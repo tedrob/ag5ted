@@ -1,0 +1,29 @@
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Player</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <!-- <a [routerLink]="[playerEl]" class="list-group clearfix" routerLinkActive="active"> -->
+    <div class="col-xs-12" id="left">
+        <app-player-item
+            *ngFor="let playerEl of playerlists"
+            [player]="playerEl"
+            (playerSelected)="onPlayerSelected(playerEl)"></app-player-item>
+    </div>
+    <!-- </a> -->
+    <ng-template>
+        <div class="col-xs-12" id="left">
+            <app-player-item
+                *ngFor="let playerEl of playerlists"
+                [player]="playerEl"></app-player-item>
+        </div>
+    </ng-template>
+</div>
+<br>
+<hr>
+<!-- <p appBasicHighlight>Style me with basic directive!</p>
+<p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">Style me with better directive!</p> -->
+

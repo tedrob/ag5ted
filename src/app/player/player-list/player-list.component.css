@@ -1,0 +1,10 @@
+
+#left {
+    position: relative;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 95%;
+    max-height: 440px;
+    overflow-y: scroll;
+}

@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-player-list></app-player-list>
+  </div>
+  <div class="div col-md-7">
+    <hr>
+    <app-player-detail
+      *ngIf="selectedPlayer; else infoText"
+      [player]="selectedPlayer"></app-player-detail>
+    <ng-template #infoText>
+      <h1>Please select a Song!</h1>
+    </ng-template>
+  </div>
+</div>
