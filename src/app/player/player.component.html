@@ -4,11 +4,12 @@
   </div>
   <div class="div col-md-7">
     <hr>
-    <app-player-detail
+    <router-outlet></router-outlet>
+    <!-- <app-player-detail
       *ngIf="selectedPlayer; else infoText"
       [player]="selectedPlayer"></app-player-detail>
     <ng-template #infoText>
       <h1>Please select a Song!</h1>
-    </ng-template>
+    </ng-template> -->
   </div>
 </div>

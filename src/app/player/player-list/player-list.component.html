@@ -6,21 +6,21 @@
 </div>
 <hr>
 <div class="row">
-    <!-- <a [routerLink]="[playerEl]" class="list-group clearfix" routerLinkActive="active"> -->
     <div class="col-xs-12" id="left">
         <app-player-item
-            *ngFor="let playerEl of playerlists"
+            *ngFor="let playerEl of playerlists let i = index"
             [player]="playerEl"
-            (playerSelected)="onPlayerSelected(playerEl)"></app-player-item>
+            [index]="i"></app-player-item>
     </div>
     <!-- </a> -->
-    <ng-template>
+    <!-- <ng-template>
         <div class="col-xs-12" id="left">
             <app-player-item
-                *ngFor="let playerEl of playerlists"
-                [player]="playerEl"></app-player-item>
+                *ngFor="let playerEl of playerlists; let i = index"
+                [player]="playerEl"
+                [index]="i"></app-player-item>
         </div>
-    </ng-template>
+    </ng-template> -->
 </div>
 <br>
 <hr>

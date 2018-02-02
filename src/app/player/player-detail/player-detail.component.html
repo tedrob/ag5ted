@@ -3,29 +3,14 @@
     <h1>{{ player.desc }}</h1>
   </div>
 </div>
-<div class="row">
-  <div ngbDropdown class="col-xs-12">
-    <div 
-      class="btn-group"
-      ngbDropdown>    
-      <button 
-        type="button"
-        class="btn btn-primary dropdown-toggle"
-        ngbDropdownToggle
-        id="dropdown">
-        Manage
-      </button>
-      <ul ngbDropdownMenu aria-labelledby="dropdown">
-          <li><a class="dropdown-item" href="#">Edit Player</a></li>
-          <li><a class="dropdown-item" href="#">Delete Player</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+
 <br>
 <div class="row">
   <div class="col-xs-12">
-    <iframe [src]="getEmbedURL(player)"  frameborder="0" width="460" height="390"></iframe><br>
+    <iframe [src]="getEmbedURL(player)" frameborder="0" width="460" height="390"></iframe><br>
     {{ player.name }} 
+    <br>
+    <h4>After song selected played,<BR> if another song is not selected,
+      <br>the next song in list will be played!</h4>
   </div>
 </div>

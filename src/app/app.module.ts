@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,9 +15,7 @@ import { BetterHighlightDirective } from './better-highlight/better-highlight.di
 import { UnlessDirective } from './unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
-
-
+import { PlayerStartComponent } from './player/player-start/player-start.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +28,14 @@ import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
     BasichighlightDirective,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    PlayerStartComponent
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    YoutubePlayerModule
+    YoutubePlayerModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

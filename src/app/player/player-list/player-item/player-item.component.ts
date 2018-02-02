@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Player } from '../../players.model';
-import { PlayerService } from '../../player.service';
 
 @Component({
   selector: 'app-player-item',
@@ -10,14 +9,7 @@ import { PlayerService } from '../../player.service';
 })
 export class PlayerItemComponent implements OnInit {
   @Input() player: Player;
+  @Input() index: number;
 
-  constructor(private playerService: PlayerService) { }
-
-  ngOnInit() {
-  }
-
-  onSelected() {
-    this.playerService.playerSelected.emit(this.player);
-  }
-
-}
+  ngOnInit() {}
+ }
