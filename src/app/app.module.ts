@@ -16,6 +16,7 @@ import { UnlessDirective } from './unless.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PlayerStartComponent } from './player/player-start/player-start.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { PlayerStartComponent } from './player/player-start/player-start.compone
     BetterHighlightDirective,
     UnlessDirective,
     DropdownDirective,
-    PlayerStartComponent
+    PlayerStartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

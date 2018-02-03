@@ -1,0 +1,28 @@
+body {
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+  }
+
+.mojFooter{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(0, 89, 255);
+    color: white;
+    text-align: center;
+}  
+footer {
+    /* border-top: 1px solid #00a651;
+    margin-top: 0px;
+    padding-top: 7px;
+    color: #00a651; */   
+    bottom: 0;
+  }
+  .footer-image-container {
+    /* background-image: url('/assets/img/natureScapes.jpg'); */
+    height: 100%;
+    text-align: center;
+    background-size:100% 100%!important;
+}
