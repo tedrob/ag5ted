@@ -5,9 +5,6 @@ import { Player } from '../players.model';
 import { SafeResourceUrl, DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { PlayerService } from '../player.service';
 import { Options } from 'selenium-webdriver/firefox';
-// import { YT } from 'ngx-youtube-player/src/services/youtube-player.service';
-
-import { YoutubePlayerModule } from 'ngx-youtube-player';
 
 @Component({
   selector: 'app-player-detail',
@@ -16,11 +13,7 @@ import { YoutubePlayerModule } from 'ngx-youtube-player';
 })
 export class PlayerDetailComponent implements OnInit {
   @Input() player: Player;
-  @Output() change = new EventEmitter<YT.Player>();
   id: number;
-  // ----
-  ik_player;
-  // ----
 
   playerlists: Player[];
   playerlist = [];
@@ -70,28 +63,11 @@ export class PlayerDetailComponent implements OnInit {
     console.log(' playerlist ' +  playerlist );
 
     const lnk2 = item.name + '?rel=0?version=3&amp;autoplay=1&amp;controls=1&loop=1&playlist=' + playerlist;
-    // const lnk2 = item.name + '?rel=0?version=3&amp;autoplay=1&enablejsapi=true&amp;controls=1&loop=1&playlist=' + playerlist;
     const URL3 = 'https://www.youtube.com/embed/' + lnk2;
-
-   /*  if (typeof(YoutubePlayerModule) === 'undefined') {
-      console.log('undefined');
-    } else {
-      console.log(YoutubePlayerModule);
-      // this.ik_player = new YT('player_iframe', { videoId: this.ik_player, events: {'onStateChange': this.onStateChange } });
-    } */
     return this.sanitizer.bypassSecurityTrustResourceUrl(URL3);
   }
 
   onStateChange(event) {
     console.log('playerchange');
   }
-
-  /* onStateChange(player) {
-    this.change.emit();
-    if (player.data === 0) {
-      this.savePlayer(player.name);
-    }
-    console.log('player state', player.data);
-  } */
-
 }

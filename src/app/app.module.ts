@@ -9,7 +9,6 @@ import { PlayerListComponent } from './player/player-list/player-list.component'
 import { PlayerItemComponent } from './player/player-list/player-item/player-item.component';
 import { PlayerEditComponent } from './player/player-list/player-edit/player-edit.component';
 import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
-import { YoutubePlayerModule } from 'ngx-youtube-player';
 import { BasichighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
@@ -36,7 +35,6 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    YoutubePlayerModule,
     AppRoutingModule
   ],
   providers: [],

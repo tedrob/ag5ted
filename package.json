@@ -35,7 +35,7 @@
     "rxjs": "^5.5.6",
     "uuid": "^3.2.1",
     "typescript": "~2.5.3",
-    "zone.js": "^0.8.19"    
+    "zone.js": "^0.8.19"
   },
   "devDependencies": {
     "@angular/cli": "1.6.7",
