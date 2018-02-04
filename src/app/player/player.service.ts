@@ -12,7 +12,7 @@ export class PlayerService {
         new Player('PMivT7MJ41M', 'That"s What I Like'),
         new Player('oOfGGjr6Aq4', 'Share My Life'),
         new Player('62iOcrKHG6Q', 'River'),
-        new Player('GwP8xAh20FU', 'Stay Awake')
+        new Player('XxGh4ruG33M', 'FourPlay')
       ];
 
       getPlayers() {
