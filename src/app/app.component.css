@@ -1,0 +1,8 @@
+.container2 {
+    height: 100%;
+    background-image: url('/assets/img/development-paradox.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%!important;
+    height: 45em;
+    overflow: inherit;
+    }
