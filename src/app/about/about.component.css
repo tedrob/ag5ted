@@ -1,3 +1,10 @@
+.articles {
+    background-image: url('/assets/img/sticky.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%!important;
+    height:30em;
+    overflow-x: hidden;
+}
 .about-item {
     background-color: aliceblue
 }

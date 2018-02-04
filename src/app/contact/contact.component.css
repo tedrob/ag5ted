@@ -1,3 +1,12 @@
+.contact {
+    background-image: url('/assets/img/Contact.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%!important;
+    height:30em;
+    overflow-x: hidden;
+}
+
 .contact-item {
     background-color: aliceblue
 }
+
