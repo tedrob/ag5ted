@@ -18,6 +18,7 @@ import { PlayerStartComponent } from './player/player-start/player-start.compone
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ContactComponent } from './contact/contact.component';
     PlayerStartComponent,
     FooterComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

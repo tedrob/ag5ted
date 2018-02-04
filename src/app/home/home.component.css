@@ -1,0 +1,12 @@
+.home {
+    height: 15em; 
+    background-image: url('/assets/img/montainssky.jpg'); 
+    background-repeat: no-repeat;
+    background-size:100% 100%!important;
+    overflow-x: hidden;
+};
+
+.home-item {
+    background-color: aliceblue;
+    text-align: center;
+}
