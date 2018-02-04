@@ -16,6 +16,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PlayerStartComponent } from './player/player-start/player-start.component';
 import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './about/about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     UnlessDirective,
     DropdownDirective,
     PlayerStartComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

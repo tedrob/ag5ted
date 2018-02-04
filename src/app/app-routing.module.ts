@@ -4,10 +4,12 @@ import { Routes, RouterModule  } from '@angular/router';
 import { PlayerComponent } from './player/player.component';
 import { PlayerStartComponent } from './player/player-start/player-start.component';
 import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
+import { AboutComponent } from './about/about.component';
 
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/player', pathMatch: 'full' },
+    { path: 'about', component: AboutComponent },
     { path: 'player', component: PlayerComponent, children: [
         { path: '', component: PlayerStartComponent },
         { path: ':id', component: PlayerDetailComponent }
