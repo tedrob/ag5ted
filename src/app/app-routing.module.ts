@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/player', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
+    { path: 'home', component: HomeComponent, pathMatch: 'full' },
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'player', component: PlayerComponent, children: [
@@ -21,7 +21,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, {useHash: true})],
     exports: [RouterModule]
 })
 export class AppRoutingModule {
