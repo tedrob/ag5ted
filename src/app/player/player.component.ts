@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from './players.model';
+// import { Player } from './players.model';
 import { PlayerService } from './player.service';
 
 @Component({
@@ -9,17 +9,18 @@ import { PlayerService } from './player.service';
   providers: [PlayerService]
 })
 export class PlayerComponent implements OnInit {
-  selectedPlayer: Player;
+  // selectedPlayer: Player;
 
-  constructor(private playerService: PlayerService) { }
+  // constructor(private playerService: PlayerService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.playerService.playerSelected
-      .subscribe(
-        (player: Player) => {
-          this.selectedPlayer = player;
-        }
-      );
+    // this.playerService.playerSelected
+    //   .subscribe(
+    //     (player: Player) => {
+    //       this.selectedPlayer = player;
+    //     }
+    //   );
   }
 
 }

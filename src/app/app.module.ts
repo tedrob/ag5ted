@@ -7,7 +7,6 @@ import { HeaderComponent } from './header/header.component';
 import { PlayerComponent } from './player/player.component';
 import { PlayerListComponent } from './player/player-list/player-list.component';
 import { PlayerItemComponent } from './player/player-list/player-item/player-item.component';
-import { PlayerEditComponent } from './player/player-list/player-edit/player-edit.component';
 import { PlayerDetailComponent } from './player/player-detail/player-detail.component';
 import { BasichighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
@@ -19,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { PlayerEditComponent } from './player/player-edit/player-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,6 @@ import { HomeComponent } from './home/home.component';
     PlayerComponent,
     PlayerListComponent,
     PlayerItemComponent,
-    PlayerEditComponent,
     PlayerDetailComponent,
     BasichighlightDirective,
     BetterHighlightDirective,
@@ -37,7 +36,8 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     AboutComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    PlayerEditComponent
   ],
   imports: [
     BrowserModule,

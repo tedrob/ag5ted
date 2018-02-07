@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <h1>{{ player.desc }}</h1>
+    <h1>{{ player?.desc }}</h1>
   </div>
 </div>
 
@@ -9,8 +9,24 @@
   <div class="col-xs-12">
     <iframe [src]="getEmbedURL(player)" frameborder="0" width="460" height="390"></iframe><br>
     <!-- {{ player.name }}  -->
-    <br>
-    <h4>After song selected played,<BR> if another song is not selected,
-      <br>the next song in list will be played!</h4><br>
+    
+    <h5>After song selected played, if another song is not selected,
+      <br>the next song in list will be played!</h5>
   </div>
 </div>
+<div class="col-xs-12">
+  <div ngbDropdown class="d-inline-block"> 
+    <button 
+      class="btn btn-primary"
+      id="dropdownMenu"
+      ngbDropdownToggle
+      style="cursor:pointer;color:white">
+      Manage Player
+    </button>  
+    <div ngbDropdownMenu aria-labelledby="dropdownMenu" style="width: auto;">
+      <button class="dropdown-item" (click)="onEditPlayer()">Edit Player</button>
+      <button class="dropdown-item">Delete Player</button>
+    </div>
+  </div>
+</div>
+<br>

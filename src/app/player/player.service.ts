@@ -3,7 +3,7 @@ import { EventEmitter } from '@angular/core';
 import { Player } from './players.model';
 
 export class PlayerService {
-    playerSelected = new EventEmitter<Player>();
+    // playerSelected = new EventEmitter<Player>();
 
     private playerlists: Player[] = [
         new Player('LgPpowVNEfE', 'Musiq - So beautiful'),

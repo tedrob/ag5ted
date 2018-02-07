@@ -23,4 +23,7 @@ export class PlayerListComponent implements OnInit {
   ngOnInit() {
     this.playerlists = this.playerService.getPlayers();
   }
+  onNewplayer() {
+    this.router.navigate(['new'], {relativeTo: this.route});
+  }
 }

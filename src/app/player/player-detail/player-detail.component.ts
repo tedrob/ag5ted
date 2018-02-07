@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Player } from '../players.model';
 import { SafeResourceUrl, DomSanitizer, SafeUrl } from '@angular/platform-browser';
@@ -20,7 +20,8 @@ export class PlayerDetailComponent implements OnInit {
 
   constructor(private sanitizer: DomSanitizer,
               private playerService: PlayerService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
     console.log('in contructor ');
    }
 
@@ -69,5 +70,10 @@ export class PlayerDetailComponent implements OnInit {
 
   onStateChange(event) {
     console.log('playerchange');
+  }
+
+  onEditPlayer() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
+    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 }
