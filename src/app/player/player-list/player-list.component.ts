@@ -1,19 +1,20 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+
 import { Player } from '../players.model';
 import { PlayerListProvider } from './player-listprovider';
 import { PlayerService } from '../player.service';
-import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-player-list',
   templateUrl: './player-list.component.html',
   styleUrls: ['./player-list.component.css']
 })
-export class PlayerListComponent implements OnInit {
-
+export class PlayerListComponent implements OnInit, OnDestroy {
   playerlists: Player[];
-
-  // currentPlayer: PlayerListProvider;
+  subscription: Subscription;
 
   constructor(private playerService: PlayerService,
               private router: Router,
@@ -21,9 +22,20 @@ export class PlayerListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.subscription = this.playerService.playerChanged
+      .subscribe(
+        (players: Player[]) => {
+          this.playerlists = players;
+        }
+      );
     this.playerlists = this.playerService.getPlayers();
   }
+
   onNewplayer() {
     this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
+import { SafePipe } from './player/safe.pipe';
+import { PlayerService } from './player/player.service';
 
 @NgModule({
   declarations: [
@@ -37,14 +40,17 @@ import { PlayerEditComponent } from './player/player-edit/player-edit.component'
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    PlayerEditComponent
+    PlayerEditComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgbModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

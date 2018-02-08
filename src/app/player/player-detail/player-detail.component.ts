@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Player } from '../players.model';
-import { SafeResourceUrl, DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { PlayerService } from '../player.service';
 import { Options } from 'selenium-webdriver/firefox';
 
@@ -14,6 +14,7 @@ import { Options } from 'selenium-webdriver/firefox';
 export class PlayerDetailComponent implements OnInit {
   @Input() player: Player;
   id: number;
+  urlCache = new Map<string, SafeResourceUrl>();
 
   playerlists: Player[];
   playerlist = [];
@@ -41,12 +42,12 @@ export class PlayerDetailComponent implements OnInit {
     }
   }
 
-  getEmbedURL(item) {
+  getEmbedURL(videoId, string) {
 
     let z;
     const playerlist = [];
     for ( let i = 0; i < this.playerlists.length; i++) {
-      if (this.playerlists[i].name === item.name) {
+      if (this.playerlists[i].name === videoId.name) {
         z = i + 1;
         break;
       }
@@ -63,17 +64,31 @@ export class PlayerDetailComponent implements OnInit {
     }
     console.log(' playerlist ' +  playerlist );
 
-    const lnk2 = item.name + '?rel=0?version=3&amp;autoplay=1&amp;controls=1&loop=1&playlist=' + playerlist;
-    const URL3 = 'https://www.youtube.com/embed/' + lnk2;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(URL3);
+    let url = this.urlCache.get(videoId);
+
+    const lnk1 = videoId.name;
+    const lnk2 = '?rel=0?version=3&amp;autoplay=1&amp;controls=1&loop=1&playlist=' + playerlist;
+
+    if (!url) {
+      url = this.sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/' + lnk1 + '?enablejasapi1=1' + lnk2);
+      this.urlCache.set(videoId, url);
+    }
+    return url;
   }
 
-  onStateChange(event) {
-    console.log('playerchange');
-  }
+  // onStateChange(event) {
+  //   console.log('playerchange');
+  // }
 
   onEditPlayer() {
+    console.log('in Edit');
     this.router.navigate(['edit'], {relativeTo: this.route});
-    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
+    this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
+  }
+
+  onDeletePlayer() {
+    this.playerService.deletePlayer(this.id);
+    this.router.navigate(['/player']);
   }
 }
