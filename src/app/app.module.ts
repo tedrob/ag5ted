@@ -20,7 +20,6 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PlayerEditComponent } from './player/player-edit/player-edit.component';
-import { SafePipe } from './player/safe.pipe';
 import { PlayerService } from './player/player.service';
 
 @NgModule({
@@ -40,8 +39,7 @@ import { PlayerService } from './player/player.service';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    PlayerEditComponent,
-    SafePipe
+    PlayerEditComponent
   ],
   imports: [
     BrowserModule,
