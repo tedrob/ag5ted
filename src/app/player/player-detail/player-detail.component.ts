@@ -42,12 +42,12 @@ export class PlayerDetailComponent implements OnInit {
     }
   }
 
-  getEmbedURL(videoId, string) {
+  getEmbedURL(item) {
 
     let z;
     const playerlist = [];
     for ( let i = 0; i < this.playerlists.length; i++) {
-      if (this.playerlists[i].name === videoId.name) {
+      if (this.playerlists[i].name === item.name) {
         z = i + 1;
         break;
       }
@@ -64,15 +64,15 @@ export class PlayerDetailComponent implements OnInit {
     }
     console.log(' playerlist ' +  playerlist );
 
-    let url = this.urlCache.get(videoId);
+    let url = this.urlCache.get(item.name);
 
-    const lnk1 = videoId.name;
+    const lnk1 = item.name;
     const lnk2 = '?rel=0?version=3&amp;autoplay=1&amp;controls=1&loop=1&playlist=' + playerlist;
 
     if (!url) {
       url = this.sanitizer.bypassSecurityTrustResourceUrl(
       'https://www.youtube.com/embed/' + lnk1 + '?enablejasapi1=1' + lnk2);
-      this.urlCache.set(videoId, url);
+      this.urlCache.set(item.name, url);
     }
     return url;
   }
