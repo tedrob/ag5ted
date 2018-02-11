@@ -1,0 +1,62 @@
+<div class="footballish-item">
+  <div class="container" style="color:white;">
+    <div  class="football-item2" style="text-align:center">
+      <div class="row">
+        <div class="col-sm-3">
+          <app-football-list-nfc></app-football-list-nfc>
+        </div>
+
+        <div class="col-sm-6">
+          <h1>
+            <p>
+              &nbsp;Football !!!
+            </p>
+            <div class="col-sm-12">
+              <div ngbDropdown class="d-inline-block"> 
+                <button 
+                  class="btn btn-primary"
+                  id="dropdownMenu"
+                  ngbDropdownToggle
+                  style="cursor:pointer;color:white">
+                  Manage Teams
+                </button>  
+                <div ngbDropdownMenu aria-labelledby="dropdownMenu" style="width: auto;">
+                  <button class="dropdown-item" (click)="startSchedule()">Schedule</button>
+                  <button class="dropdown-item">Pick Teams</button>
+                </div>
+              </div>
+            </div>            
+          </h1>
+          <router-outlet></router-outlet>
+          <hr>
+          <div class="row">
+            <div class="col-sm-6">
+              Home
+            </div>
+            <div class="col-sm-6">
+              Visitor
+              <!-- <form class="form-inline">
+                <div class="form-group">                  
+                  <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd"
+                          name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-default" (click)="d.toggle()" type="button">
+                        <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <app-football-list-afc></app-football-list-afc>
+        </div>  
+      </div>
+    
+  </div>
+  </div>
+</div><br><br>

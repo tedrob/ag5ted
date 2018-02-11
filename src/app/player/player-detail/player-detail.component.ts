@@ -77,10 +77,6 @@ export class PlayerDetailComponent implements OnInit {
     return url;
   }
 
-  // onStateChange(event) {
-  //   console.log('playerchange');
-  // }
-
   onEditPlayer() {
     console.log('in Edit');
     this.router.navigate(['edit'], {relativeTo: this.route});

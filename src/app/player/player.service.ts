@@ -2,7 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
 import { Player } from './players.model';
-import { forEach } from '@angular/router/src/utils/collection';
+// import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class PlayerService {
@@ -16,7 +16,8 @@ export class PlayerService {
     new Player('oOfGGjr6Aq4', 'Share My Life'),
     new Player('62iOcrKHG6Q', 'River'),
     new Player('XxGh4ruG33M', 'Fourplay-I`ll Still Be Loving You'),
-    new Player('jT0gbcq5xqI', 'You and I')
+    new Player('jT0gbcq5xqI', 'You and I'),
+    new Player('EtJy69cEOtQ', 'How to Learn Anything')
       ];
 
       getPlayers() {

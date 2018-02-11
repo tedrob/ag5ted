@@ -1,0 +1,11 @@
+.footballish-item {
+    background-image: url('/assets/img/footBallHeroes.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%!important;
+    height:45em;
+    overflow-x: hidden;
+}
+
+.football-item2 {
+    background-color: rgb(247, 21, 66)
+}
