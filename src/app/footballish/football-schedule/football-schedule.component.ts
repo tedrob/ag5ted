@@ -15,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FootballScheduleComponent implements OnInit {
   footballteamlists: FootballTeams[];
   model: NgbDateStruct;
+  date: {year: number, month: number};
   footballschedule: FootballSchedule[] = [];
   footballschedule2: FootballSchedule;
   week: number;
