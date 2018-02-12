@@ -1,3 +1,23 @@
-<p>
-  football-showschedule works!
-</p>
+<div class="row">
+  <div class="col-sm-1" style="text-align:left">
+     <h5>Week</h5>
+  </div>
+  <div class="col-sm-3" style="text-align:center">
+      <h5>Start-Date</h5>
+  </div>
+  <div class="col-sm-4" style="text-align:left">
+      <h5>End-Entry-Date</h5>
+  </div> 
+  <div class="col-sm-4" style="text-align:left">
+      <h5>Results-day</h5>
+  </div>   
+</div>
+
+<div class="row">
+    <div class="col-sm-12 pull-left"><br>
+      <app-showschedule-item
+        *ngFor="let schedule of footballschs"
+        [footballSchedule]="schedule">
+      </app-showschedule-item>
+    </div>
+  </div>

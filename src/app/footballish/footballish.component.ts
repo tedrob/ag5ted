@@ -21,7 +21,6 @@ export class FootballishComponent implements OnInit {
   }
 
   startSchedule() {
-    console.log('have to navigate to schedule');
     this.router.navigate(['schedule'], {relativeTo: this.route});
   }
 

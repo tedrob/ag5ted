@@ -26,35 +26,58 @@ export class FootballScheduleComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    this.footballschedule = this.footballService.footballsch;
+    if (!(this.footballschedule.length === 0)) { // this will clean up if
+      const z = this.footballschedule.length;
+      this.footballschedule.splice(0, z);
+    }
   }
 
   selectToday() {
-    console.log(this.model);
+
     let startdate;
-    let endDate;
-    let resultDate;
-    let week = 0;
+    let enddate;
+    let resultdate;
+    let week = 1;
 
-    for (let i = 0; i < 27; i += 9 ) {
+    for (let i = 0; i < 63; i += 9 ) {
       startdate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + i));
-      endDate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 5 )));
-      resultDate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 9)));
+      enddate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 5 )));
+      resultdate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 9)));
       i -= 2;
-      console.log('start day ' + startdate);
-      console.log('end entry day ' + endDate);
-      console.log('results day ' + resultDate);
-      week += 1 ;
-
-      const footballschedule3 =  new FootballSchedule(week, startdate, endDate, resultDate);
+      const footballschedule3 =  new FootballSchedule(week, startdate, enddate, resultdate);
       this.footballschedule2 = footballschedule3;
-      console.log('in schedule ', footballschedule3);
       this.footballService.addFootballSch(this.footballschedule2);
-      }
+      week += 1 ;
+    }
+    const ddstart = new Date(startdate);
+    const ddend = new Date(enddate);
+    const ddresult = new Date(resultdate);
+    let z = 2;
+    const y = 7;
+    let d2, d3, d4;
+    // let d3;
+    // let d4;
+    let footballschedule4;
 
-      this.footballschedule.push(this.footballschedule2);
-      console.log(' test ' + this.footballService.getFootballSch.length);
+    for (let i = 9; i < 63; i += 9 ) {
+      ddstart.setDate(ddstart.getDate() + (i - z));
+      ddend.setDate(ddend.getDate() + (y));
+      ddresult.setDate(ddresult.getDate() + (y));
+      d2 = this.datePipe.transform(ddstart, 'MMM-dd-yyyy');
+      d3 = this.datePipe.transform(ddend, 'MMM-dd-yyyy');
+      d4 = this.datePipe.transform(ddresult, 'MMM-dd-yyyy');
+      footballschedule4 =  new FootballSchedule(week, d2, d3, d4);
+      this.footballschedule2 = footballschedule4;
+      this.footballService.addFootballSch(this.footballschedule2);
+      z += 7;
+      i -= 2;
+      week += 1;
+    }
+    // const strd = this.datePipe.transform(ddstart.getFullYear() + '-' + ddstart.getMonth() + '-' + ddstart.getDay());
 
-      this.router.navigate(['../', 'showschedule'] , {relativeTo: this.route});
+    // this.footballschedule.push(this.footballschedule2);
+    this.router.navigate(['../', 'showschedule'] , {relativeTo: this.route});
   }
 
 

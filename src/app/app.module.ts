@@ -33,6 +33,7 @@ import { FootballStartComponent } from './footballish/football-start/football-st
 import { FootballScheduleComponent } from './footballish/football-schedule/football-schedule.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { FootballShowscheduleComponent } from './footballish/football-showschedule/football-showschedule.component';
+import { ShowscheduleItemComponent } from './footballish/football-showschedule/showschedule-item/showschedule-item.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { FootballShowscheduleComponent } from './footballish/football-showschedu
     AfcItemComponent,
     FootballStartComponent,
     FootballScheduleComponent,
-    FootballShowscheduleComponent
+    FootballShowscheduleComponent,
+    ShowscheduleItemComponent
   ],
   imports: [
     BrowserModule,
