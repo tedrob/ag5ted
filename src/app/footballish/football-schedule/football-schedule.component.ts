@@ -42,8 +42,8 @@ export class FootballScheduleComponent implements OnInit {
 
     for (let i = 0; i < 63; i += 9 ) {
       startdate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + i));
-      enddate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 5 )));
-      resultdate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 9)));
+      enddate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 4 )));
+      resultdate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 8)));
       i -= 2;
       const footballschedule3 =  new FootballSchedule(week, startdate, enddate, resultdate);
       this.footballschedule2 = footballschedule3;
