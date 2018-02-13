@@ -53,24 +53,24 @@ export class FootballScheduleComponent implements OnInit {
     const ddstart = new Date(startdate);
     const ddend = new Date(enddate);
     const ddresult = new Date(resultdate);
-    let z = 2;
-    const y = 7;
-    let d2, d3, d4;
-    // let d3;
-    // let d4;
+    let weekIndex = 2;
+    const constIndex = 7;
+    let dstart, dend, dresult;
     let footballschedule4;
 
+    // this loop was created because the day increment rose over 100, which cause the datepipe to fail
+
     for (let i = 9; i < 63; i += 9 ) {
-      ddstart.setDate(ddstart.getDate() + (i - z));
-      ddend.setDate(ddend.getDate() + (y));
-      ddresult.setDate(ddresult.getDate() + (y));
-      d2 = this.datePipe.transform(ddstart, 'MMM-dd-yyyy');
-      d3 = this.datePipe.transform(ddend, 'MMM-dd-yyyy');
-      d4 = this.datePipe.transform(ddresult, 'MMM-dd-yyyy');
-      footballschedule4 =  new FootballSchedule(week, d2, d3, d4);
+      ddstart.setDate(ddstart.getDate() + (i - weekIndex));
+      ddend.setDate(ddend.getDate() + (constIndex));
+      ddresult.setDate(ddresult.getDate() + (constIndex));
+      dstart = this.datePipe.transform(ddstart, 'MMM-dd-yyyy');
+      dend = this.datePipe.transform(ddend, 'MMM-dd-yyyy');
+      dresult = this.datePipe.transform(ddresult, 'MMM-dd-yyyy');
+      footballschedule4 =  new FootballSchedule(week, dstart, dend, dresult);
       this.footballschedule2 = footballschedule4;
       this.footballService.addFootballSch(this.footballschedule2);
-      z += 7;
+      weekIndex += 7;
       i -= 2;
       week += 1;
     }
