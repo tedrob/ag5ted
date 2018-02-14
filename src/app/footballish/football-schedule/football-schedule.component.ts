@@ -39,12 +39,13 @@ export class FootballScheduleComponent implements OnInit {
     let enddate;
     let resultdate;
     let week = 1;
+    let dayIndex;
 
-    for (let i = 0; i < 63; i += 9 ) {
-      startdate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + i));
-      enddate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 4 )));
-      resultdate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (i + 8)));
-      i -= 2;
+    for (dayIndex = 0; dayIndex < 63; dayIndex += 9 ) {
+      startdate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + dayIndex));
+      enddate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (dayIndex + 4 )));
+      resultdate = this.datePipe.transform(this.model.year + '-' + this.model.month + '-' + (this.model.day + (dayIndex + 8)));
+      dayIndex -= 2;
       const footballschedule3 =  new FootballSchedule(week, startdate, enddate, resultdate);
       this.footballschedule2 = footballschedule3;
       this.footballService.addFootballSch(this.footballschedule2);
@@ -60,18 +61,18 @@ export class FootballScheduleComponent implements OnInit {
 
     // this loop was created because the day increment rose over 100, which cause the datepipe to fail
 
-    for (let i = 9; i < 63; i += 9 ) {
-      ddstart.setDate(ddstart.getDate() + (i - weekIndex));
+    for (dayIndex = 9; dayIndex < 63; dayIndex += 9 ) {
+      ddstart.setDate(ddstart.getDate() + (dayIndex - weekIndex));
       ddend.setDate(ddend.getDate() + (constIndex));
       ddresult.setDate(ddresult.getDate() + (constIndex));
-      dstart = this.datePipe.transform(ddstart, 'MMM-dd-yyyy');
-      dend = this.datePipe.transform(ddend, 'MMM-dd-yyyy');
-      dresult = this.datePipe.transform(ddresult, 'MMM-dd-yyyy');
+      dstart = this.datePipe.transform(ddstart, 'MMM dd, yyyy');
+      dend = this.datePipe.transform(ddend, 'MMM dd, yyyy');
+      dresult = this.datePipe.transform(ddresult, 'MMM dd, yyyy');
       footballschedule4 =  new FootballSchedule(week, dstart, dend, dresult);
       this.footballschedule2 = footballschedule4;
       this.footballService.addFootballSch(this.footballschedule2);
       weekIndex += 7;
-      i -= 2;
+      dayIndex -= 2;
       week += 1;
     }
     // const strd = this.datePipe.transform(ddstart.getFullYear() + '-' + ddstart.getMonth() + '-' + ddstart.getDay());

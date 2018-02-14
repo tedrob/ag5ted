@@ -3,22 +3,24 @@
     style="padding:0;"
     routerlinkActive="active">
     <div class="pull-left" style="text-align:left">
-        <div class="row">
-            <div class="col-sm-4">
-                <h6 class="list-group-itemheading">
-                    {{footballSchedule.week}}
-                    &nbsp;{{footballSchedule.startdate}}
-                </h6>    
-            </div>        
-            <div class="col-sm-4">
-                <h6 class="list-group-itemheading">
-                    {{footballSchedule.endentrydate}}
-                </h6>    
-            </div>        
-            <div class="col-sm-4">
-                <h6 class="list-group-itemheading">
-                    {{footballSchedule.resultsday}}
-                </h6>    
+        <div *ngIf="scheduleDate > todaysDate">
+        <div class="row">            
+                <div class="col-sm-4">
+                    <h6 class="list-group-itemheading">
+                        {{footballSchedule.week}}
+                        &nbsp;{{footballSchedule.startdate}}
+                    </h6>    
+                </div>        
+                <div class="col-sm-4">
+                    <h6 class="list-group-itemheading">
+                        {{footballSchedule.endentrydate}}
+                    </h6>    
+                </div>        
+                <div class="col-sm-4">
+                    <h6 class="list-group-itemheading">
+                        {{footballSchedule.resultsday}}
+                    </h6>    
+                </div>
             </div>
         </div>
     </div>
