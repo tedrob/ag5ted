@@ -8,6 +8,7 @@ import { FootballSchedule } from '../../football-schedule.model';
 })
 export class ShowscheduleItemComponent implements OnInit {
   @Input() footballSchedule: FootballSchedule;
+  @Input() index: number;
 
   constructor() { }
 

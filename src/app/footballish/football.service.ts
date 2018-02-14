@@ -114,9 +114,9 @@ export class FootballService {
       'Content-Type': 'application/json'
     });
 
-    const req = new HttpRequest('PUT', this.ftbSchUrl, fbsch, {reportProgress: true});
+    // const req = new HttpRequest('PUT', this.ftbSchUrl, fbsch, {reportProgress: true});
     // console.log('this req ', req);
-    return this.httpClient.request(req);
+    // return this.httpClient.request(req);
   }
 
   getNewFootballSch() {
@@ -146,6 +146,10 @@ export class FootballService {
 
   getFootballSch() {
     return this.footballsch.slice();
+  }
+
+  getFootballSchwk(index: number) {
+    return this.footballsch[index];
   }
 
 }

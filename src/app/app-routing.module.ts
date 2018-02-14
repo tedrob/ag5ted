@@ -12,6 +12,7 @@ import { FootballishComponent } from './footballish/footballish.component';
 import { FootballStartComponent } from './footballish/football-start/football-start.component';
 import { FootballScheduleComponent } from './footballish/football-schedule/football-schedule.component';
 import { FootballShowscheduleComponent } from './footballish/football-showschedule/football-showschedule.component';
+import { ShowscheduleDetailComponent } from './footballish/football-showschedule/showschedule-detail/showschedule-detail.component';
 
 
 const appRoutes: Routes = [
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     { path: 'footballish', component: FootballishComponent, children: [
         { path: '', component: FootballStartComponent },
         { path: 'schedule', component: FootballScheduleComponent },
-        { path: 'showschedule', component: FootballShowscheduleComponent }
+        { path: 'showschedule', component: FootballShowscheduleComponent },
+        { path: 'showschedule/:id', component: ShowscheduleDetailComponent}
     ]},
 ];
 

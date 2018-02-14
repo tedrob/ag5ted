@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { FootballSchedule } from '../football-schedule.model';
 import { FootballService } from '../football.service';
+
 
 @Component({
   selector: 'app-football-showschedule',
   templateUrl: './football-showschedule.component.html',
   styleUrls: ['./football-showschedule.component.css']
 })
-export class FootballShowscheduleComponent implements OnInit {
+export class FootballShowscheduleComponent implements OnInit, OnDestroy {
   footballschs: FootballSchedule[];
   subscription: Subscription;
 
-  constructor(private fbs: FootballService) { }
+  constructor(private fbs: FootballService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.subscription = this.fbs.footballSchChanged
@@ -23,7 +27,9 @@ export class FootballShowscheduleComponent implements OnInit {
         }
       );
     this.footballschs = this.fbs.footballsch.slice();
-    // this.footballschs.splice(this.footballschs.length - 1, 1);
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

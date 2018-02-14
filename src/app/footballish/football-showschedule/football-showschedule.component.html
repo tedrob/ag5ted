@@ -14,10 +14,13 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-12 pull-left"><br>
-      <app-showschedule-item
-        *ngFor="let schedule of footballschs"
-        [footballSchedule]="schedule">
-      </app-showschedule-item>
+    <div class="col-sm-12 pull-left"><hr>
+      <div id="left">
+        <app-showschedule-item id="left"
+          *ngFor="let schedule of footballschs let i = index"
+          [footballSchedule]="schedule"
+          [index]="i">
+        </app-showschedule-item>
+      </div><br>
     </div>
   </div>
