@@ -37,6 +37,8 @@ import { ShowscheduleItemComponent } from './footballish/football-showschedule/s
 import { ShowscheduleDetailComponent } from './footballish/football-showschedule/showschedule-detail/showschedule-detail.component';
 import { WhatifComponent } from './whatif/whatif.component';
 import { ScheduleComponent } from './whatif/schedule/schedule.component';
+import { PickteamsComponent } from './whatif/pickteams/pickteams.component';
+import { ManageteamsComponent } from './whatif/manageteams/manageteams.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import { ScheduleComponent } from './whatif/schedule/schedule.component';
     ShowscheduleItemComponent,
     ShowscheduleDetailComponent,
     WhatifComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    PickteamsComponent,
+    ManageteamsComponent
   ],
   imports: [
     BrowserModule,

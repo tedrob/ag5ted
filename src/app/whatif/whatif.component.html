@@ -1,33 +1,38 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-2 off-set-2 whatif-item" style="text-align:center;">
-       A list of links on this panel
-       <div class="contain"></div>
-        <div class="row">
-         <div class="bootstrap-vertical-nav">
-            <div class="col-sm-12 offset-8">
-
-              <ul class="nav flex-column">
-                <li routerLinkActive="active">
-                  <a routerLink="schedule"                    
-                    class="nav-link" style="text-align:left;">Schedule
-                  </a>
-                </li>
-                <li routerLinkActive="active">
-                  <a class="nav-link" style="text-align:left;">Pick Teams</a>
-                </li>
-                <li routerLinkActive="active">
-                    <a class="nav-link" style="text-align:left;">link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="text-align:left;">link</a>
-                </li>    
-              </ul>
+    <div class="col-xs-5 col-sm-2 whatif-item" style="text-align:center; background-color:gray">
+      A list of links on this panel
+      <div class="container">
+        <div class="row col-xs-12 col-sm-12" col-sm-2 offset-8>
+          <nav class="nav-pills flex-column"  routerLinkActive="active" routerLinkActiveOptions="{exact: true}">
+            <div class="xs-offset-2 sm-offset-8">
+                <a routerLink="manageteams"
+                routerLinkActive="active"
+                class="nav-link"
+                style="text-align:left;"
+                routerLinkActiveOptions="{exact: true}">Manage Teams
+              </a>
+              <a routerLink="schedule"
+                routerLinkActive="active"
+                class="nav-link"
+                style="text-align:left;"
+                routerLinkActiveOptions="{exact: true}">Schedule
+              </a>
+              <a routerLink="pickteams"
+                routerLinkActive="active"
+                class="nav-link"
+                style="text-align:left;"
+                routerLinkActiveOptions="{exact: true}">Pick Teams
+              </a>
+              <!-- <a routerLink="somethingelse" -->
+              <a routerLinkActive="active"
+                class="nav-link disabled" style="text-align:left;">Disabled</a>
             </div>
-         </div>
-       </div>
+          </nav>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-10 whatif">
+    <div class="col-xs-7 col-sm-10 whatif">
       <router-outlet class="whatif-item"></router-outlet>
     </div>
   </div>

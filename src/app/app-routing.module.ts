@@ -15,6 +15,8 @@ import { FootballShowscheduleComponent } from './footballish/football-showschedu
 import { ShowscheduleDetailComponent } from './footballish/football-showschedule/showschedule-detail/showschedule-detail.component';
 import { WhatifComponent } from './whatif/whatif.component';
 import { ScheduleComponent } from './whatif/schedule/schedule.component';
+import { PickteamsComponent } from './whatif/pickteams/pickteams.component';
+import { ManageteamsComponent } from './whatif/manageteams/manageteams.component';
 
 
 const appRoutes: Routes = [
@@ -35,7 +37,9 @@ const appRoutes: Routes = [
         { path: 'showschedule/:id', component: ShowscheduleDetailComponent}
     ]},
     { path: 'whatif', component: WhatifComponent, children: [
-        { path: 'schedule', component: ScheduleComponent, pathMatch: 'full'}
+        { path: 'manageteams', component: ManageteamsComponent, pathMatch: 'full'},
+        { path: 'schedule', component: ScheduleComponent, pathMatch: 'full'},
+        { path: 'pickteams', component: PickteamsComponent, pathMatch: 'full'},
     ]}
 ];
 
