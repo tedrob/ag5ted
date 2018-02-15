@@ -1,51 +1,51 @@
 <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-primary"> 
     <header class="navbar navbar-light navbar-fixed-top navbar-expand-lg"> -->
-<header class="navbar navbar-dark navbar-fixed-top navbar-expand-sm bg-primary">    
-    <div class="container-fluid">
+<div class="container-fluid">
+    <header class="navbar navbar-dark navbar-fixed-top navbar-expand-sm bg-primary">
     
-    <a class="navbar-brand" routerLink="/" (click)="navbarCollapsed = true">AG Ted</a>
+        <a class="navbar-brand" routerLink="/" (click)="navbarCollapsed = true">AG Ted</a>
 
-    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
-                  [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
+                    [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarContent">
-            <ul class="nav navbar-nav mr-auto navbar-dark">
-                <li routerLinkActive="active"><a routerLink="/home" class="nav-link">Home</a></li>
-                <li routerLinkActive="active"><a routerLink="/about" class="nav-link">About</a></li>
-                <li routerLinkActive="active"><a  routerLink="/contact" class="nav-link">Contact</a></li>
-                <li routerLinkActive="active"><a routerLink="/player" class="nav-link">Player</a></li>
-                <li routerLinkActive="active"><a routerLink="/footballish" class="nav-link">Footballish</a></li>
-                <li routerLinkActive="active"><a routerLink="/whatif" class="nav-link">WhatIf</a></li>
-                <li><a class="nav-link disabled">Somthingelse</a></li>
-            </ul>
-            
-            <ul class="nav navbar-nav">                
-                <li class="nav-item">
-                    <div ngbDropdown class="d-inline-block">  
-                        <a class="btn btn-outline-primary dropdown-toggle"
-                            id="dropdown01"
-                            ngbDropdownToggle
-                            style="cursor:pointer;color:white">
-                            Manage
-                        </a>
-                        <ul ngbDropdownMenu aria-labelledby="dropdown01">
-                            <li><a style="cursor:pointer">&nbsp;Save Data</a></li>
-                            <li><a style="cursor:pointer">&nbsp;Fetch Data</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-
-            <ul class="navbar-nav">
+        <div class="navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarContent">
+                <ul class="nav navbar-nav mr-auto navbar-dark">
+                    <li routerLinkActive="active"><a routerLink="/home" class="nav-link">Home</a></li>
+                    <li routerLinkActive="active"><a routerLink="/about" class="nav-link">About</a></li>
+                    <li routerLinkActive="active"><a  routerLink="/contact" class="nav-link">Contact</a></li>
+                    <li routerLinkActive="active"><a routerLink="/player" class="nav-link">Player</a></li>
+                    <li routerLinkActive="active"><a routerLink="/footballish" class="nav-link">Footballish</a></li>
+                    <li routerLinkActive="active"><a routerLink="/whatif" class="nav-link">WhatIf</a></li>
+                    <li><a class="nav-link disabled">Somthingelse</a></li>
+                </ul>
+                
+                <ul class="nav navbar-nav">                
                     <li class="nav-item">
-                      <a class="nav-link disabled" style="cursor:pointer;" href="#">Login</a>
+                        <div ngbDropdown class="d-inline-block">  
+                            <a class="btn btn-outline-primary dropdown-toggle"
+                                id="dropdown01"
+                                ngbDropdownToggle
+                                style="cursor:pointer;color:white">
+                                Manage
+                            </a>
+                            <ul ngbDropdownMenu aria-labelledby="dropdown01">
+                                <li><a style="cursor:pointer">&nbsp;Save Data</a></li>
+                                <li><a style="cursor:pointer">&nbsp;Fetch Data</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" style="cursor:pointer;" href="#">Register</a>
-                    </li>
-            </ul>
+                </ul>
+
+                <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link disabled" style="cursor:pointer;" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link disabled" style="cursor:pointer;" href="#">Register</a>
+                        </li>
+                </ul>
         </div>
-    </div>
-</header>
+    </header>
+<div
