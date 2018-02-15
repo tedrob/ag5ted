@@ -30,9 +30,7 @@ export class PlayerEditComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.playerForm);
     if (this.editMode) {
-      console.log(this.playerForm);
       this.playerService.updatePlayer(this.id, this.playerForm.value);
     } else {
       this.playerService.addPlayer(this.playerForm.value);

@@ -22,9 +22,7 @@ export class PlayerDetailComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer,
               private playerService: PlayerService,
               private route: ActivatedRoute,
-              private router: Router) {
-    console.log('in contructor ');
-   }
+              private router: Router) { }
 
   ngOnInit() {
     const id = this.route.params
@@ -62,7 +60,6 @@ export class PlayerDetailComponent implements OnInit {
       const names2 = this.playerlists[i].name;
       playerlist.push(names2);
     }
-    console.log(' playerlist ' +  playerlist );
 
     let url = this.urlCache.get(item.name);
 
@@ -78,7 +75,6 @@ export class PlayerDetailComponent implements OnInit {
   }
 
   onEditPlayer() {
-    console.log('in Edit');
     this.router.navigate(['edit'], {relativeTo: this.route});
     this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }

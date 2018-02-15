@@ -9,13 +9,6 @@ export class PlayerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    // this.playerService.playerSelected
-    //   .subscribe(
-    //     (player: Player) => {
-    //       this.selectedPlayer = player;
-    //     }
-    //   );
-  }
+  ngOnInit() {}
 
 }

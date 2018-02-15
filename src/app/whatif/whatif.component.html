@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 off-set-2 whatif-item" style="text-align:center;">
+       A list of links on this panel
+       <div class="contain"></div>
+        <div class="row">
+         <div class="bootstrap-vertical-nav">
+            <div class="col-sm-12 offset-8">
+
+              <ul class="nav flex-column">
+                <li routerLinkActive="active">
+                  <a routerLink="schedule"                    
+                    class="nav-link" style="text-align:left;">Schedule
+                  </a>
+                </li>
+                <li routerLinkActive="active">
+                  <a class="nav-link" style="text-align:left;">Pick Teams</a>
+                </li>
+                <li routerLinkActive="active">
+                    <a class="nav-link" style="text-align:left;">link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="text-align:left;">link</a>
+                </li>    
+              </ul>
+            </div>
+         </div>
+       </div>
+    </div>
+    <div class="col-sm-10 whatif">
+      <router-outlet class="whatif-item"></router-outlet>
+    </div>
+  </div>
+</div>
+

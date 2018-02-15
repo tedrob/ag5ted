@@ -2,7 +2,6 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
 import { Player } from './players.model';
-// import { forEach } from '@angular/router/src/utils/collection';
 
 @Injectable()
 export class PlayerService {

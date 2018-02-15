@@ -13,6 +13,8 @@ import { FootballStartComponent } from './footballish/football-start/football-st
 import { FootballScheduleComponent } from './footballish/football-schedule/football-schedule.component';
 import { FootballShowscheduleComponent } from './footballish/football-showschedule/football-showschedule.component';
 import { ShowscheduleDetailComponent } from './footballish/football-showschedule/showschedule-detail/showschedule-detail.component';
+import { WhatifComponent } from './whatif/whatif.component';
+import { ScheduleComponent } from './whatif/schedule/schedule.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +34,9 @@ const appRoutes: Routes = [
         { path: 'showschedule', component: FootballShowscheduleComponent },
         { path: 'showschedule/:id', component: ShowscheduleDetailComponent}
     ]},
+    { path: 'whatif', component: WhatifComponent, children: [
+        { path: 'schedule', component: ScheduleComponent, pathMatch: 'full'}
+    ]}
 ];
 
 @NgModule({

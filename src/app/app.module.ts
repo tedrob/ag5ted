@@ -35,6 +35,8 @@ import { HttpClient } from 'selenium-webdriver/http';
 import { FootballShowscheduleComponent } from './footballish/football-showschedule/football-showschedule.component';
 import { ShowscheduleItemComponent } from './footballish/football-showschedule/showschedule-item/showschedule-item.component';
 import { ShowscheduleDetailComponent } from './footballish/football-showschedule/showschedule-detail/showschedule-detail.component';
+import { WhatifComponent } from './whatif/whatif.component';
+import { ScheduleComponent } from './whatif/schedule/schedule.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { ShowscheduleDetailComponent } from './footballish/football-showschedule
     FootballScheduleComponent,
     FootballShowscheduleComponent,
     ShowscheduleItemComponent,
-    ShowscheduleDetailComponent
+    ShowscheduleDetailComponent,
+    WhatifComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
