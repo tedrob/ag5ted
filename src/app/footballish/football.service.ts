@@ -16,7 +16,7 @@ export class FootballService {
   ftbSchUrl = '/assets/data/schedule.json';  // URL to json file
 
   private footballteamlist: FootballTeams[] = [
-    new FootballTeams(1, 'Philadephia', 'PHI'),
+    new FootballTeams(1, 'Philadephia Eagles', 'PHI'),
     new FootballTeams(2, 'Dallas Cowboys', 'DAL'),
     new FootballTeams(3, 'New York Giants', 'NYG'),
     new FootballTeams(4, 'Washington Redskins', 'WAS'),
