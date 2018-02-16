@@ -1,4 +1,4 @@
 export class FootballTeams {
-    constructor(public name: string, public shortName: string) {
+    constructor(public teamnumber: number, public name: string, public shortName: string) {
     }
 }
