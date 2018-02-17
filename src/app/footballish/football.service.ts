@@ -1,22 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpRequest } from '@angular/common/http';
+import { Subject } from 'rxjs/Subject';
+import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 
 import { FootballTeams } from './football-teams.model';
 import { FootballSchedule } from './football-schedule.model';
-import { Subject } from 'rxjs/Subject';
 import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-
 @Injectable()
 export class FootballService {
+  teamUrl = '/assets/data/teams.json';
+  teamChanged = new Subject<FootballTeams[]>();
+  teams: FootballTeams[];
   footballsch: FootballSchedule[] = [];
   footballSchChanged = new Subject<FootballSchedule[]>();
   ftbSchUrl = '/assets/data/schedule.json';  // URL to json file
 
   private footballteamlist: FootballTeams[] = [
-    new FootballTeams(1, 'Philadephia Eagles', 'PHI'),
+    new FootballTeams(1, 'Philadelphia Eagles', 'PHI'),
     new FootballTeams(2, 'Dallas Cowboys', 'DAL'),
     new FootballTeams(3, 'New York Giants', 'NYG'),
     new FootballTeams(4, 'Washington Redskins', 'WAS'),
@@ -51,7 +53,7 @@ export class FootballService {
   ];
 
   private NFCTeamlist: FootballTeams[] = [
-    new FootballTeams(1, 'Philadephia Eagles', 'PHI'),
+    new FootballTeams(1, 'Philadelphia Eagles', 'PHI'),
     new FootballTeams(2, 'Dallas Cowboys', 'DAL'),
     new FootballTeams(3, 'New York Giants', 'NYG'),
     new FootballTeams(4, 'Washington Redskins', 'WAS'),
@@ -87,7 +89,7 @@ export class FootballService {
     new FootballTeams(32, 'Denver Broncos', 'DEN')
   ];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getTeams() {
     return this.footballteamlist.slice();
@@ -99,6 +101,14 @@ export class FootballService {
 
   getAFCteams() {
     return this.AFCTeamlist.slice();
+  }
+
+  getTeamsFile() {
+    return this.http.get<FootballTeams[]>(this.teamUrl, {responseType: 'json'}).map((teams) => {
+        this.teams = teams;
+        console.log('json', teams);
+        return this.teams;
+      });
   }
 
   getSeasonStart(startdate: Date) {
@@ -113,22 +123,16 @@ export class FootballService {
     const headers = new Headers({
       'Content-Type': 'application/json'
     });
-
-    // const req = new HttpRequest('PUT', this.ftbSchUrl, fbsch, {reportProgress: true});
-    // console.log('this req ', req);
-    // return this.httpClient.request(req);
   }
 
   getNewFootballSch() {
-    this.httpClient.get<FootballSchedule[]>(this.ftbSchUrl, {
+    this.http.get<FootballSchedule[]>(this.ftbSchUrl, {
       observe: 'body',
       responseType: 'json'
     })
       .map(
         (footballschs) => {
-          for (const footballsch of footballschs) {
-
-          }
+          for (const footballsch of footballschs) { /* any custom work here */ }
           return footballschs;
         })
         .subscribe(

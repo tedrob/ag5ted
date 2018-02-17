@@ -1,14 +1,33 @@
 <div class="container manageteams-item">
-    <span style="text-align:center">
-      <h2>This will help with Mange Teams Dropdown on Football !!! page</h2><br>
-      <ul style="text-align:left;">
-        <li><h5>The dropdown item - Schedule will provide a calendar where you get start the your season</h5></li>
-        <li><h5>You can pick any day on the calendar, but be a where that the Thursday games are not included and Tuesday is when results are posted</h5></li>
-        <li><h5>The actual start of the season will make any season in play obsolete</h5></li>
-        <li><h5>So if you pick a Wednesday as the start of your season, you will be allow to enter teams until Sunday, games will take place on Monday, Tuesday and Wednesday, with the results posted on Thursday </h5></li>
-      </ul>
-      <ul style="text-align:left;">          
-        <li><h5>The dropdown item - Pick Teams (WIP)</h5></li>
-      </ul><br>    
-    </span>
+  <span style="text-align:center">
+    <h2>This will help with Mange Teams Dropdown on Football !!! page</h2><br>
+    <ul style="text-align:left;">
+      <li><h5>The dropdown item - Schedule will provide a calendar where you get start the your season</h5></li>
+      <li><h5>You can pick any day on the calendar, but be a where that the Thursday games are not included and Tuesday is when results are posted</h5></li>
+      <li><h5>The actual start of the season will make any season in play obsolete</h5></li>
+      <li><h5>So if you pick a Wednesday as the start of your season, you will be allow to enter teams until Sunday, games will take place on Monday, Tuesday and Wednesday, with the results posted on Thursday </h5></li>
+    </ul>
+    <ul style="text-align:left;">          
+      <li><h5>The dropdown item - Pick Teams (WIP)</h5></li>
+    </ul>
+  </span>
+  <hr>
+  <div class="row">
+    <div class="col-sm-5 offset-2">
+      <app-team-item
+        *ngFor="let teamEl of footballTeams; let i = index"
+        [team]="teamEl"
+        [index]="i">
+      </app-team-item>
+    </div>
+     <div class="col-sm-5">
+        <app-team-item
+          *ngFor="let teamEl of footballTeams2; let i = index"
+          [team]="teamEl"
+          [index]="i">
+        </app-team-item>
+    </div>
   </div>
+  <div class="col" style="text-align:center"><br><h3>A week's games could appear like above</h3><br></div>
+</div><br>
+
