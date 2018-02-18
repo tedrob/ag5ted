@@ -4,8 +4,9 @@
     background-size:100% 100%!important;
     height:50em;
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 .about-item {
-    background-color: rgb(245, 236, 179)
+    background-color: rgb(245, 236, 179);
+    background-size:100% 100%!important;
 }
