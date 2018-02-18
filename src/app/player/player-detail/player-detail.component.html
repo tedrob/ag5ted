@@ -6,7 +6,14 @@
 
 <br>
 <div class="row clearfix">
-  <div class="col-xs-12 col-sm-12 col-md-12 clearfix">
+    <div class="d-block d-sm-none">
+        <iframe [src]="getEmbedURL(player)"
+              frameboder="0"
+              width="360"
+              height="390"
+               class="iframe clearfix" width="auto"></iframe>
+    </div>
+  <div class="d-none d-sm-block col-sm-12">
       &nbsp;&nbsp;<iframe [src]="getEmbedURL(player)"
             frameboder="0"
             width="460"
