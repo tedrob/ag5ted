@@ -6,14 +6,15 @@
 
 <br>
 <div class="row">
-  <div class="col-xs-12 offset-1 clearfix">
+  <div class="col-xs-12 offset-1">
      <iframe [src]="getEmbedURL(player)"
-            frameborder="0"
+            frameboder="0"
             width="460"
-            height="390"></iframe><br>
-      <h5>After song selected played, if another song is not selected,
-      <br>the next song in list will be played!</h5>
+            height="390"
+             class="iframe" width="auto"></iframe>
   </div>
+  <span><h5>&nbsp;After song selected played, if another song is not selected,
+      <br>&nbsp;the next song in list will be played!</h5></span><br>
 </div>
 <div class="col-xs-12 offset-1">
   <div ngbDropdown class="d-inline-block"> 
