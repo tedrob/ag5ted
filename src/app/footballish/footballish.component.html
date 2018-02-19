@@ -2,35 +2,33 @@
   <div class="container" style="color:white;">
     <div  class="football-item2" style="text-align:center">
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-xs-12 col-sm-3 col-md-4 col-lg-3">
           <app-football-list-nfc></app-football-list-nfc>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-6" style="text-align:center">
           <h2>
             <p>
               &nbsp;Football !!!
             </p>
-            <div class="col-sm-12">
-              <div ngbDropdown class="d-inline-block"> 
-                <button 
-                  class="btn btn-primary"
-                  id="dropdownMenu"
-                  ngbDropdownToggle
-                  style="cursor:pointer;color:white">
-                  Manage Teams
-                </button>  
-                <div ngbDropdownMenu aria-labelledby="dropdownMenu" style="width: auto;">
-                  <button class="dropdown-item" (click)="startSchedule()">Schedule</button>
-                  <button class="dropdown-item">Pick Teams</button>
-                </div>
+            <div ngbDropdown class="d-inline-block"> 
+              <button 
+                class="btn btn-primary"
+                id="dropdownMenu"
+                ngbDropdownToggle
+                style="cursor:pointer;color:white">
+                Manage Teams
+              </button>  
+              <div ngbDropdownMenu aria-labelledby="dropdownMenu" style="width: auto;">
+                <button class="dropdown-item" (click)="startSchedule()">Schedule</button>
+                <button class="dropdown-item">Pick Teams</button>
               </div>
-            </div>            
+            </div>              
           </h2>
           <router-outlet></router-outlet>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-xs-12 col-sm-3 col-md-4 col-lg-3">
           <app-football-list-afc></app-football-list-afc>
         </div>  
       </div>
