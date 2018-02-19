@@ -20,7 +20,7 @@ import { ManageteamsComponent } from './whatif/manageteams/manageteams.component
 
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: '/player', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent, pathMatch: 'full' },
     { path: 'about', component: AboutComponent },
     { path: 'contact', component: ContactComponent },
