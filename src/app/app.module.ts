@@ -40,6 +40,7 @@ import { ScheduleComponent } from './whatif/schedule/schedule.component';
 import { PickteamsComponent } from './whatif/pickteams/pickteams.component';
 import { ManageteamsComponent } from './whatif/manageteams/manageteams.component';
 import { TeamItemComponent } from './whatif/manageteams/team-item/team-item.component';
+import { TickerDirective } from './ticker.directive';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { TeamItemComponent } from './whatif/manageteams/team-item/team-item.comp
     ScheduleComponent,
     PickteamsComponent,
     ManageteamsComponent,
-    TeamItemComponent
+    TeamItemComponent,
+    TickerDirective
   ],
   imports: [
     BrowserModule,

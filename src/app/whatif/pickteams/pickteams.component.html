@@ -3,6 +3,15 @@
     <h5>This will help with picking of teams</h5>
     <ul style="text-align:left;">          
     </ul><br>
-  </span>
+  </span><br>
+  <div class="row">
+    <div class="col-sm-12 offset-3">
+      <div class="tickerContainer myStyles">
+        <div appTicker [trigger]="'auto'" [text]="''" [speed]="50" [paddingRight]="50" [size]="20"></div>
+      </div>    
+      <div id="ghost"></div>
+      <br>
+    </div>
+  </div>
 </div>
   
