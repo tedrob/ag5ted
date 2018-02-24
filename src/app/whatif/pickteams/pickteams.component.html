@@ -2,8 +2,8 @@
   <span style="text-align:center">
     <h5>This will help with picking of teams</h5>
     <ul style="text-align:left;">          
-    </ul><br>
-  </span><br>
+    </ul>
+  </span>
   <div class="row">
     <div class="col-xs-12 offset-0 col-sm-12 col-md-12 offset-md-2">
       <div class="tickerContainer myStyles">
@@ -11,6 +11,34 @@
       </div>    
       <div id="ghost"></div>
       <br>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <!-- Week number -->
+      <form [formGroup]="weekForm" novalidate>
+        <div class="form-group" style="text-align: center;">
+          <label><h3>Footballish Week {{ week }}</h3></label>
+        </div>
+      </form>
+      <!-- week games -->
+      <div class="row">
+        <!-- away games -->
+        <div class="col-xs-12 col-sm-6">
+          <div style="text-align:center">
+              <label><h4>Away</h4></label>
+              <hr>
+          </div>
+          
+        </div>
+        <!-- home games -->
+        <div class="col-xs-12 col-sm-6">
+            <div style="text-align:center">
+                <label><h4>Home</h4></label>
+                <hr>
+            </div>
+        </div>
+      </div>      
     </div>
   </div>
 </div>

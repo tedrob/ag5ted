@@ -72,21 +72,21 @@ export class TickerDirective implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-      let textstr = '';
+        let textstr = '';
         this.subscription = this.fService.getTeamsFile()
-          .subscribe(response => {
-            this.footballTeams =  response['teams'].slice();
-            for (let i = 0; i < this.footballTeams.length; i++) {
-              textstr = textstr + this.footballTeams[i].name + ', ' ;
+            .subscribe(response => {
+                this.footballTeams =  response['teams'].slice();
+                for (let i = 0; i < this.footballTeams.length; i++) {
+                textstr = textstr + this.footballTeams[i].name + ', ' ;
             }
             this.text = textstr;
-              console.log('teams', this.text);
-              this.setIgnoredAtts();
-              this.textWidth = this.getTextWidth();
-              this.firstNode = this.createTickerNode( this.firstNode, this.text );
-              if ( this.trigger === 'auto' && this.tickerNeeded()) {
-                  this.initTicker();
-              }
+
+            this.setIgnoredAtts();
+            this.textWidth = this.getTextWidth();
+            this.firstNode = this.createTickerNode( this.firstNode, this.text );
+            if ( this.trigger === 'auto' && this.tickerNeeded()) {
+                    this.initTicker();
+            }
             });
     }
 
