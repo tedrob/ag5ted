@@ -16,7 +16,8 @@ export class PlayerService {
     new Player('62iOcrKHG6Q', 'River'),
     new Player('XxGh4ruG33M', 'Fourplay-I`ll Still Be Loving You'),
     new Player('jT0gbcq5xqI', 'You and I'),
-    new Player('EtJy69cEOtQ', 'How to Learn Anything')
+    new Player('EtJy69cEOtQ', 'How to Learn Anything'),
+    new Player('BxY_eJLBflk', 'Put God First - Denzel Washington')
       ];
 
       getPlayers() {
