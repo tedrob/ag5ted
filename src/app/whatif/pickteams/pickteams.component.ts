@@ -104,6 +104,10 @@ export class PickteamsComponent implements OnInit {
     return this.weekForm.get('weekAway') as FormArray;
   }
 
+  get weekHome(): FormArray {
+    return this.weekForm.get('weekHome') as FormArray;
+  }
+
   setWeekMethodType(type) {
     const ctrl: FormGroup = (<any>this.weekForm).controls.weekMethod.controls.type;
     ctrl.setValue(type);

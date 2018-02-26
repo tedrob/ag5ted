@@ -30,7 +30,7 @@
             </div>
             <div formArrayName="weekAway">
               <div class="row"
-                *ngFor="let awayTeam of weekForm.controls.weekAway.controls; let i=index"                
+                *ngFor="let awayTeam of weekForm.controls['weekAway'].controls; let i=index"                
                 formGroupName="{{i}}">
                   <button type="button" (click)="setGameMethodType(i)"
                     class="btn btn-block text-capitilize form-control"
@@ -56,7 +56,7 @@
               </div>
               <div formArrayName="weekHome">
                   <div class="row"
-                    *ngFor="let homeTeam of weekForm.controls.weekHome.controls; let i=index"                
+                    *ngFor="let homeTeam of weekForm.controls['weekHome'].controls; let i=index"                
                     formGroupName="{{i}}">
                       <button type="button"
                         class="btn btn-block text-capitilize form-control"
