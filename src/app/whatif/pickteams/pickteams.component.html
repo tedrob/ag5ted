@@ -31,15 +31,15 @@
             <div formArrayName="weekAway">
               <div class="row"
                 *ngFor="let awayTeam of weekForm['controls'].weekAway['controls']; let i=index"                
-                formGroupName="{{i}}">
-                  <button type="button" (click)="setGameMethodType(i)"
+                formGroupName="{{i}}"><span>&nbsp;&nbsp;&nbsp;</span>
+                  <button type="button" (click)="setGameMethodAwayType(i, GAME_WEEK_TYPE.AWAY)"
                     class="btn btn-block text-capitilize form-control"
-                    name="{{ awayTeam.value.teamNo }}"
+                    name="awayTeam.value.teamNo"
                     style="width:80%;height:80%;color:black;font:bold;"
-                    [class.btn-default]="awayTeam.value.type === awayTeam.value.type"
-                    [class.btn-primary]="awayTeam.value.type !== awayTeam.value.type"                    
+                    [class.btn-default]="awayTeam.value.type !== GAME_WEEK_TYPE.AWAY"
+                    [class.btn-primary]="awayTeam.value.type === GAME_WEEK_TYPE.AWAY"                    
                     >{{ awayTeam.value.name }}
-                  </button>{{ awayTeam.value.teamNo }}
+                  </button>{{ awayTeam.value.teamNo }} - {{ awayTeam.value.type }}
                   <!-- <span *ngIf="weekForm.controls.weekAway.controls.length >= 0">{{ awayTeam.value.type }}</span>
                   <span *ngIf="weekForm.controls.weekAway.controls.length === 0">nothing</span> -->
                   <br><br>
@@ -56,14 +56,16 @@
               </div>
               <div formArrayName="weekHome">
                   <div class="row"
-                    *ngFor="let homeTeam of weekForm['controls'].weekHome['controls']; let i=index"                
-                    formGroupName="{{i}}">
-                      <button type="button"
+                    *ngFor="let homeTeam of weekForm['controls'].weekHome['controls']; let i=index"
+                    formGroupName="{{i}}"><span>&nbsp;&nbsp;&nbsp;</span>
+                      <button type="button" (click)="setGameMethodHomeType(i, GAME_WEEK_TYPE.HOME)"
                         class="btn btn-block text-capitilize form-control"
-                        name="{{ homeTeam.value.teamNo }}"
+                        name="homeTeam.value.teamNo"
                         style="width:80%;height:80%;color:black;font:bold;"
+                        [class.btn-default]="homeTeam.value.type !== GAME_WEEK_TYPE.HOME"
+                        [class.btn-primary]="homeTeam.value.type === GAME_WEEK_TYPE.HOME"
                         >{{ homeTeam.value.name }}
-                      </button>{{ homeTeam.value.teamNo }}
+                      </button>{{ homeTeam.value.teamNo }} - {{ homeTeam.value.type }}
                       <!-- <span *ngIf="weekForm.controls.weekAway.controls.length >= 0">{{ awayTeam.value.type }}</span>
                       <span *ngIf="weekForm.controls.weekAway.controls.length === 0">nothing</span> -->
                       <br><br>

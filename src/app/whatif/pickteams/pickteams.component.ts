@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { Games } from '../../footballish/football-teams.model';
 import { FootballService } from '../../footballish/football.service';
@@ -8,7 +8,7 @@ import { FootballService } from '../../footballish/football.service';
   templateUrl: './pickteams.component.html',
   styleUrls: ['./pickteams.component.css']
 })
-export class PickteamsComponent implements OnInit {
+export class PickteamsComponent implements OnInit, OnChanges {
   weekForm: FormGroup;
   gameForm: FormGroup;
 
@@ -51,7 +51,7 @@ export class PickteamsComponent implements OnInit {
     let tname;
     for (let i = 0; i < 2; i++) {
       tmno = this.teamsA[i].teamnumber;
-      ttype = 'AWAY';
+      ttype = '';
       tname = this.teamsA[i].name;
       teamAway.push(
         this.formBuilder.group({
@@ -72,7 +72,7 @@ export class PickteamsComponent implements OnInit {
     let tname;
     for (let i = 0; i < 2; i++) {
       tmno = this.teamsH[i].teamnumber;
-      ttype = 'Home';
+      ttype = '';
       tname = this.teamsH[i].name;
       teamHome.push(
         this.formBuilder.group({
@@ -83,21 +83,6 @@ export class PickteamsComponent implements OnInit {
       );
       console.log('tttt', teamHome.controls[i].value);
     }
-  }
-
-
-  createAwayForm() {
-    for (let i = 0; i < 2; i++) {
-      const modelA = {
-        teamNo: this.teamsA[i].teamnumber,
-        type: 'AWAY',
-        teamName: this.teamsA[i].name
-      };
-      this.modelAway.push(modelA);
-    }
-    console.log('modela ', this.modelAway);
-    // this.awayListArray = this.weekForm.get('weekAway') as FormArray;
-    // console.log('al', this.awayListArray);
   }
 
   get weekAway(): FormArray {
@@ -114,14 +99,47 @@ export class PickteamsComponent implements OnInit {
     console.log('in set ctrl ', type);
   }
 
-  setGameMethodType(index: number) {
+  setGameMethodAwayType(index: number, type: string) {
     const ctl: FormGroup = (<any>this.weekForm).controls.weekAway.controls;
-    console.log('in ctrl ', index);
-    console.log('ctrl = ', ctl[index]);
+    const ctlh: FormGroup = (<any>this.weekForm).controls.weekHome.controls;
+    console.log('ctl idx', index);
+    console.log('ctl num ', ctl[index].controls.teamNo.value);
+    console.log('ctl type', ctl[index].controls.type.value);
+    ctl[index].controls.type.setValue(type, true); // = true;
+    ctlh[index].controls.type.setValue();
+    console.log('ctl type after set', ctl[index].controls.type.value);
+    console.log('ctlh type after set', ctlh[index].controls.type.value);
+    console.log('ctl type param', type);
+    console.log('status', ctl.status);
+    console.log('value', ctl.value);
+    ctlh[index].controls.type.reset();
   }
+
+  setGameMethodHomeType(index: number, type: string) {
+    const ctl: FormGroup = (<any>this.weekForm).controls.weekHome.controls;
+    const ctla: FormGroup = (<any>this.weekForm).controls.weekAway.controls;
+    console.log('ctl idx ', index);
+    console.log('ctl num', ctl[index].controls.teamNo.value);
+    console.log('ctla type', ctla[index].controls.type.value);
+    ctl[index].controls.type.setValue(type); // = true;
+    ctla[index].controls.type.setValue();
+    console.log('ctl type after set', ctl[index].controls.type.value);
+    console.log('ctla type after set', ctla[index].controls.type.value);
+    console.log('ctl type param', type);
+    console.log('status', ctl.status);
+    console.log('value', ctl.valueChanges);
+
+    ctla[index].controls.type.reset();
+  }
+
 
   ngOnInit() {
     this.createForm();
+  }
+
+  ngOnChanges() {
+    console.log('onChanges');
+    this.weekForm.reset();
   }
 
   initWeekFormGroup () { }
