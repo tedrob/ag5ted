@@ -3,6 +3,17 @@
     background-size:100% 100%!important;
 }
 
+#games {
+    position: relative;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 95%;
+    max-height: 700px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 #ghost{
     display: inline-block;
     height: 0;

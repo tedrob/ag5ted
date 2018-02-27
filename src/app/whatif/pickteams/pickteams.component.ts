@@ -49,7 +49,7 @@ export class PickteamsComponent implements OnInit, OnChanges {
     let tmno;
     let ttype;
     let tname;
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 16; i++) {
       tmno = this.teamsA[i].teamnumber;
       ttype = '';
       tname = this.teamsA[i].name;
@@ -70,7 +70,7 @@ export class PickteamsComponent implements OnInit, OnChanges {
     let tmno;
     let ttype;
     let tname;
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 16; i++) {
       tmno = this.teamsH[i].teamnumber;
       ttype = '';
       tname = this.teamsH[i].name;
@@ -112,21 +112,22 @@ export class PickteamsComponent implements OnInit, OnChanges {
     console.log('ctl type param', type);
     console.log('status', ctl.status);
     console.log('value', ctl.value);
+
     ctlh[index].controls.type.reset();
   }
 
-  setGameMethodHomeType(index: number, type: string) {
+  setGameMethodHomeType(index: number, type) {
     const ctl: FormGroup = (<any>this.weekForm).controls.weekHome.controls;
     const ctla: FormGroup = (<any>this.weekForm).controls.weekAway.controls;
     console.log('ctl idx ', index);
     console.log('ctl num', ctl[index].controls.teamNo.value);
     console.log('ctla type', ctla[index].controls.type.value);
-    ctl[index].controls.type.setValue(type); // = true;
+    ctl[index].controls.type.setValue(type, Touch); // = true;
     ctla[index].controls.type.setValue();
     console.log('ctl type after set', ctl[index].controls.type.value);
     console.log('ctla type after set', ctla[index].controls.type.value);
     console.log('ctl type param', type);
-    console.log('status', ctl.status);
+    console.log('status', ctl.touched);
     console.log('value', ctl.valueChanges);
 
     ctla[index].controls.type.reset();

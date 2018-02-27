@@ -1,81 +1,91 @@
 <div class="container pickteams-item">
-  <span style="text-align:center">
+  <!-- <span style="text-align:center">
     <h5>This will help with picking of teams</h5>
-    <ul style="text-align:left;">          
+    <ul style="text-align:left;">       
     </ul>
-  </span>
+  </span> -->
   <div class="row">
     <div class="col-xs-12 offset-0 col-sm-12 col-md-12 offset-md-2">
+        <br>
       <div class="tickerContainer myStyles">
         <div appTicker [trigger]="'auto'" [text]="'Teams'" [speed]="50" [paddingRight]="60" [size]="20"></div>
       </div>    
       <div id="ghost"></div>
-      <br>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-12">
       <!-- Week number -->
-      <form [formGroup]="weekForm" novalidate>
+      <form class="ui form" [formGroup]="weekForm" novalidate (ngSubmit)="onSubmit">
         <div class="form-group" style="text-align:center;">
-          <label><h3>Footballish Week {{ week }}</h3></label>
+          <label><h3>Footballish Week {{ week }} Sample try picking some teams</h3></label>
         </div>
         <!-- week games -->        
-        <div class="row">
-          <!-- away games -->
-          <div class="col-xs-12 col-sm-6">
-            <div style="text-align:center">
-                <label><h4>Away</h4></label>
-                <hr>
-            </div>
-            <div formArrayName="weekAway">
-              <div class="row"
-                *ngFor="let awayTeam of weekForm['controls'].weekAway['controls']; let i=index"                
-                formGroupName="{{i}}"><span>&nbsp;&nbsp;&nbsp;</span>
-                  <button type="button" (click)="setGameMethodAwayType(i, GAME_WEEK_TYPE.AWAY)"
-                    class="btn btn-block text-capitilize form-control"
-                    name="awayTeam.value.teamNo"
-                    style="width:80%;height:80%;color:black;font:bold;"
-                    [class.btn-default]="awayTeam.value.type !== GAME_WEEK_TYPE.AWAY"
-                    [class.btn-primary]="awayTeam.value.type === GAME_WEEK_TYPE.AWAY"                    
-                    >{{ awayTeam.value.name }}
-                  </button>{{ awayTeam.value.teamNo }} - {{ awayTeam.value.type }}
-                  <!-- <span *ngIf="weekForm.controls.weekAway.controls.length >= 0">{{ awayTeam.value.type }}</span>
-                  <span *ngIf="weekForm.controls.weekAway.controls.length === 0">nothing</span> -->
-                  <br><br>
-              </div>
-            </div>
-            test away  only
-          </div>
-        
-          <!-- home games -->
-          <div class="col-xs-12 col-sm-6">
-              <div style="text-align:center">
-                  <label><h4>Home</h4></label>
-                  <hr>
-              </div>
-              <div formArrayName="weekHome">
+        <div id="games">
+            <div class="row">
+              <!-- away games -->
+              <div class="col-xs-12 col-sm-6">
+                <div style="text-align:center">
+                    <label><h4>Away</h4></label>
+
+                  </div>
+                <div formArrayName="weekAway">
                   <div class="row"
-                    *ngFor="let homeTeam of weekForm['controls'].weekHome['controls']; let i=index"
+                    *ngFor="let awayTeam of weekForm['controls'].weekAway['controls']; let i=index"                
                     formGroupName="{{i}}"><span>&nbsp;&nbsp;&nbsp;</span>
-                      <button type="button" (click)="setGameMethodHomeType(i, GAME_WEEK_TYPE.HOME)"
+                      <button type="button" (click)="setGameMethodAwayType(i, GAME_WEEK_TYPE.AWAY)"
                         class="btn btn-block text-capitilize form-control"
-                        name="homeTeam.value.teamNo"
+                        name="awayTeam.value.teamNo"
                         style="width:80%;height:80%;color:black;font:bold;"
-                        [class.btn-default]="homeTeam.value.type !== GAME_WEEK_TYPE.HOME"
-                        [class.btn-primary]="homeTeam.value.type === GAME_WEEK_TYPE.HOME"
-                        >{{ homeTeam.value.name }}
-                      </button>{{ homeTeam.value.teamNo }} - {{ homeTeam.value.type }}
+                        [class.btn-default]="awayTeam.value.type !== GAME_WEEK_TYPE.AWAY"
+                        [class.btn-primary]="awayTeam.value.type === GAME_WEEK_TYPE.AWAY"                    
+                        >{{ awayTeam.value.name }}
+                      </button>{{ awayTeam.value.teamNo }} - {{ awayTeam.value.type }}
                       <!-- <span *ngIf="weekForm.controls.weekAway.controls.length >= 0">{{ awayTeam.value.type }}</span>
                       <span *ngIf="weekForm.controls.weekAway.controls.length === 0">nothing</span> -->
                       <br><br>
                   </div>
-              </div>  
-            test home only
-          </div>
+                </div>
+              </div>
+            
+              <!-- home games -->
+              <div class="col-xs-12 col-sm-6">
+                  <div style="text-align:center">
+                      <label><h4>Home</h4></label>
+
+                  </div>
+                  <div formArrayName="weekHome">
+                      <div class="row"
+                        *ngFor="let homeTeam of weekForm['controls'].weekHome['controls']; let i=index"
+                        formGroupName="{{i}}"><span>&nbsp;&nbsp;&nbsp;</span>
+                          <button type="button" (click)="setGameMethodHomeType(i, GAME_WEEK_TYPE.HOME)"
+                            class="btn btn-block text-capitilize form-control"
+                            name="homeTeam.value.teamNo"
+                            style="width:80%;height:80%;color:black;font:bold;"
+                            [class.btn-default]="homeTeam.value.type !== GAME_WEEK_TYPE.HOME"
+                            [class.btn-primary]="homeTeam.value.type === GAME_WEEK_TYPE.HOME"
+                            >{{ homeTeam.value.name }}
+                          </button>{{ homeTeam.value.teamNo }} - {{ homeTeam.value.type }}
+                          <!-- <span *ngIf="weekForm.controls.weekAway.controls.length >= 0">{{ awayTeam.value.type }}</span>
+                          <span *ngIf="weekForm.controls.weekAway.controls.length === 0">nothing</span> -->                      
+                          <br><br>
+                      </div>
+                  </div>  
+              </div>
+            </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12" style="text-align:center">
+              <br>
+              <button type="submit"
+                class="btn btn-success">Submit Games
+              </button>
+              <br>
+            </div>
+            <br>
+         </div>
         </div>
-        
-      </form>      
+
+      </form><br>
     </div>
   </div>
 </div>
