@@ -5,3 +5,9 @@ export class FootballTeams {
 export class Games {
     constructor(public week: number, public away: string, public home: string) {}
 }
+
+export class Game {
+    teamNo = '';
+    type = '';
+    name = '';
+}

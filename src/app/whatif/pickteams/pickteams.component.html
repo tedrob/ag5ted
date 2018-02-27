@@ -41,8 +41,6 @@
                         [class.btn-primary]="awayTeam.value.type === GAME_WEEK_TYPE.AWAY"                    
                         >{{ awayTeam.value.name }}
                       </button>{{ awayTeam.value.teamNo }} - {{ awayTeam.value.type }}
-                      <!-- <span *ngIf="weekForm.controls.weekAway.controls.length >= 0">{{ awayTeam.value.type }}</span>
-                      <span *ngIf="weekForm.controls.weekAway.controls.length === 0">nothing</span> -->
                       <br><br>
                   </div>
                 </div>
@@ -66,8 +64,6 @@
                             [class.btn-primary]="homeTeam.value.type === GAME_WEEK_TYPE.HOME"
                             >{{ homeTeam.value.name }}
                           </button>{{ homeTeam.value.teamNo }} - {{ homeTeam.value.type }}
-                          <!-- <span *ngIf="weekForm.controls.weekAway.controls.length >= 0">{{ awayTeam.value.type }}</span>
-                          <span *ngIf="weekForm.controls.weekAway.controls.length === 0">nothing</span> -->                      
                           <br><br>
                       </div>
                   </div>  

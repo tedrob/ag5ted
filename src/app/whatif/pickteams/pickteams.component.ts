@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
-import { Games } from '../../footballish/football-teams.model';
+import { Games, Game } from '../../footballish/football-teams.model';
 import { FootballService } from '../../footballish/football.service';
 
 @Component({
@@ -60,7 +60,7 @@ export class PickteamsComponent implements OnInit, OnChanges {
           name: new FormControl(tname)
         })
       );
-      console.log('tttt', teamAway.controls[i].value);
+      // console.log('tttt', teamAway.controls[i].value);
     }
   }
 
@@ -81,56 +81,54 @@ export class PickteamsComponent implements OnInit, OnChanges {
           name: new FormControl(tname)
         })
       );
-      console.log('tttt', teamHome.controls[i].value);
+      // console.log('tttt', teamHome.controls[i].value);
     }
   }
 
   get weekAway(): FormArray {
-    return this.weekForm.get('weekAway') as FormArray;
+    return this.weekForm.get('game') as FormArray;
   }
 
   get weekHome(): FormArray {
     return this.weekForm.get('weekHome') as FormArray;
   }
 
-  setWeekMethodType(type) {
+  /* setWeekMethodType(type) {
     const ctrl: FormGroup = (<any>this.weekForm).controls.weekMethod.controls.type;
     ctrl.setValue(type);
     console.log('in set ctrl ', type);
-  }
+  } */
 
-  setGameMethodAwayType(index: number, type: string) {
-    const ctl: FormGroup = (<any>this.weekForm).controls.weekAway.controls;
-    const ctlh: FormGroup = (<any>this.weekForm).controls.weekHome.controls;
+  setGameMethodAwayType(index: number, type) {
+    const ctlType: FormGroup = (<any>this.weekForm).controls.weekAway.controls[index].controls.type;
+    const ctlTypeH: FormGroup = (<any>this.weekForm).controls.weekHome.controls[index].controls.type;
+    ctlType.setValue(type);
+    ctlType.markAsTouched();
+    ctlTypeH.reset();
+    ctlTypeH.markAsTouched();
+    console.log('away value', ctlType.value);
     console.log('ctl idx', index);
-    console.log('ctl num ', ctl[index].controls.teamNo.value);
-    console.log('ctl type', ctl[index].controls.type.value);
-    ctl[index].controls.type.setValue(type, true); // = true;
-    ctlh[index].controls.type.setValue();
-    console.log('ctl type after set', ctl[index].controls.type.value);
-    console.log('ctlh type after set', ctlh[index].controls.type.value);
-    console.log('ctl type param', type);
-    console.log('status', ctl.status);
-    console.log('value', ctl.value);
+    console.log('home value', ctlTypeH.value);
 
-    ctlh[index].controls.type.reset();
+    console.log('status', ctlType);
+    console.log('status', ctlTypeH);
   }
 
   setGameMethodHomeType(index: number, type) {
-    const ctl: FormGroup = (<any>this.weekForm).controls.weekHome.controls;
-    const ctla: FormGroup = (<any>this.weekForm).controls.weekAway.controls;
-    console.log('ctl idx ', index);
-    console.log('ctl num', ctl[index].controls.teamNo.value);
-    console.log('ctla type', ctla[index].controls.type.value);
-    ctl[index].controls.type.setValue(type, Touch); // = true;
-    ctla[index].controls.type.setValue();
-    console.log('ctl type after set', ctl[index].controls.type.value);
-    console.log('ctla type after set', ctla[index].controls.type.value);
-    console.log('ctl type param', type);
+    const ctl: FormGroup = (<any>this.weekForm).controls.weekHome.controls[index].controls.type;
+    const ctlA: FormGroup = (<any>this.weekForm).controls.weekAway.controls[index].controls.type;
+    ctl.setValue(type);
+    ctl.markAsTouched();
+    ctlA.reset();
+    ctlA.markAsTouched();
+    console.log('home value', ctl.value);
+    console.log('ctl idx', index);
+    console.log('away value', ctlA.value);
+    ctl.markAsTouched();
+
     console.log('status', ctl.touched);
     console.log('value', ctl.valueChanges);
 
-    ctla[index].controls.type.reset();
   }
 
   onSubmit() {
