@@ -133,6 +133,10 @@ export class PickteamsComponent implements OnInit, OnChanges {
     ctla[index].controls.type.reset();
   }
 
+  onSubmit() {
+    console.log('onSubmit');
+  }
+
 
   ngOnInit() {
     this.createForm();
