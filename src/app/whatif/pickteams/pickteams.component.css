@@ -13,6 +13,10 @@
     overflow-y: scroll;
     overflow-x: hidden;
 }
+.team {
+    border: 2px solid blue;
+    width: 275px;
+}
 
 #ghost{
     display: inline-block;

@@ -21,14 +21,23 @@
           <label><h3>Footballish Week {{ week }} Sample try picking some teams</h3></label>
         </div>
         <!-- week games -->        
+        <div class="row">
+          <div class="col-xs-12 col-sm-5">
+            <div style="text-align:center">
+              <label><h4>Away</h4></label>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div style="text-align:center">
+              <label><h4>Home</h4></label>  
+            </div>
+          </div>
+        </div>
+
         <div id="games">
             <div class="row">
               <!-- away games -->
               <div class="col-xs-12 col-sm-6">
-                <div style="text-align:center">
-                    <label><h4>Away</h4></label>
-
-                  </div>
                 <div formArrayName="weekAway">
                   <div class="row"
                     *ngFor="let awayTeam of weekForm['controls'].weekAway['controls']; let i=index"                
@@ -48,10 +57,6 @@
             
               <!-- home games -->
               <div class="col-xs-12 col-sm-6">
-                  <div style="text-align:center">
-                      <label><h4>Home</h4></label>
-
-                  </div>
                   <div formArrayName="weekHome">
                       <div class="row"
                         *ngFor="let homeTeam of weekForm['controls'].weekHome['controls']; let i=index"
@@ -61,7 +66,7 @@
                             name="homeTeam.value.teamNo"
                             style="width:80%;height:80%;color:black;font:bold;"
                             [class.btn-default]="homeTeam.value.type !== GAME_WEEK_TYPE.HOME"
-                            [class.btn-primary]="homeTeam.value.type === GAME_WEEK_TYPE.HOME"
+                            [class.btn-success]="homeTeam.value.type === GAME_WEEK_TYPE.HOME"
                             >{{ homeTeam.value.name }}
                           </button>{{ homeTeam.value.teamNo }} - {{ homeTeam.value.type }}
                           <br><br>
