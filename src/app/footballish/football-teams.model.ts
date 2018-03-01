@@ -7,7 +7,7 @@ export class Games {
 }
 
 export class Game {
-    teamNo = '';
     type = '';
+    teamNo = '';
     name = '';
 }
