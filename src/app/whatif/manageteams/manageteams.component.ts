@@ -21,7 +21,9 @@ export class ManageteamsComponent implements OnInit, OnDestroy {
       .subscribe(response => {
         this.footballTeams =  response['teams'].slice(0, 16);
         this.footballTeams2 =  response['teams'].slice(16);
-        console.log('teams', this.footballTeams[0].name); });
+        console.log('teams', this.footballTeams[0].name);
+        console.log('teams', this.footballTeams2[0].name);
+      });
   }
 
   ngOnDestroy() { this.subscription.unsubscribe(); }

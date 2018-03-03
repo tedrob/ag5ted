@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12">
       <!-- Week number -->
-      <form class="ui form" [formGroup]="weekForm" novalidate (ngSubmit)="onSubmit">
+      <form class="ui form" [formGroup]="weekForm" novalidate (ngSubmit)="onSubmit()">
         <div class="form-group" style="text-align:center;">
           <label><h3>Footballish Week {{ week }} Sample try picking some teams</h3></label>
         </div>
@@ -43,27 +43,25 @@
                     class="btn btn-block text-capitalize"
                     [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.AWAY"
                     [class.btn-primary]="gm['controls'].type.value === GAME_WEEK_TYPE.AWAY"                    
-                    control>
+                    formcontrolName="gm['controls'].away['controls'].teamName.value"
+                    id="gm['controls'].away['controls'].teamNo.value">
                     {{ gm['controls'].away['controls'].teamName.value }}
                   </button>
-                          {{i}}
-                                - {{ gm['controls'].away['controls'].type.value }}
-                                - {{ gm['controls'].away['controls'].teamNo.value }}
-                                - {{ gm['controls'].away['controls'].teamName.value }}
+                  <br>
                   </div>
                   <div class="col-sm-6">
                       <button type="button" (click)="setGameMethodType(i, GAME_WEEK_TYPE.HOME)"
                       class="btn btn-block text-capitalize"
                       [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.HOME"
                       [class.btn-success]="gm['controls'].type.value === GAME_WEEK_TYPE.HOME"
-                      >                      
+                      formcontrolName="gm['controls'].home['controls'].teamName.value"
+                      id="gm['controls'].away['controls'].teamNo.value">
                       {{ gm['controls'].home['controls'].teamName.value }}
                   </button>
-                          {{i}}
-                                - {{ gm['controls'].home['controls'].type.value }}
-                                - {{ gm['controls'].home['controls'].teamNo.value }}
-                                - {{ gm['controls'].home['controls'].teamName.value }}
                   </div>
+                  <br>
+                <span *ngIf="!gm['controls'].type.touched && !gm['controls'].type.value !=='' ">
+                </span>
                 </div>                
               
               </div>
@@ -73,7 +71,13 @@
           <div class="row">
             <div class="col-xs-12 col-sm-12" style="text-align:center">
               <br>
+              <span
+                *ngIf="!weekForm['controls'].gameMethod['controls'].valid && weekForm.touched"
+                class="help-block">Please make all selections
+              </span>
               <button type="submit"
+                [disabled]="!weekForm.valid"
+                style="cursor:pointer;"
                 class="btn btn-success">Submit Games
               </button>
               <br>
@@ -83,6 +87,13 @@
         </div>
 
       </form><br>
+      <hr>
+      <div class="row" *ngIf="submitted">
+        <div class="col-xs-12">
+            <h3> Your Teams selected</h3>
+            <p>{{ weeksGames }}</p>
+        </div>
+      </div>      
     </div>
   </div>
 </div>
