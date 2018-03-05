@@ -17,6 +17,7 @@ import { WhatifComponent } from './whatif/whatif.component';
 import { ScheduleComponent } from './whatif/schedule/schedule.component';
 import { PickteamsComponent } from './whatif/pickteams/pickteams.component';
 import { ManageteamsComponent } from './whatif/manageteams/manageteams.component';
+import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/showgamespicked.component';
 
 
 const appRoutes: Routes = [
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
         { path: 'manageteams', component: ManageteamsComponent, pathMatch: 'full'},
         { path: 'schedule', component: ScheduleComponent, pathMatch: 'full'},
         { path: 'pickteams', component: PickteamsComponent, pathMatch: 'full'},
+        { path: 'showgames', component: ShowgamespickedComponent, pathMatch: 'full'},
     ]}
 ];
 

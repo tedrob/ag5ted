@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 
-import { FootballTeams } from './football-teams.model';
+import { FootballTeams, WeeklyGame } from './football-teams.model';
 import { FootballSchedule } from './football-schedule.model';
 import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { FormBuilder } from '@angular/forms';
 
 @Injectable()
 export class FootballService {
@@ -16,6 +17,26 @@ export class FootballService {
   footballsch: FootballSchedule[] = [];
   footballSchChanged = new Subject<FootballSchedule[]>();
   ftbSchUrl = '/assets/data/schedule.json';  // URL to json file
+  arrayForm = this.formBuilder.array([]);
+
+  private weekly: WeeklyGame[] = [
+    new WeeklyGame(1, 1, 'away', 'NYJ'),
+    new WeeklyGame(1, 1, 'home', 'BUF'),
+    new WeeklyGame(1, 2, 'away', 'BAL'),
+    new WeeklyGame(1, 2, 'home', 'CIN'),
+    new WeeklyGame(1, 3, 'away', 'SEA'),
+    new WeeklyGame(1, 3, 'home', 'GB'),
+    new WeeklyGame(1, 4, 'away', 'CHI'),
+    new WeeklyGame(1, 4, 'home', 'SF'),
+    new WeeklyGame(1, 5, 'away', 'PIT'),
+    new WeeklyGame(1, 5, 'home', 'CLE'),
+    new WeeklyGame(1, 6, 'away', 'MIN'),
+    new WeeklyGame(1, 6, 'home', 'LAR'),
+    new WeeklyGame(1, 7, 'away', 'TEN'),
+    new WeeklyGame(1, 7, 'home', 'NE'),
+    new WeeklyGame(1, 8, 'away', 'JAX'),
+    new WeeklyGame(1, 8, 'home', 'HOU'),
+  ];
 
   private footballteamlist: FootballTeams[] = [
     new FootballTeams(1, 'Philadelphia Eagles', 'PHI'),
@@ -89,7 +110,7 @@ export class FootballService {
     new FootballTeams(32, 'Denver Broncos', 'DEN')
   ];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private formBuilder: FormBuilder) { }
 
   getTeams() {
     return this.footballteamlist.slice();
@@ -106,7 +127,7 @@ export class FootballService {
   getTeamsFile() {
     return this.http.get<FootballTeams[]>(this.teamUrl, {responseType: 'json'}).map((teams) => {
         this.teams = teams;
-        console.log('json', teams);
+        // console.log('json', teams);
         return this.teams;
       });
   }
@@ -154,6 +175,16 @@ export class FootballService {
 
   getFootballSchwk(index: number) {
     return this.footballsch[index];
+  }
+
+  addArrayFormGames(pickedTeams: any) {
+    this.arrayForm = this.formBuilder.array([]);
+    this.arrayForm.push(pickedTeams);
+    console.log('in service picks', this.arrayForm);
+  }
+
+  getArrayFromGames() {
+    return this.arrayForm;
   }
 
 }

@@ -7,7 +7,13 @@ export class Games {
 }
 
 export class Game {
-    type = '';
-    teamNo = '';
-    name = '';
+    constructor(public type: string, public teamNo: string, public name) {}
+}
+
+export class WeeklyGame {
+    constructor(public week: number, public game: number, public type: string, public teamName) {}
+}
+
+export class WeeklyPicks {
+    constructor(public week: number, public game: number,  public type: string, public teamName ) {}
 }

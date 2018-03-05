@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl, Validators } from '@angular/forms';
-import { Games, Game } from '../../footballish/football-teams.model';
+import { Games, Game, WeeklyGame } from '../../footballish/football-teams.model';
 import { FootballService } from '../../footballish/football.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pickteams',
@@ -11,31 +12,41 @@ import { FootballService } from '../../footballish/football.service';
 export class PickteamsComponent implements OnInit, OnChanges {
   weekForm: FormGroup;
   gameForm: FormGroup;
-  // gameWeekValid: any[] = [];
   submitted = false;
+  weeklyGames: WeeklyGame[];
+  weekGame: FormGroup = this.formBuilder.group(this.initModelFormGroup());
 
   week = 1;
-/*   game = {
-    week: '',
-    type: '',
-    teamName: ''
-  }; */
-  weeksGames: any[] = [];
+  weeksGames = [];
 
   teams: any[] = [];
   teamsA: any[] = [];
   teamsH: any[] = [];
-  modelAway = [];
+
+/*   modelAway = [];
   modelHome = [];
-  awayListArray: FormArray;
+  awayListArray: FormArray; */
 
   public GAME_WEEK_TYPE = {
     AWAY: 'away',
     HOME: 'home',
   };
 
-  constructor(private formBuilder: FormBuilder, private fs: FootballService) {
+  constructor(private formBuilder: FormBuilder,
+              private fs: FootballService,
+              private route: ActivatedRoute,
+              private router: Router) {
     // this.createForm();
+  }
+
+  initModelFormGroup () {
+    const model = this.formBuilder.group({
+      week: 0,
+      type: '',
+      teamNo: '',
+      teamName: ''
+    });
+    return model;
   }
 
   createForm() {
@@ -100,12 +111,6 @@ export class PickteamsComponent implements OnInit, OnChanges {
     const ctrl: FormGroup = (<any>this.weekForm).controls.gameMethod;
     ctrl.controls[i].patchValue({type: type1});
     ctrl.controls[i].get('type').markAsTouched();
-/*     console.log('type', ctrl.controls[i].get('type').value);
-    console.log('touched', ctrl.controls[i].get('type').touched);
-    console.log('touched', ctrl.controls[i].get('type').status);
-    console.log('in set ctrl type', ctrl.controls[i].touched);
-    console.log('in set ctrl ', ctrl.controls[i]['controls'].type.value, i, type1); */
-    // this.gameWeekValid.push('game ' + i + ' type ' + type1);
   }
 
   get gameMethod(): FormArray {
@@ -116,36 +121,45 @@ export class PickteamsComponent implements OnInit, OnChanges {
     this.submitted = true;
     const lnth = this.weekForm.controls.gameMethod['controls'].length;
     const week = this.weekForm.controls.week.value;
+    const arrayForm = this.formBuilder.array([]);
 
     let team;
     let wktype;
     let wkteam;
-    const subarray = [];
-    const subarray2 = [];
+    this.weeksGames.splice(0, this.weeksGames.length);
     for (let i = 0; i < lnth; i++) {
       wktype = this.weekForm.controls.gameMethod['controls'][i].get('type').value;
+      const group = this.initModelFormGroup();
       if (wktype === 'home') {
         team = this.weekForm.controls.gameMethod['controls'][i];
         wkteam = team.controls.home['controls'].teamName.value;
-        subarray.push(wkteam);
+        group.patchValue({
+          week: week,
+          teamNo: i + 1,
+          type: wktype,
+          teamName: wkteam
+        });
+        arrayForm.push(group);
       } else {
         team = this.weekForm.controls.gameMethod['controls'][i];
         wkteam = team.controls.away['controls'].teamName.value;
-        subarray.push(wkteam);
+        group.patchValue({
+          week: week,
+          teamNo: i + 1,
+          type: wktype,
+          teamName: wkteam
+        });
+        arrayForm.push(group);
       }
     }
-    this.weeksGames.push(subarray);
-    console.log('week games', this.weeksGames);
-
-     this.createForm();
-     // this.gameWeekValid.splice(0);
-  }
-
-
-  ngOnInit() {
+    console.log('array', arrayForm);
+    this.fs.addArrayFormGames(arrayForm);
+    this.weekForm.reset();
     this.createForm();
-    // console.log('gameWeek', this.gameMethod);
+    this.router.navigate(['../showgames'], {relativeTo: this.route});
   }
+
+  ngOnInit() { this.createForm(); }
 
   ngOnChanges() {
     console.log('onChanges');
