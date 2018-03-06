@@ -18,16 +18,22 @@
         </div>
         <!-- week games -->
         <div class="row">
-          <div class="col-xs-12 col-sm-5">
-            <div style="text-align:center">
+          <div class="col-sm-1" style="text-align:center;">
+            <label><h4>GM</h4></label>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div style="text-align:center;">
               <label><h4>Away</h4></label>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-6">
-            <div style="text-align:center">
+          <div class="col-sm-2" style="text-align:center;">
+              <label><h4>VS</h4></label>
+          </div>  
+          <div class="col-xs-12 col-sm-4">
+            <div style="text-align:center;">
               <label><h4>Home</h4></label>
             </div>
-          </div>
+          </div>  
         </div>
 
         <div id="games">
@@ -38,7 +44,11 @@
                 <div class="row"
                   *ngFor="let gm of weekForm['controls'].gameMethod['controls']; let i=index"
                 formGroupName="{{i}}">
-                  <div class="col-sm-6">
+                  <div class="col-sm-1">
+                      <button type="button" class="btn btn-block">{{ i + 1}}</button>
+                  </div>
+                  <br>
+                  <div class="col-sm-5" style="text-align:center;">
                     <button type="button" (click)="setGameMethodType(i, GAME_WEEK_TYPE.AWAY)"
                     class="btn btn-block text-capitalize"
                     [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.AWAY"
@@ -46,10 +56,14 @@
                     formcontrolName="gm['controls'].away['controls'].teamName.value"
                     id="gm['controls'].away['controls'].teamNo.value">
                     {{ gm['controls'].away['controls'].teamName.value }}
-                  </button>
+                  </button>                  
                   <br>
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-1">
+                      <button type="button" class="btn btn-block">@</button>
+                  </div>
+                  <br>
+                  <div class="col-sm-5">
                       <button type="button" (click)="setGameMethodType(i, GAME_WEEK_TYPE.HOME)"
                       class="btn btn-block text-capitalize"
                       [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.HOME"

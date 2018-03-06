@@ -1,6 +1,6 @@
-<div class="container showgames-item">
+<div class="container showgames-item"><br>
   <div class="row">
-    <div class="col" style="text-align:center"><h2>The teams you picked</h2></div>   
+    <div class="col-sm-12" style="text-align:center"><h2>**The teams you picked**</h2></div>   
   </div><hr>
 
   <div [formGroup]="gameForm" novalidate>
@@ -11,7 +11,10 @@
           <div class="row"
             *ngFor="let gm of gameForm['controls'].arrayGame['controls']; let i=index"
               [formGroupName]="i">
-            <div class="col">
+            <div class="col-sm-2">
+              <label><h4>GM-{{i + 1}}</h4></label>
+            </div>
+            <div class="col-sm-10" style="text-align:left;">
               <button type="button"
                 class="btn btn-block text-capitalize"
                 [class.btn-primary]="gm['controls'].type.value === 'away'"
