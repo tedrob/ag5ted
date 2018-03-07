@@ -23,9 +23,7 @@ export class PickteamsComponent implements OnInit, OnChanges {
   teamsA: any[] = [];
   teamsH: any[] = [];
 
-/*   modelAway = [];
-  modelHome = [];
-  awayListArray: FormArray; */
+
 
   public GAME_WEEK_TYPE = {
     AWAY: 'away',
