@@ -21,11 +21,14 @@
                 [class.btn-success]="gm['controls'].type.value === 'home'">
                 Team {{ gm['controls'].teamName.value }}
               </button>
-              <h4>Week {{ gm['controls'].week.value }} -
-                  Where ( {{ gm['controls'].type.value }} ) -
-                  Team {{ gm['controls'].teamName.value }}</h4>
+                            
             </div> 
           </div>
+          <div class="row" *ngIf="!submitted" style="text-align:center">
+            <button type="button" class="btn btn-primary text capitalize">away</button>&nbsp;
+            <button type="button" class="btn btn-success text capitalize">home</button>
+          </div>  
+
         </div>
       </div>
       <div class="col-sm-1"></div>

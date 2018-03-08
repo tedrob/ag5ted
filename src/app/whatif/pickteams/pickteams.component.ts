@@ -26,8 +26,8 @@ export class PickteamsComponent implements OnInit, OnChanges {
 
 
   public GAME_WEEK_TYPE = {
-    AWAY: 'away',
-    HOME: 'home',
+    'AWAY': 'away',
+    'HOME': 'home',
   };
 
   constructor(private formBuilder: FormBuilder,
@@ -39,10 +39,10 @@ export class PickteamsComponent implements OnInit, OnChanges {
 
   initModelFormGroup () {
     const model = this.formBuilder.group({
-      week: 0,
-      type: '',
-      teamNo: '',
-      teamName: ''
+      'week': new FormControl(null), // 0,
+      'type': new FormControl(null), // '',
+      'teamNo': new FormControl(null), // '',
+      'teamName': new FormControl(null) // ''
     });
     return model;
   }
@@ -63,14 +63,14 @@ export class PickteamsComponent implements OnInit, OnChanges {
       const group = this.initWeekFormGroup();
       group.patchValue({
         away: {
-          type: '',
-          teamNo: this.teamsA[i].teamnumber,
-          teamName: this.teamsA[i].name,
+          'type': '',
+          'teamNo': this.teamsA[i].teamnumber,
+          'teamName': this.teamsA[i].name,
         },
         home: {
-          type: '',
-          teamNo: this.teamsH[i].teamnumber,
-          teamName: this.teamsH[i].name,
+          'type': '',
+          'teamNo': this.teamsH[i].teamnumber,
+          'teamName': this.teamsH[i].name,
         },
       });
       arrayForm.push(group);
@@ -80,27 +80,27 @@ export class PickteamsComponent implements OnInit, OnChanges {
 
   initWeekFormGroup() {
     const groupForm = this.formBuilder.group({
-      type: ['', Validators.required],
-      away: this.formBuilder.group(this.initAModel()),
-      home: this.formBuilder.group(this.initHModel()),
+      'type': ['', Validators.required],
+      'away': this.formBuilder.group(this.initAModel()),
+      'home': this.formBuilder.group(this.initHModel()),
     });
     return groupForm;
   }
 
   initAModel () {
     const model = {
-      type: 'AWAY',
-      teamNo: '',
-      teamName: ''
+      'type': new FormControl('AWAY'), // 'AWAY',
+      'teamNo': new FormControl(null), // '',
+      'teamName': new FormControl(null) // ''
     };
     return model;
   }
 
   initHModel () {
     const model = {
-      type: 'HOME',
-      teamNo: '',
-      teamName: ''
+      'type': new FormControl('HOME'), // 'HOME',
+      'teamNo': new FormControl(null), // '',
+      'teamName': new FormControl(null) // ''
     };
     return model;
   }
@@ -132,20 +132,20 @@ export class PickteamsComponent implements OnInit, OnChanges {
         team = this.weekForm.controls.gameMethod['controls'][i];
         wkteam = team.controls.home['controls'].teamName.value;
         group.patchValue({
-          week: week,
-          teamNo: i + 1,
-          type: wktype,
-          teamName: wkteam
+          'week': week,
+          'teamNo': i + 1,
+          'type': wktype,
+          'teamName': wkteam
         });
         arrayForm.push(group);
       } else {
         team = this.weekForm.controls.gameMethod['controls'][i];
         wkteam = team.controls.away['controls'].teamName.value;
         group.patchValue({
-          week: week,
-          teamNo: i + 1,
-          type: wktype,
-          teamName: wkteam
+          'week': week,
+          'teamNo': i + 1,
+          'type': wktype,
+          'teamName': wkteam
         });
         arrayForm.push(group);
       }

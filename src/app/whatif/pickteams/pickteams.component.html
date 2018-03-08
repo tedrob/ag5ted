@@ -52,8 +52,8 @@
                     <button type="button" (click)="setGameMethodType(i, GAME_WEEK_TYPE.AWAY)"
                     class="btn btn-block text-capitalize"
                     [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.AWAY"
-                    [class.btn-primary]="gm['controls'].type.value === GAME_WEEK_TYPE.AWAY"                    
-                    formcontrolName="gm['controls'].away['controls'].teamName.value"
+                    [class.btn-primary]="gm['controls'].type.value === GAME_WEEK_TYPE.AWAY"
+                    name="gm['controls'].away['controls'].teamName.value"
                     id="gm['controls'].away['controls'].teamNo.value">
                     {{ gm['controls'].away['controls'].teamName.value }}
                   </button>                  
@@ -68,8 +68,8 @@
                       class="btn btn-block text-capitalize"
                       [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.HOME"
                       [class.btn-success]="gm['controls'].type.value === GAME_WEEK_TYPE.HOME"
-                      formcontrolName="gm['controls'].home['controls'].teamName.value"
-                      id="gm['controls'].away['controls'].teamNo.value">
+                      name="gm['controls'].home['controls'].teamName.value"
+                      id="gm['controls'].home['controls'].teamNo.value">
                       {{ gm['controls'].home['controls'].teamName.value }}
                   </button>
                   </div>
@@ -100,7 +100,7 @@
          </div>
         </div>
 
-      </form><br>
+      </form><br><br>
       
     </div>
   </div>
