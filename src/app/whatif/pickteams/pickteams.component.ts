@@ -150,7 +150,7 @@ export class PickteamsComponent implements OnInit, OnChanges {
         arrayForm.push(group);
       }
     }
-    console.log('array', arrayForm);
+    // console.log('array', arrayForm);
     this.fs.addArrayFormGames(arrayForm);
     this.weekForm.reset();
     this.createForm();
@@ -160,7 +160,7 @@ export class PickteamsComponent implements OnInit, OnChanges {
   ngOnInit() { this.createForm(); }
 
   ngOnChanges() {
-    console.log('onChanges');
+    // console.log('onChanges');
     this.weekForm.reset();
   }
 }

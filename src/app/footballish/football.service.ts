@@ -180,7 +180,7 @@ export class FootballService {
   addArrayFormGames(pickedTeams: any) {
     this.arrayForm = this.formBuilder.array([]);
     this.arrayForm.push(pickedTeams);
-    console.log('in service picks', this.arrayForm);
+    // console.log('in service picks', this.arrayForm);
   }
 
   getArrayFromGames() {
