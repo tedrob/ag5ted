@@ -18,6 +18,7 @@ import { ScheduleComponent } from './whatif/schedule/schedule.component';
 import { PickteamsComponent } from './whatif/pickteams/pickteams.component';
 import { ManageteamsComponent } from './whatif/manageteams/manageteams.component';
 import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/showgamespicked.component';
+import { SomethingelseComponent } from './somethingelse/somethingelse.component';
 
 
 const appRoutes: Routes = [
@@ -43,7 +44,10 @@ const appRoutes: Routes = [
         { path: 'schedule', component: ScheduleComponent, pathMatch: 'full'},
         { path: 'pickteams', component: PickteamsComponent, pathMatch: 'full'},
         { path: 'showgames', component: ShowgamespickedComponent, pathMatch: 'full'},
-    ]}
+    ]},
+    { path: 'somethingelse', component: SomethingelseComponent, children: [
+        { path: 'somethingelse', component: SomethingelseComponent, pathMatch: 'full'},
+    ]},
 ];
 
 @NgModule({

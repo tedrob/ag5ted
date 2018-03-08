@@ -1,0 +1,12 @@
+.something {
+    background-image: url('/assets/img/somethingelse.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%!important;
+    height:57em;
+    overflow-x: hidden;
+}
+
+.something-item {
+    background-color: rgb(255, 252, 240);
+    background-size:100% 100%!important;
+}
