@@ -23,6 +23,7 @@ export class PlayerService {
     new Player('arMu4f8rnBk', 'Beethoven- Moonlight Sonata'),
     new Player('o1dBg__wsuo', 'Mendelssohn Violin Concerto E Minor'),
     new Player('zM4En012IJo', 'Novel & Short Story'),
+    new Player('HCjNJDNzw8Y', 'HAVANA, Camila Cabello'),
 
       ];
 

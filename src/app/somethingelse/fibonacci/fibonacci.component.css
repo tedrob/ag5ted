@@ -1,0 +1,23 @@
+.fibonacci_color {
+    background-color: rgb(112, 102, 56);
+    background-size:100% 100%!important;
+}
+
+.fibonacci_item {
+    background-image: url('/assets/img/fibonacci.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%!important;
+    width: 220px;
+    height: 331px;
+}
+
+#fibonac {
+    position: relative;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 95%;
+    max-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

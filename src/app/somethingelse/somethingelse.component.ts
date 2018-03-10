@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./somethingelse.component.css']
 })
 export class SomethingelseComponent implements OnInit {
+  fibNumber;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

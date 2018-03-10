@@ -1,0 +1,40 @@
+<div class="row fibonacci_color">        
+  <div class="col-xs-12 col-sm-4 fibonacci_item">
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <h1 style="color:whitesmoke">Fibonacci generator</h1>
+    <h2>This is where you would imput a number........</h2>
+  </div>
+  <div class="col-xs-12 col-sm-4">      
+      <form [formGroup]="fiboForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="form-group">
+              <label for="fiboNum">Enter number</label>
+              <input
+                type="number"
+                id="fibNum"
+                formControlName="fiboNum"
+                class="form-control"
+                min="1"
+                max="40"
+                required
+                pattern="^[1-9]+[0-9]*$">    
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+              <label>Sequence of numbers </label>
+            <button class="btn btn-success" type="submit">Generate</button>
+          </div>
+      
+        </div>
+      </form>
+      <div class="row" *ngIf="submitted">        
+        <h3>Fibonacci results</h3>
+        <div id="fibonac">
+          <h4>{{fibobacciResults}}</h4>
+        </div>        
+      </div>
+      <br><br>
+    </div>
+</div>

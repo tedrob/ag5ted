@@ -43,6 +43,7 @@ import { TeamItemComponent } from './whatif/manageteams/team-item/team-item.comp
 import { TickerDirective } from './ticker.directive';
 import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/showgamespicked.component';
 import { SomethingelseComponent } from './somethingelse/somethingelse.component';
+import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { SomethingelseComponent } from './somethingelse/somethingelse.component'
     TeamItemComponent,
     TickerDirective,
     ShowgamespickedComponent,
-    SomethingelseComponent
+    SomethingelseComponent,
+    FibonacciComponent
   ],
   imports: [
     BrowserModule,
