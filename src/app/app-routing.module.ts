@@ -20,6 +20,7 @@ import { ManageteamsComponent } from './whatif/manageteams/manageteams.component
 import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/showgamespicked.component';
 import { SomethingelseComponent } from './somethingelse/somethingelse.component';
 import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.component';
+import { SimpleinterestComponent } from './somethingelse/simpleinterest/simpleinterest.component';
 
 
 const appRoutes: Routes = [
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     ]},
     { path: 'somethingelse', component: SomethingelseComponent, children: [
         { path: 'fibnocci', component: FibonacciComponent, pathMatch: 'full'},
+        { path: 'simpleinterest', component: SimpleinterestComponent, pathMatch: 'full'},
     ]},
 ];
 

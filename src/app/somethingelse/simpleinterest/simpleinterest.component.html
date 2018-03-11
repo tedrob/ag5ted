@@ -1,0 +1,65 @@
+<div class="row simple_color">
+  <div class="col-xs-12 col-sm-4 simple_item" >
+  </div>
+  <div class="col-xs-12 col-sm-8">
+    <div [formGroup]="interestForm" (ngSubmit)="calculate()">
+      <table class="container color-dark">
+        <tr>
+          <th style="padding:.3em 1.3em;">Enter Load Data:</th>
+          <td></td>
+          <th style="padding:.3em 1.3em;">Load Balance, Cumulative Equity, and Interest Payments</th>
+        </tr>
+        <tr>
+          <td>Amount of  loan ($):</td>
+          <td><input
+                id="amount"
+                type="text"
+                formControlName="amount"
+                (change)="calculate();"></td>
+          <td rowspan=8>
+            <canvas 
+                #myCanvas
+                id="graph"
+                width="400"
+                height="250"></canvas>
+          </td>
+        </tr>
+        <tr><td>Annual interest (%):</td>
+          <td><input
+                id="apr"
+                type="text"
+                formControlName="apr"
+                (change)="calculate();">
+          </td>
+        </tr>
+        <tr><td>Repayment period (years):</td>
+          <td><input
+            id="years"
+            type="text"
+            formControlName="years"
+            (change)="calculate();">
+          </td>
+        <tr><th>Approximate Payments:</th>
+          <td><button (click)="calculate();">Calculate</button></td></tr>
+        <tr><td>Monthly payment:</td>
+          <td>$<span 
+                  class="output"
+                  id="payment"
+                  name="payment"> {{interestForm['controls'].payment.value}}
+                </span></td></tr>
+        <tr><td>Total payment:</td>
+          <td>$<span
+                  class="output"
+                  id="total"
+                  name="total"> {{interestForm['controls'].total.value}}
+                </span></td></tr>
+        <tr><td>Total interest:</td>
+          <td>$<span
+                  class="output"
+                  id="totalinterest"
+                  name="totalinterest"> {{interestForm['controls'].totalinterest.value}}
+                </span></td></tr>      
+      </table>
+    </div>
+  </div>
+</div>

@@ -20,8 +20,26 @@
       </div>
     </div>
     <div class="col-xs-12 col-sm-8 something" >
-        <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
-    <div class="col-xs-12 col-sm-2 something-item" style="text-align:center"><h2>Even more links</h2></div>
+    <div class="col-xs-12 col-sm-2 something-item" style="text-align:center">
+      <h2>Even more links</h2>
+      <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <h3>
+              <nav class="nav-pills flex-column" routerLinkActive="active">
+                <a routerLink="simpleinterest"
+                  routerLinkActive="active"
+                  class="nav-link"
+                  style="text-align:left; color:brown;"
+                  routerLinkActiveOptions="{exact: true}">Loan Calculator
+                </a>
+              </nav>
+              </h3>
+            </div>
+          </div>
+        </div>
+    </div>
   </div><br><br>
 </div>

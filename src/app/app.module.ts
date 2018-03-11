@@ -44,6 +44,7 @@ import { TickerDirective } from './ticker.directive';
 import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/showgamespicked.component';
 import { SomethingelseComponent } from './somethingelse/somethingelse.component';
 import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.component';
+import { SimpleinterestComponent } from './somethingelse/simpleinterest/simpleinterest.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.componen
     TickerDirective,
     ShowgamespickedComponent,
     SomethingelseComponent,
-    FibonacciComponent
+    FibonacciComponent,
+    SimpleinterestComponent
   ],
   imports: [
     BrowserModule,

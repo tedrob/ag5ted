@@ -1,0 +1,72 @@
+p {
+    font-weight:bold;    
+}
+div {
+    color: gray;
+}
+
+.simple_color {
+    background-color: rgb(112, 102, 56);
+    background-size:100% 100%!important;
+}
+
+.simple_item {
+    background-image: url('/assets/img/interestrates.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%!important;
+    width: 220px;
+    height: 331px;
+}
+
+.col {
+    padding: .3em 1.3em;
+}
+.color-dark {
+    background: rgb(196, 89, 40);
+}
+.color-light {
+    background: #f1bb57;
+}
+
+input.txt {
+    border: 0;
+    padding: 1em;
+    width: 80%;
+    margin-bottom: 2em;
+}
+input.btn {
+    border: 0;
+    display:block;
+    padding:1em 3em;
+    background:#A5F883;
+    color:#003A61;
+    margin-bottom:1em;
+    cursor:pointer;
+}
+.life-container {
+    background:rgb(225, 149, 63);
+    padding:.5em;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+th {
+    color:aliceblue;
+}
+
+th, td {
+    vertical-align: top;
+}
+
+td {
+    color:black;
+}
+.output {
+    font-weight:bold;
+}
+#payment {
+    text-decoration:underline;
+}
+#graph {
+    border:solid black 1px;
+}
