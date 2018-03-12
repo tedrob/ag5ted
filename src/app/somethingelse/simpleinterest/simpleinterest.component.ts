@@ -11,6 +11,7 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
   submitted = false;
   @ViewChild('myCanvas') myCanvas: ElementRef;
   context: CanvasRenderingContext2D;
+  graph = document.getElementById('graph');
 
   constructor() { }
 
@@ -21,8 +22,8 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
       'years': new  FormControl(),
       'payment': new FormControl(),
       'total': new FormControl(),
-      'totalinterest': new FormControl(),
-      'graph': new FormControl()
+      'totalinterest': new FormControl()
+      // 'graph': new FormControl()
     });
     this.interestForm.patchValue({
       'payment': '',
@@ -45,6 +46,7 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
     } else if (this.interestForm.controls.years.value === null) {
       return;
     }
+    console.log('calculate');
     // this.context.clearRect(0, 0, 400, 250);
 
     // look up the input and output elements in the document
@@ -92,29 +94,23 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
   // Chart monthly loan balance, interest and equity in an <canvas> element.
   // if called with no arguments then just erase any previous drawn elemnt.
    chart(principal, interest, monthly, payments) {
-     const g = this.context;
+    this.context.restore();
+    const g = this.context;
+    g.textAlign = 'left';
+    // let graph: HTMLElem200ent;
+     this.graph = document.getElementById('graph');
+
+     const width = this.graph.clientWidth; // this.myCanvas.nativeElement.width;
+     const height = this.graph.clientHeight; // this.myCanvas.nativeElement.height;
+
      g.clearRect(0, 0, this.myCanvas.nativeElement.width, this.myCanvas.nativeElement.height);
+     g.fillStyle = '#ff4000';
+     g.fillRect(0, 0, width, height);
      g.globalCompositeOperation = 'distnation-out';
 
-    // const graph: HTMLElement = document.getElementById('graph');
-    // graph.clientWidth = graph.clientWidth;
-    // graph = 400; // graph.value.width; // Magic to clear and reset the canvas
-    // console.log('text el', graph); // .clientWidth);
-
-    // if we're called with no arguments, or
-    // if the this browser does not support
-    // graphics in a <canvas> element,
-    // then just return now.
-    // if (arguments.length === 0 || !graph.value) {
-    //   return;
-    // }
     // get the "context" object for the <canvas>
     // that defines with the drawing API
-    // const g = graph; // all drawing is done with this object
     // get canvas size
-    const width = this.myCanvas.nativeElement.width;
-    const height = this.myCanvas.nativeElement.height;
-    // console.log('wdt ht', width, height);
     // these functions conver payment numbers and dollars amounts to pixels
     function paymentToX(n) { return n * width / payments; }
     function amountToY(a) { return height - (a * height / (monthly * payments * 1.05)); }
@@ -126,10 +122,12 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
 
     g.lineTo(paymentToX(payments), amountToY(0));
     g.closePath(); // And back to start
-    g.fillStyle = '#f88'; // light red
+    g.globalAlpha = 0.95;
+    // g.font = 'serif';
+    g.fillStyle = '#FFFF00'; // '#f88'; // light red
     g.fill(); // Fill the triangle
     g.font = 'bold 12px sans-serif'; // Define a font
-    if (!this.submitted) {
+    {
       g.fillText('Total Interest Payments', 20, 20); // Draw text in legend
     }
     // Cumulative equity is non-linear and trickier to chart
@@ -143,14 +141,16 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
     }
     g.lineTo(paymentToX(payments), amountToY(0)); // Line back to X axis
     g.closePath(); // And back to start point
+    g.globalAlpha = 0.95;
     g.fillStyle = 'green'; // Now use green paint
     g.fill(); // And fill area under curve
-    if (!this.submitted) {
+    // if (!this.submitted)
+    {
       g.fillText('Total Equity', 20, 35); // Label it in green
     }
     // Loop again, as above, but chart loan balance as a thick black line
     let bal = principal;
-    g .beginPath();
+    g.beginPath();
     g.moveTo(paymentToX(0), amountToY(bal));
     for (let p = 1; p <= payments; p++) {
       const thisMonthsInterest = bal * interest;
@@ -159,8 +159,10 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
     }
     g.lineWidth = 3; // Use a thick line
     g.stroke(); // Draw the balance curve
+    g.closePath();
     g.fillStyle = 'black'; // Switch to black text
-    if (!this.submitted) {
+    // if (!this.submitted)
+    {
       g.fillText('Loan Balance', 20, 50); // Legend entry
     }
     // Now make yearly tick marks and year numbers on X axis
@@ -185,5 +187,6 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
       g.fillText(String(ticks[i].toFixed(0)), // And label it.
       rightEdge - 5, y);
     }
+    g.beginPath();
   }
 }
