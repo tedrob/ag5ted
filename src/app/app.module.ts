@@ -45,6 +45,7 @@ import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/sho
 import { SomethingelseComponent } from './somethingelse/somethingelse.component';
 import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.component';
 import { SimpleinterestComponent } from './somethingelse/simpleinterest/simpleinterest.component';
+import { PalindromeComponent } from './somethingelse/palindrome/palindrome.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { SimpleinterestComponent } from './somethingelse/simpleinterest/simplein
     ShowgamespickedComponent,
     SomethingelseComponent,
     FibonacciComponent,
-    SimpleinterestComponent
+    SimpleinterestComponent,
+    PalindromeComponent
   ],
   imports: [
     BrowserModule,

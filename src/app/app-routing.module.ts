@@ -21,6 +21,7 @@ import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/sho
 import { SomethingelseComponent } from './somethingelse/somethingelse.component';
 import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.component';
 import { SimpleinterestComponent } from './somethingelse/simpleinterest/simpleinterest.component';
+import { PalindromeComponent } from './somethingelse/palindrome/palindrome.component';
 
 
 const appRoutes: Routes = [
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     { path: 'somethingelse', component: SomethingelseComponent, children: [
         { path: 'fibnocci', component: FibonacciComponent, pathMatch: 'full'},
         { path: 'simpleinterest', component: SimpleinterestComponent, pathMatch: 'full'},
+        { path: 'palindrome', component: PalindromeComponent, pathMatch: 'full'},
     ]},
 ];
 

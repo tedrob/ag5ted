@@ -1,0 +1,12 @@
+.palindrome_color {
+    background-color: rgb(112, 102, 56);
+    background-size:100% 100%!important;
+}
+
+.palindrome_item {
+    background-image: url('/assets/img/palindrome.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%!important;
+    width: 220px;
+    height: 340px;
+}
