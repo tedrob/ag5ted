@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './simpleinterest.component.html',
   styleUrls: ['./simpleinterest.component.css']
 })
-export class SimpleinterestComponent implements OnInit {
+export class SimpleinterestComponent implements OnInit, AfterViewInit {
   interestForm: FormGroup;
   submitted = false;
   @ViewChild('myCanvas') myCanvas: ElementRef;
@@ -30,6 +30,9 @@ export class SimpleinterestComponent implements OnInit {
       'totalinterest': ''
     });
 
+  }
+
+  ngAfterViewInit(): void {
     this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
   }
 
@@ -42,6 +45,7 @@ export class SimpleinterestComponent implements OnInit {
     } else if (this.interestForm.controls.years.value === null) {
       return;
     }
+    // this.context.clearRect(0, 0, 400, 250);
 
     // look up the input and output elements in the document
     const amount = this.interestForm.controls.amount.value;
@@ -74,7 +78,7 @@ export class SimpleinterestComponent implements OnInit {
       payment = monthly.toFixed(2);
       total = (monthly * payments).toFixed(2);
       totalinterest = ((monthly * payments) - principal).toFixed(2);
-      console.log('fields', principal, interest, monthly, payments);
+      this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
       this.chart(principal, interest, monthly, payments);
     }
     this.interestForm.patchValue({
@@ -82,12 +86,16 @@ export class SimpleinterestComponent implements OnInit {
       'total': (monthly * payments).toFixed(2),
       'totalinterest': ((monthly * payments) - principal).toFixed(2)
     });
-    console.log('form', this.interestForm);
+    this.submitted = true;
   }
 
   // Chart monthly loan balance, interest and equity in an <canvas> element.
   // if called with no arguments then just erase any previous drawn elemnt.
    chart(principal, interest, monthly, payments) {
+     const g = this.context;
+     g.clearRect(0, 0, this.myCanvas.nativeElement.width, this.myCanvas.nativeElement.height);
+     g.globalCompositeOperation = 'distnation-out';
+
     // const graph: HTMLElement = document.getElementById('graph');
     // graph.clientWidth = graph.clientWidth;
     // graph = 400; // graph.value.width; // Magic to clear and reset the canvas
@@ -106,13 +114,12 @@ export class SimpleinterestComponent implements OnInit {
     // get canvas size
     const width = this.myCanvas.nativeElement.width;
     const height = this.myCanvas.nativeElement.height;
-    console.log('wdt ht', width, height);
+    // console.log('wdt ht', width, height);
     // these functions conver payment numbers and dollars amounts to pixels
     function paymentToX(n) { return n * width / payments; }
     function amountToY(a) { return height - (a * height / (monthly * payments * 1.05)); }
 
     // Payments are a straight line from (0,0) to (payments, monthly*payments)
-    const g = this.context;
     g.moveTo(paymentToX(0), amountToY(0));
     g.lineTo(paymentToX(payments), // draw to upper right)
     amountToY(monthly * payments));
@@ -122,7 +129,9 @@ export class SimpleinterestComponent implements OnInit {
     g.fillStyle = '#f88'; // light red
     g.fill(); // Fill the triangle
     g.font = 'bold 12px sans-serif'; // Define a font
-    g.fillText('Total Interest Payments', 20, 20); // Draw text in legend
+    if (!this.submitted) {
+      g.fillText('Total Interest Payments', 20, 20); // Draw text in legend
+    }
     // Cumulative equity is non-linear and trickier to chart
     let equity = 0;
     g.beginPath(); // Begin a new shape
@@ -136,7 +145,9 @@ export class SimpleinterestComponent implements OnInit {
     g.closePath(); // And back to start point
     g.fillStyle = 'green'; // Now use green paint
     g.fill(); // And fill area under curve
-    g.fillText('Total Equity', 20, 35); // Label it in green
+    if (!this.submitted) {
+      g.fillText('Total Equity', 20, 35); // Label it in green
+    }
     // Loop again, as above, but chart loan balance as a thick black line
     let bal = principal;
     g .beginPath();
@@ -149,7 +160,9 @@ export class SimpleinterestComponent implements OnInit {
     g.lineWidth = 3; // Use a thick line
     g.stroke(); // Draw the balance curve
     g.fillStyle = 'black'; // Switch to black text
-    g.fillText('Loan Balance', 20, 50); // Legend entry
+    if (!this.submitted) {
+      g.fillText('Loan Balance', 20, 50); // Legend entry
+    }
     // Now make yearly tick marks and year numbers on X axis
     g.textAlign = 'center'; // Center text over ticks
     let y = amountToY(0); // Y coordinate of X axis
