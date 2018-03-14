@@ -17,7 +17,7 @@ export class BoardComponent implements OnInit {
 
   // getting game status
   getgameStatusMessage() {
-    return this.winner ? `Player ${this.winner} has won!` : `player ${this.player}'s turn`;
+    return this.winner ? `Player ${this.winner} has won!` : `Player ${this.player}'s turn`;
   }
 
   // handling game move based on click of cell
