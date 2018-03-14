@@ -22,6 +22,7 @@ import { SomethingelseComponent } from './somethingelse/somethingelse.component'
 import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.component';
 import { SimpleinterestComponent } from './somethingelse/simpleinterest/simpleinterest.component';
 import { PalindromeComponent } from './somethingelse/palindrome/palindrome.component';
+import { GamespartComponent } from './somethingelse/gamespart/gamespart.component';
 
 
 const appRoutes: Routes = [
@@ -52,6 +53,7 @@ const appRoutes: Routes = [
         { path: 'fibnocci', component: FibonacciComponent, pathMatch: 'full'},
         { path: 'simpleinterest', component: SimpleinterestComponent, pathMatch: 'full'},
         { path: 'palindrome', component: PalindromeComponent, pathMatch: 'full'},
+        { path: 'gamespart', component: GamespartComponent, pathMatch: 'full'},
     ]},
 ];
 

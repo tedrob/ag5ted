@@ -46,6 +46,9 @@ import { SomethingelseComponent } from './somethingelse/somethingelse.component'
 import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.component';
 import { SimpleinterestComponent } from './somethingelse/simpleinterest/simpleinterest.component';
 import { PalindromeComponent } from './somethingelse/palindrome/palindrome.component';
+import { GamespartComponent } from './somethingelse/gamespart/gamespart.component';
+import { BoardComponent } from './somethingelse/gamespart/presentation/board/board.component';
+import { CellComponent } from './somethingelse/gamespart/presentation/cell/cell.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +89,10 @@ import { PalindromeComponent } from './somethingelse/palindrome/palindrome.compo
     SomethingelseComponent,
     FibonacciComponent,
     SimpleinterestComponent,
-    PalindromeComponent
+    PalindromeComponent,
+    GamespartComponent,
+    BoardComponent,
+    CellComponent
   ],
   imports: [
     BrowserModule,
