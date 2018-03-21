@@ -13,11 +13,7 @@ import { FootballStartComponent } from './footballish/football-start/football-st
 import { FootballScheduleComponent } from './footballish/football-schedule/football-schedule.component';
 import { FootballShowscheduleComponent } from './footballish/football-showschedule/football-showschedule.component';
 import { ShowscheduleDetailComponent } from './footballish/football-showschedule/showschedule-detail/showschedule-detail.component';
-import { WhatifComponent } from './whatif/whatif.component';
-import { ScheduleComponent } from './whatif/schedule/schedule.component';
-import { PickteamsComponent } from './whatif/pickteams/pickteams.component';
-import { ManageteamsComponent } from './whatif/manageteams/manageteams.component';
-import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/showgamespicked.component';
+
 import { SomethingelseComponent } from './somethingelse/somethingelse.component';
 import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.component';
 import { SimpleinterestComponent } from './somethingelse/simpleinterest/simpleinterest.component';
@@ -41,13 +37,7 @@ const appRoutes: Routes = [
         { path: '', component: FootballStartComponent },
         { path: 'schedule', component: FootballScheduleComponent },
         { path: 'showschedule', component: FootballShowscheduleComponent },
-        { path: 'showschedule/:id', component: ShowscheduleDetailComponent}
-    ]},
-    { path: 'whatif', component: WhatifComponent, children: [
-        { path: 'manageteams', component: ManageteamsComponent, pathMatch: 'full'},
-        { path: 'schedule', component: ScheduleComponent, pathMatch: 'full'},
-        { path: 'pickteams', component: PickteamsComponent, pathMatch: 'full'},
-        { path: 'showgames', component: ShowgamespickedComponent, pathMatch: 'full'},
+        { path: 'showschedule/:id', component: ShowscheduleDetailComponent},
     ]}
 ];
 

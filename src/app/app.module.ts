@@ -35,15 +35,10 @@ import { HttpClient } from 'selenium-webdriver/http';
 import { FootballShowscheduleComponent } from './footballish/football-showschedule/football-showschedule.component';
 import { ShowscheduleItemComponent } from './footballish/football-showschedule/showschedule-item/showschedule-item.component';
 import { ShowscheduleDetailComponent } from './footballish/football-showschedule/showschedule-detail/showschedule-detail.component';
-import { WhatifComponent } from './whatif/whatif.component';
-import { ScheduleComponent } from './whatif/schedule/schedule.component';
-import { PickteamsComponent } from './whatif/pickteams/pickteams.component';
-import { ManageteamsComponent } from './whatif/manageteams/manageteams.component';
-import { TeamItemComponent } from './whatif/manageteams/team-item/team-item.component';
-import { TickerDirective } from './ticker.directive';
-import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/showgamespicked.component';
+
 import { SomethingelsesMudule } from './somethingelse/somthingelses.modules';
 import { SharedModule } from './shared/shared.module';
+import { WhatifsModule } from './whatif/whatifs.modules';
 
 
 @NgModule({
@@ -74,14 +69,7 @@ import { SharedModule } from './shared/shared.module';
     FootballScheduleComponent,
     FootballShowscheduleComponent,
     ShowscheduleItemComponent,
-    ShowscheduleDetailComponent,
-    WhatifComponent,
-    ScheduleComponent,
-    PickteamsComponent,
-    ManageteamsComponent,
-    TeamItemComponent,
-    TickerDirective,
-    ShowgamespickedComponent
+    ShowscheduleDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +79,7 @@ import { SharedModule } from './shared/shared.module';
     NgbModule.forRoot(),
     AppRoutingModule,
     SomethingelsesMudule,
+    WhatifsModule,
     SharedModule
   ],
   providers: [PlayerService, FootballService],
