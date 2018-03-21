@@ -48,13 +48,7 @@ const appRoutes: Routes = [
         { path: 'schedule', component: ScheduleComponent, pathMatch: 'full'},
         { path: 'pickteams', component: PickteamsComponent, pathMatch: 'full'},
         { path: 'showgames', component: ShowgamespickedComponent, pathMatch: 'full'},
-    ]},
-    { path: 'somethingelse', component: SomethingelseComponent, children: [
-        { path: 'fibnocci', component: FibonacciComponent, pathMatch: 'full'},
-        { path: 'simpleinterest', component: SimpleinterestComponent, pathMatch: 'full'},
-        { path: 'palindrome', component: PalindromeComponent, pathMatch: 'full'},
-        { path: 'gamespart', component: GamespartComponent, pathMatch: 'full'},
-    ]},
+    ]}
 ];
 
 @NgModule({

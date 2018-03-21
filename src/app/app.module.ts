@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -42,13 +42,9 @@ import { ManageteamsComponent } from './whatif/manageteams/manageteams.component
 import { TeamItemComponent } from './whatif/manageteams/team-item/team-item.component';
 import { TickerDirective } from './ticker.directive';
 import { ShowgamespickedComponent } from './whatif/pickteams/showgamespicked/showgamespicked.component';
-import { SomethingelseComponent } from './somethingelse/somethingelse.component';
-import { FibonacciComponent } from './somethingelse/fibonacci/fibonacci.component';
-import { SimpleinterestComponent } from './somethingelse/simpleinterest/simpleinterest.component';
-import { PalindromeComponent } from './somethingelse/palindrome/palindrome.component';
-import { GamespartComponent } from './somethingelse/gamespart/gamespart.component';
-import { BoardComponent } from './somethingelse/gamespart/presentation/board/board.component';
-import { CellComponent } from './somethingelse/gamespart/presentation/cell/cell.component';
+import { SomethingelsesMudule } from './somethingelse/somthingelses.modules';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -85,22 +81,17 @@ import { CellComponent } from './somethingelse/gamespart/presentation/cell/cell.
     ManageteamsComponent,
     TeamItemComponent,
     TickerDirective,
-    ShowgamespickedComponent,
-    SomethingelseComponent,
-    FibonacciComponent,
-    SimpleinterestComponent,
-    PalindromeComponent,
-    GamespartComponent,
-    BoardComponent,
-    CellComponent
+    ShowgamespickedComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    SomethingelsesMudule,
+    SharedModule
   ],
   providers: [PlayerService, FootballService],
   bootstrap: [AppComponent]
