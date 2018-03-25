@@ -46,8 +46,6 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
     } else if (this.interestForm.controls.years.value === null) {
       return;
     }
-    console.log('calculate');
-    // this.context.clearRect(0, 0, 400, 250);
 
     // look up the input and output elements in the document
     const amount = this.interestForm.controls.amount.value;
