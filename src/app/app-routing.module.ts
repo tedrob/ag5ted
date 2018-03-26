@@ -15,13 +15,7 @@ const appRoutes: Routes = [
     { path: '', redirectTo: './', pathMatch: 'full' },
     { path: 'home', component: HomeComponent, pathMatch: 'full' },
     { path: 'about', component: AboutComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'footballish', component: FootballishComponent, children: [
-        { path: '', component: FootballStartComponent },
-        { path: 'schedule', component: FootballScheduleComponent },
-        { path: 'showschedule', component: FootballShowscheduleComponent },
-        { path: 'showschedule/:id', component: ShowscheduleDetailComponent},
-    ]}
+    { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({
