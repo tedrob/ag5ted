@@ -9,7 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { BasichighlightDirective } from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
-import { DropdownDirective } from './shared/dropdown.directive';
 import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
@@ -31,7 +30,6 @@ import { FootballishsModule } from './footballish/footballishs.modules';
     BasichighlightDirective,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective,
     FooterComponent,
     AboutComponent,
     ContactComponent,

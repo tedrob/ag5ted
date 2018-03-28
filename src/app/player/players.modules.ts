@@ -9,6 +9,7 @@ import { PlayerItemComponent } from './player-list/player-item/player-item.compo
 import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { PlayersRoutingModule } from './players-routing.module';
+import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
@@ -21,8 +22,9 @@ import { PlayersRoutingModule } from './players-routing.module';
     ],
     imports: [
         CommonModule,
+        PlayersRoutingModule,
         SharedModule,
-        PlayersRoutingModule
+        NgbModule.forRoot(),
     ]
 })
 export class PlayersModules {}
