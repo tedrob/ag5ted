@@ -4,12 +4,6 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 
-import { FootballishComponent } from './footballish/footballish.component';
-import { FootballStartComponent } from './footballish/football-start/football-start.component';
-import { FootballScheduleComponent } from './footballish/football-schedule/football-schedule.component';
-import { FootballShowscheduleComponent } from './footballish/football-showschedule/football-showschedule.component';
-import { ShowscheduleDetailComponent } from './footballish/football-showschedule/showschedule-detail/showschedule-detail.component';
-
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: '', redirectTo: './', pathMatch: 'full' },
