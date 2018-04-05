@@ -13,8 +13,8 @@ const appRoutes: Routes = [
     { path: 'player', loadChildren: './player/players.modules#PlayersModules' },
     { path: 'footballish', loadChildren: './footballish/footballishs.modules#FootballishsModule' },
     { path: 'whatif', loadChildren: './whatif/whatifs.modules#WhatifsModule' },
-    // { path: 'somethingelse', loadChildren: './somethingelse/somthingelses.modules#SomethingelsesModule' },
-];                                       // ./somethingelse/somthingelses.modules
+    { path: 'somethingelse', loadChildren: './somethingelse/somethingelses.modules#SomethingelsesModule' }
+];
 
 @NgModule({
     imports: [RouterModule.forRoot(appRoutes, {useHash: true})],

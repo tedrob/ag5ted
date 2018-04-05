@@ -27,4 +27,4 @@ import { SomethingelsesRoutingModule } from './somethingelses-routing.module';
         SomethingelsesRoutingModule
     ]
 })
-export class SomethingelsesMudule {}
+export class SomethingelsesModule {}

@@ -8,7 +8,7 @@ import { PalindromeComponent } from './palindrome/palindrome.component';
 import { GamespartComponent } from './gamespart/gamespart.component';
 
 const somethingelsesRoutes: Routes = [
-    { path: 'somethingelse', component: SomethingelseComponent, children: [
+    { path: '', component: SomethingelseComponent, children: [
         { path: 'fibnocci', component: FibonacciComponent, pathMatch: 'full'},
         { path: 'simpleinterest', component: SimpleinterestComponent, pathMatch: 'full'},
         { path: 'palindrome', component: PalindromeComponent, pathMatch: 'full'},

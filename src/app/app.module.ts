@@ -18,7 +18,7 @@ import { PlayerService } from './player/player.service';
 import { FootballService } from './footballish/football.service';
 import { HttpClient } from 'selenium-webdriver/http';
 // import { PlayersModules } from './player/players.modules';
-import { SomethingelsesMudule } from './somethingelse/somthingelses.modules';
+// import { SomethingelsesModule } from './somethingelse/somethingelses.modules';
 // import { WhatifsModule } from './whatif/whatifs.modules';
 // import { FootballishsModule } from './footballish/footballishs.modules';
 
@@ -44,7 +44,7 @@ import { SomethingelsesMudule } from './somethingelse/somthingelses.modules';
     SharedModule,
     // PlayersModules,
     // FootballishsModule,
-    SomethingelsesMudule,
+    // SomethingelsesModule,
     // WhatifsModule,
   ],
   providers: [PlayerService, FootballService],
