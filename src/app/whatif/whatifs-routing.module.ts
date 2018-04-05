@@ -8,7 +8,7 @@ import { PickteamsComponent } from './pickteams/pickteams.component';
 import { ShowgamespickedComponent } from './pickteams/showgamespicked/showgamespicked.component';
 
 const whatifsRoutes: Routes = [
-    { path: 'whatif', component: WhatifComponent, children: [
+    { path: '', component: WhatifComponent, children: [
         { path: 'manageteams', component: ManageteamsComponent, pathMatch: 'full'},
         { path: 'schedule', component: ScheduleComponent, pathMatch: 'full'},
         { path: 'pickteams', component: PickteamsComponent, pathMatch: 'full'},

@@ -6,7 +6,7 @@ import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 const playersRoutes: Routes = [
-    { path: 'player', component: PlayerComponent, children: [
+    { path: '', component: PlayerComponent, children: [
         { path: '', component: PlayerStartComponent },
         { path: 'new', component: PlayerEditComponent },
         { path: ':id', component: PlayerDetailComponent },

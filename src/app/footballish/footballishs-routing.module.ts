@@ -9,7 +9,7 @@ import { ShowscheduleDetailComponent } from './football-showschedule/showschedul
 
 
 const footballishsRoutes: Routes = [
-    { path: 'footballish', component: FootballishComponent, children: [
+    { path: '', component: FootballishComponent, children: [
         { path: '', component: FootballStartComponent },
         { path: 'schedule', component: FootballScheduleComponent },
         { path: 'showschedule', component: FootballShowscheduleComponent },

@@ -17,10 +17,10 @@ import { HomeComponent } from './home/home.component';
 import { PlayerService } from './player/player.service';
 import { FootballService } from './footballish/football.service';
 import { HttpClient } from 'selenium-webdriver/http';
-import { PlayersModules } from './player/players.modules';
+// import { PlayersModules } from './player/players.modules';
 import { SomethingelsesMudule } from './somethingelse/somthingelses.modules';
-import { WhatifsModule } from './whatif/whatifs.modules';
-import { FootballishsModule } from './footballish/footballishs.modules';
+// import { WhatifsModule } from './whatif/whatifs.modules';
+// import { FootballishsModule } from './footballish/footballishs.modules';
 
 
 @NgModule({
@@ -42,10 +42,10 @@ import { FootballishsModule } from './footballish/footballishs.modules';
     NgbModule.forRoot(),
     AppRoutingModule,
     SharedModule,
-    PlayersModules,
-    FootballishsModule,
+    // PlayersModules,
+    // FootballishsModule,
     SomethingelsesMudule,
-    WhatifsModule,
+    // WhatifsModule,
   ],
   providers: [PlayerService, FootballService],
   bootstrap: [AppComponent]

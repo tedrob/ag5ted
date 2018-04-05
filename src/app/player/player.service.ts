@@ -24,6 +24,7 @@ export class PlayerService {
     new Player('o1dBg__wsuo', 'Mendelssohn Violin Concerto E Minor'),
     new Player('zM4En012IJo', 'Novel & Short Story'),
     new Player('HCjNJDNzw8Y', 'HAVANA, Camila Cabello'),
+    new Player('Qn25lL4a94o', 'Dr. SaxLove, Max Maxwell'),
 
       ];
 
