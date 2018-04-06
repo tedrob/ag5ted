@@ -13,7 +13,7 @@ const footballishsRoutes: Routes = [
         { path: '', component: FootballStartComponent },
         { path: 'schedule', component: FootballScheduleComponent },
         { path: 'showschedule', component: FootballShowscheduleComponent },
-        { path: 'showschedule/:id', component: ShowscheduleDetailComponent},
+        { path: 'showschedule/:id', component: ShowscheduleDetailComponent}
     ]},
 ];
 

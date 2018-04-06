@@ -12,7 +12,7 @@ const whatifsRoutes: Routes = [
         { path: 'manageteams', component: ManageteamsComponent, pathMatch: 'full'},
         { path: 'schedule', component: ScheduleComponent, pathMatch: 'full'},
         { path: 'pickteams', component: PickteamsComponent, pathMatch: 'full'},
-        { path: 'showgames', component: ShowgamespickedComponent, pathMatch: 'full'},
+        { path: 'showgames', component: ShowgamespickedComponent, pathMatch: 'full'}
     ]},
 ];
 

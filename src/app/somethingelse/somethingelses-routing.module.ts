@@ -12,7 +12,7 @@ const somethingelsesRoutes: Routes = [
         { path: 'fibnocci', component: FibonacciComponent, pathMatch: 'full'},
         { path: 'simpleinterest', component: SimpleinterestComponent, pathMatch: 'full'},
         { path: 'palindrome', component: PalindromeComponent, pathMatch: 'full'},
-        { path: 'gamespart', component: GamespartComponent, pathMatch: 'full'},
+        { path: 'gamespart', component: GamespartComponent, pathMatch: 'full'}
     ]},
 
 ];
