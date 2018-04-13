@@ -18,13 +18,16 @@ export class PlayerService {
     new Player('jT0gbcq5xqI', 'You and I'),
     new Player('EtJy69cEOtQ', 'How to Learn Anything'),
     new Player('BxY_eJLBflk', 'Put God First - Denzel Washington'),
-    // new Player('3B87LMXvUsM', 'Black Panther'),
+    // new Player('3B87LMXvUsM', 'Black Panther'), lFsChbwsbmo 'Insanity Gregory Porter", 5oSnLt20Wn4 'Consequence of Love'
     new Player('TqyLnMa3DJw', 'CHOPIN - Nocture Op.9'),
     new Player('arMu4f8rnBk', 'Beethoven- Moonlight Sonata'),
     new Player('o1dBg__wsuo', 'Mendelssohn Violin Concerto E Minor'),
     new Player('zM4En012IJo', 'Novel & Short Story'),
     new Player('HCjNJDNzw8Y', 'HAVANA, Camila Cabello'),
     new Player('Qn25lL4a94o', 'Dr. SaxLove, Max Maxwell'),
+    new Player('lFsChbwsbmo', 'Insanity Gregory Porter'),
+    new Player('5oSnLt20Wn4', 'Consequence of Love'),
+    new Player('TvnYmWpD_T8', 'Prince-Purple Rain'),
 
       ];
 
