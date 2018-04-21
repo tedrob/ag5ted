@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 
-import { FootballTeams, WeeklyGame } from './football-teams.model';
+import { FootballTeams, WeeklyGame, WeeklyGames } from './football-teams.model';
 import { FootballSchedule } from './football-schedule.model';
 import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Observable';
@@ -16,7 +16,9 @@ export class FootballService {
   teams: FootballTeams[];
   footballsch: FootballSchedule[] = [];
   footballSchChanged = new Subject<FootballSchedule[]>();
-  ftbSchUrl = '/assets/data/schedule.json';  // URL to json file
+  ftbSchUrl = '/assets/data/schedule.json';
+  weeklyGames: WeeklyGames[];
+  weeklygamesUrl = '/assets/data/teams.json';
   arrayForm = this.formBuilder.array([]);
 
   private weekly: WeeklyGame[] = [
@@ -91,6 +93,7 @@ export class FootballService {
     new FootballTeams(15, 'Arizona Cardinals', 'ARI'),
     new FootballTeams(16, 'San Francisco 49ers', 'SF')
   ];
+
   private AFCTeamlist: FootballTeams[]  = [
     new FootballTeams(17, 'New England Patriots', 'NE'),
     new FootballTeams(18, 'Buffalo Bills', 'BUF'),
@@ -130,6 +133,14 @@ export class FootballService {
         // console.log('json', teams);
         return this.teams;
       });
+  }
+
+  getWeeklyGames() {
+    return this.http.get<WeeklyGames[]>(this.weeklygamesUrl, {responseType: 'json'}).map((weeklyGames) => {
+      this.weeklyGames = weeklyGames;
+      console.log('json', weeklyGames);
+      return this.weeklyGames;
+    });
   }
 
   getSeasonStart(startdate: Date) {

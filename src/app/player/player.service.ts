@@ -28,6 +28,7 @@ export class PlayerService {
     new Player('lFsChbwsbmo', 'Insanity Gregory Porter'),
     new Player('5oSnLt20Wn4', 'Consequence of Love'),
     new Player('TvnYmWpD_T8', 'Prince-Purple Rain'),
+    new Player('n2v98PGBZH4', 'Billy Paul-Me And Mrs.Jones'),
 
       ];
 

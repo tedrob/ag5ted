@@ -17,3 +17,7 @@ export class WeeklyGame {
 export class WeeklyPicks {
     constructor(public week: number, public game: number,  public type: string, public teamName ) {}
 }
+
+export class WeeklyGames {
+    constructor(public week: number, public game: number, public teamNo: number, public where: string) {}
+}
