@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { FootballSchedule } from '../football-schedule.model';
 import { FootballService } from '../football.service';
+import { WeeklyGamesAH } from './../football-teams.model';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { FootballService } from '../football.service';
 export class FootballShowscheduleComponent implements OnInit, OnDestroy {
   footballschs: FootballSchedule[];
   subscription: Subscription;
+  weeksGamesAH: WeeklyGamesAH[];
 
   constructor(private fbs: FootballService,
               private router: Router,

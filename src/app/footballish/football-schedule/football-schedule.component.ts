@@ -9,8 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-football-schedule',
   templateUrl: './football-schedule.component.html',
-  styleUrls: ['./football-schedule.component.css'],
-  providers: [DatePipe]
+  styleUrls: ['./football-schedule.component.css']
+  // providers: [DatePipe]
 })
 export class FootballScheduleComponent implements OnInit {
   footballteamlists: FootballTeams[];
@@ -75,9 +75,9 @@ export class FootballScheduleComponent implements OnInit {
       dayIndex -= 2;
       week += 1;
     }
-    // const strd = this.datePipe.transform(ddstart.getFullYear() + '-' + ddstart.getMonth() + '-' + ddstart.getDay());
-
-    // this.footballschedule.push(this.footballschedule2);
+    const fbsSch = this.footballService.getFootballSch();
+    this.footballService.setScheduleSeasons(fbsSch[0].endentrydate);
+    this.footballService.setScheduleType('Schedule');
     this.router.navigate(['../', 'showschedule'] , {relativeTo: this.route});
   }
 

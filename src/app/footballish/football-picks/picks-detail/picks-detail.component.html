@@ -1,0 +1,48 @@
+<p>
+  picks-detail works! 
+  picking teams for the week ends on {{ footballSch.endentrydate}} wk
+  {{ footballSch.week }}
+</p>
+
+<div class="row">
+  <!-- week games -->  
+    <div class="col-sm-1" style="text-align:center;">
+      <label>GM</label>  
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div style="text-align:center;">
+        <label>Away</label>
+        
+      </div>
+    </div>
+    <div class="col-sm-2" style="text-align:center;">
+        <label>VS</label>
+    </div>  
+    <div class="col-xs-12 col-sm-4">
+      <div style="text-align:center;">
+        <label>Home</label>
+      </div>
+    </div>  
+</div>
+<div>
+  <div class="row" *ngFor="let gm of wklyGmsAhName; let i=index">
+    <div class="col-sm-1" style="text-align:center;">
+      <!-- {{wklyGmsAH[0].game}} -->
+      <!-- {{wklyGmsAhName[0].game}} -->
+      {{gm.game}}
+    </div>
+    <div class="col-xs-12 col-sm-4" style="text-align:left;">
+      <!-- {{wklyGmsAH[0].awayTeamNo}} -->
+      <!-- {{wklyGmsAhName[0].awayTeamName}} -->
+      {{gm.awayTeamName}}
+    </div>
+    <div class="col-sm-2" style="text-align:center;">
+      <label>@</label>
+    </div>
+    <div class="col-xs-12 col-sm-4" style="text-align:left;">
+      <!-- {{wklyGmsAH[0].homeTeamNo}} -->
+      <!-- {{wklyGmsAhName[0].homeTeamName}} -->
+      {{gm.homeTeamName}}
+    </div>
+  </div><br>
+</div>

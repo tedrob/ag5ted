@@ -21,3 +21,11 @@ export class WeeklyPicks {
 export class WeeklyGames {
     constructor(public week: number, public game: number, public teamNo: number, public where: string) {}
 }
+
+export class WeeklyGamesAH {
+    constructor (public week: number, public game: number, public awayTeamNo: number, public homeTeamNo: number) {}
+}
+
+export class WeeklyGmsAHNames {
+    constructor (public game: number, public awayTeamName: string, public homeTeamName: string) {}
+}

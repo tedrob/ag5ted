@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 
@@ -17,6 +17,11 @@ import { ShowscheduleDetailComponent } from './football-showschedule/showschedul
 import { FootballishsRoutingModule } from './footballishs-routing.module';
 import { NgbModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
+import { FootballActualComponent } from './football-actual/football-actual.component';
+import { FootballPicksComponent } from './football-picks/football-picks.component';
+import { PicksDetailComponent } from './football-picks/picks-detail/picks-detail.component';
+import { PicksStartComponent } from './football-picks/picks-start/picks-start.component';
+import { PicksItemComponent } from './football-picks/picks-item/picks-item.component';
 
 @NgModule({
     declarations: [
@@ -30,10 +35,15 @@ import { SharedModule } from '../shared/shared.module';
         FootballScheduleComponent,
         FootballShowscheduleComponent,
         ShowscheduleItemComponent,
-        ShowscheduleDetailComponent
+        ShowscheduleDetailComponent,
+        FootballActualComponent,
+        FootballPicksComponent,
+        PicksStartComponent,
+        PicksItemComponent,
+        PicksDetailComponent
     ],
     imports: [
-        CommonModule,
+    CommonModule,
         FormsModule,
         SharedModule,
         NgbModule.forRoot(),

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { Subject } from 'rxjs/Subject';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
 
-import { FootballTeams, WeeklyGame, WeeklyGames } from './football-teams.model';
+import { FootballTeams, WeeklyGame, WeeklyGames, WeeklyGamesAH, WeeklyGmsAHNames } from './football-teams.model';
 import { FootballSchedule } from './football-schedule.model';
 import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Observable';
@@ -16,9 +17,19 @@ export class FootballService {
   teams: FootballTeams[];
   footballsch: FootballSchedule[] = [];
   footballSchChanged = new Subject<FootballSchedule[]>();
+  scheduleType;
+  schSeason1stEndDate;
+
   ftbSchUrl = '/assets/data/schedule.json';
-  weeklyGames: WeeklyGames[];
-  weeklygamesUrl = '/assets/data/teams.json';
+  weeklygames: WeeklyGames[];
+  wklygmsUrl = '/assets/data/weeklygames.json';
+  weekGamesAH: WeeklyGamesAH[] = [];
+  wklygmsUrlAH = '/assets/data/weeklyahgms.json';
+  weeksGmsChanged = new Subject<WeeklyGamesAH[]>();
+  curWksGmsAH: WeeklyGamesAH[];
+  cwTeams: WeeklyGmsAHNames;
+  curWksGmsAHNames: WeeklyGmsAHNames[];
+
   arrayForm = this.formBuilder.array([]);
 
   private weekly: WeeklyGame[] = [
@@ -67,7 +78,7 @@ export class FootballService {
     new FootballTeams(24, 'Cleveland Browns', 'CLE'),
     new FootballTeams(25, 'Jacksonville Jaguars', 'JAX'),
     new FootballTeams(26, 'Tennessee Titans', 'TEN'),
-    new FootballTeams(27, 'Indianapolis Lions', 'IND'),
+    new FootballTeams(27, 'Indianapolis Colts', 'IND'),
     new FootballTeams(28, 'Houston Texans', 'HOU'),
     new FootballTeams(29, 'Kansas City', 'KC'),
     new FootballTeams(30, 'Los Angeles Chargers', 'LAC'),
@@ -105,7 +116,7 @@ export class FootballService {
     new FootballTeams(24, 'Cleveland Browns', 'CLE'),
     new FootballTeams(25, 'Jacksonville Jaguars', 'JAX'),
     new FootballTeams(26, 'Tennessee Titans', 'TEN'),
-    new FootballTeams(27, 'Indianapolis Lions', 'IND'),
+    new FootballTeams(27, 'Indianapolis Colts', 'IND'),
     new FootballTeams(28, 'Houston Texans', 'HOU'),
     new FootballTeams(29, 'Kansas City Chiefs', 'KC'),
     new FootballTeams(30, 'Los Angeles Chargers', 'LAC'),
@@ -113,10 +124,40 @@ export class FootballService {
     new FootballTeams(32, 'Denver Broncos', 'DEN')
   ];
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) { }
+  constructor(private http: HttpClient,
+              private formBuilder: FormBuilder,
+              private datePipe: DatePipe) { }
 
+  getWklyGmsAH() {
+    return this.http.get<WeeklyGamesAH[]>(this.wklygmsUrlAH, {responseType: 'json'})
+      .map((weeklyahgms) => {
+        this.setWklyGamesAh(weeklyahgms);
+        console.log('innn service', this.weekGamesAH);
+        return this.weekGamesAH;
+      });
+  }
+  getAllwklyGmsAH() {
+    return this.weekGamesAH;
+  }
+
+  setWklyGamesAh(wklyGamesAH: WeeklyGamesAH[]) {
+    this.weekGamesAH = wklyGamesAH;
+    console.log('in service', this.weekGamesAH);
+  }
+
+  getWeeklyGames() {
+    return this.http.get<WeeklyGames[]>(this.wklygmsUrl);
+  }
   getTeams() {
     return this.footballteamlist.slice();
+  }
+
+  setScheduleType(type: any) {
+    this.scheduleType = type;
+  }
+
+  getScheduleType() {
+    return this.scheduleType;
   }
 
   getNFCteams() {
@@ -128,23 +169,15 @@ export class FootballService {
   }
 
   getTeamsFile() {
-    return this.http.get<FootballTeams[]>(this.teamUrl, {responseType: 'json'}).map((teams) => {
+    return this.http.get<FootballTeams[]>(this.teamUrl, {responseType: 'json'})
+      .map((teams) => {
         this.teams = teams;
         // console.log('json', teams);
         return this.teams;
       });
   }
 
-  getWeeklyGames() {
-    return this.http.get<WeeklyGames[]>(this.weeklygamesUrl, {responseType: 'json'}).map((weeklyGames) => {
-      this.weeklyGames = weeklyGames;
-      console.log('json', weeklyGames);
-      return this.weeklyGames;
-    });
-  }
-
-  getSeasonStart(startdate: Date) {
-  }
+  getSeasonStart(startdate: Date) { }
 
   addFootballSch(fbsch: FootballSchedule) {
 
@@ -184,8 +217,35 @@ export class FootballService {
     return this.footballsch.slice();
   }
 
+  setFootballSch(fbSch: FootballSchedule[]) {
+    this.footballsch = fbSch;
+  }
+
   getFootballSchwk(index: number) {
+    console.log('service schwk', this.footballsch);
     return this.footballsch[index];
+  }
+  setCurWksGames(games: WeeklyGamesAH[]) {
+    this.curWksGmsAH = games;
+    this.curWksGmsAHNames = this.setWksGmsNames();
+    console.log('service curWkGms', this.curWksGmsAH[0]);
+  }
+  getCurWksGames() {
+    return this.curWksGmsAH;
+  }
+
+  setWksGmsNames() {
+    const tms = this.footballteamlist.slice(0);
+    const curWksTeamName: WeeklyGmsAHNames[] = [];
+    this.curWksGmsAH.forEach((gm) => {
+      const cwgm = +gm.game;
+      const cwawayTmName = tms.find(x => x.teamnumber === gm.awayTeamNo).name;
+      const cwhomeTName = tms.find(x => x.teamnumber === gm.homeTeamNo).name;
+      const cwWksTeam = new WeeklyGmsAHNames(cwgm, cwawayTmName, cwhomeTName);
+      curWksTeamName.push(cwWksTeam);
+    });
+    // console.log('insssss', this.curWksGmsAHNames);
+    return curWksTeamName;
   }
 
   addArrayFormGames(pickedTeams: any) {
@@ -196,6 +256,67 @@ export class FootballService {
 
   getArrayFromGames() {
     return this.arrayForm;
+  }
+
+  setScheduleSeasons(seasonEndDate: any) {
+    this.schSeason1stEndDate = seasonEndDate;
+  }
+  /*
+  getSchSeason1stEnddate() {
+    return this.schSeason1stEndDate;
+  } */
+
+  getActualSeasonSchedule() {
+    this.footballsch = [];
+    const date = new Date(2018, 8, 3);
+    const dateYr = date.getFullYear();
+    const dateMth = date.getMonth() + 1;
+    const dateDay = date.getDay() + 2;
+
+    let startdate;
+    let enddate;
+    let resultdate;
+    let week = 1;
+    let dayIndex;
+
+    let footballschedule2: FootballSchedule;
+
+    for (dayIndex = 0; dayIndex < 63; dayIndex += 9 ) {
+      startdate = this.datePipe.transform(dateYr + '-' + (dateMth) + '-' + (dateDay + dayIndex));
+      enddate = this.datePipe.transform(dateYr + '-' + (dateMth) + '-' + (dateDay + (dayIndex + 4 )));
+      resultdate = this.datePipe.transform(dateYr + '-' + (dateMth)  + '-' + (dateDay + (dayIndex + 8)));
+      dayIndex -= 2;
+      const footballschedule3 =  new FootballSchedule(week, startdate, enddate, resultdate);
+      footballschedule2 = footballschedule3;
+      this.addFootballSch(footballschedule2);
+      week += 1 ;
+    }
+
+    const ddstart = new Date(startdate);
+    const ddend = new Date(enddate);
+    const ddresult = new Date(resultdate);
+    let weekIndex = 2;
+    const constIndex = 7;
+    let dstart, dend, dresult;
+    let footballschedule4;
+
+    // this loop was created because the day increment rose over 100, which cause the datepipe to fail
+
+    for (dayIndex = 9; dayIndex < 63; dayIndex += 9 ) {
+      ddstart.setDate(ddstart.getDate() + (dayIndex - weekIndex));
+      ddend.setDate(ddend.getDate() + (constIndex));
+      ddresult.setDate(ddresult.getDate() + (constIndex));
+      dstart = this.datePipe.transform(ddstart, 'MMM dd, yyyy');
+      dend = this.datePipe.transform(ddend, 'MMM dd, yyyy');
+      dresult = this.datePipe.transform(ddresult, 'MMM dd, yyyy');
+      footballschedule4 =  new FootballSchedule(week, dstart, dend, dresult);
+      footballschedule2 = footballschedule4;
+      this.addFootballSch(footballschedule2);
+      weekIndex += 7;
+      dayIndex -= 2;
+      week += 1;
+    }
+    this.setScheduleType('Actual');
   }
 
 }

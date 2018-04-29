@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { PlayerService } from './player/player.service';
 import { FootballService } from './footballish/football.service';
 import { HttpClient } from 'selenium-webdriver/http';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { HttpClient } from 'selenium-webdriver/http';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [PlayerService, FootballService],
+  providers: [PlayerService, FootballService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
