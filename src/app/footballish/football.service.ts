@@ -222,13 +222,13 @@ export class FootballService {
   }
 
   getFootballSchwk(index: number) {
-    console.log('service schwk', this.footballsch);
+    // console.log('service schwk', this.footballsch);
     return this.footballsch[index];
   }
   setCurWksGames(games: WeeklyGamesAH[]) {
     this.curWksGmsAH = games;
     this.curWksGmsAHNames = this.setWksGmsNames();
-    console.log('service curWkGms', this.curWksGmsAH[0]);
+    // console.log('service curWkGms', this.curWksGmsAH[0]);
   }
   getCurWksGames() {
     return this.curWksGmsAH;
