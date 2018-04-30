@@ -132,7 +132,7 @@ export class FootballService {
     return this.http.get<WeeklyGamesAH[]>(this.wklygmsUrlAH, {responseType: 'json'})
       .map((weeklyahgms) => {
         this.setWklyGamesAh(weeklyahgms);
-        console.log('innn service', this.weekGamesAH);
+        // console.log('innn service', this.weekGamesAH);
         return this.weekGamesAH;
       });
   }
@@ -142,7 +142,7 @@ export class FootballService {
 
   setWklyGamesAh(wklyGamesAH: WeeklyGamesAH[]) {
     this.weekGamesAH = wklyGamesAH;
-    console.log('in service', this.weekGamesAH);
+    // console.log('in service', this.weekGamesAH);
   }
 
   getWeeklyGames() {
@@ -221,16 +221,12 @@ export class FootballService {
     this.footballsch = fbSch;
   }
 
-  getFootballSchwk(index: number) {
-    // console.log('service schwk', this.footballsch);
-    return this.footballsch[index];
-  }
+  getFootballSchwk(index: number) { return this.footballsch[index]; }
   setCurWksGames(games: WeeklyGamesAH[]) {
     this.curWksGmsAH = games;
-    this.curWksGmsAHNames = this.setWksGmsNames();
-    // console.log('service curWkGms', this.curWksGmsAH[0]);
-  }
-  getCurWksGames() {
+    this.curWksGmsAHNames = this.setWksGmsNames(); }
+
+    getCurWksGames() {
     return this.curWksGmsAH;
   }
 
@@ -244,14 +240,14 @@ export class FootballService {
       const cwWksTeam = new WeeklyGmsAHNames(cwgm, cwawayTmName, cwhomeTName);
       curWksTeamName.push(cwWksTeam);
     });
-    // console.log('insssss', this.curWksGmsAHNames);
+
     return curWksTeamName;
   }
 
   addArrayFormGames(pickedTeams: any) {
     this.arrayForm = this.formBuilder.array([]);
     this.arrayForm.push(pickedTeams);
-    // console.log('in service picks', this.arrayForm);
+
   }
 
   getArrayFromGames() {

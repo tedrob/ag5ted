@@ -26,7 +26,7 @@ export class PicksDetailComponent implements OnInit, OnDestroy {
               private route: ActivatedRoute,
               private fbs: FootballService,
               private formBuilder: FormBuilder) {
-                console.log('in detail constructor');
+                // console.log('in detail constructor');
               }
 
   ngOnInit() {
