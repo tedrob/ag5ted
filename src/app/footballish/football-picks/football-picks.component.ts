@@ -14,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FootballPicksComponent implements OnInit {
   @Input() fbSchedule: FootballSchedule;
   @Input() index: number;
-  scheduleActual; // = 'Actual';
+  scheduleActual;
   weekDate;
   todaysDate;
   scheduleDate;
