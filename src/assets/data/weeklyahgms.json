@@ -237,6 +237,41 @@
         {"week": 15, "game": 12, "awayTeamNo": 14, "homeTeamNo": 16},
         {"week": 15, "game": 13, "awayTeamNo": 17, "homeTeamNo": 21},
         {"week": 15, "game": 14, "awayTeamNo": 1, "homeTeamNo": 13},
-        {"week": 15, "game": 15, "awayTeamNo": 9, "homeTeamNo": 10}
+        {"week": 15, "game": 15, "awayTeamNo": 9, "homeTeamNo": 10},
+
+        {"week": 16, "game": 1, "awayTeamNo": 12, "homeTeamNo": 2},
+        {"week": 16, "game": 2, "awayTeamNo": 5, "homeTeamNo": 6},
+        {"week": 16, "game": 3, "awayTeamNo": 11, "homeTeamNo": 10},
+        {"week": 16, "game": 4, "awayTeamNo": 28, "homeTeamNo": 1},
+        {"week": 16, "game": 5, "awayTeamNo": 3, "homeTeamNo": 27},
+        {"week": 16, "game": 6, "awayTeamNo": 23, "homeTeamNo": 24},
+        {"week": 16, "game": 7, "awayTeamNo": 18, "homeTeamNo": 17},
+        {"week": 16, "game": 8, "awayTeamNo": 7, "homeTeamNo": 20},
+        {"week": 16, "game": 9, "awayTeamNo": 25, "homeTeamNo": 19},
+        {"week": 16, "game": 10, "awayTeamNo": 4, "homeTeamNo": 26},
+        {"week": 16, "game": 11, "awayTeamNo": 22, "homeTeamNo": 30},
+        {"week": 16, "game": 12, "awayTeamNo": 8, "homeTeamNo": 16},
+        {"week": 16, "game": 13, "awayTeamNo": 13, "homeTeamNo": 15},
+        {"week": 16, "game": 14, "awayTeamNo": 21, "homeTeamNo": 9},
+        {"week": 16, "game": 15, "awayTeamNo": 29, "homeTeamNo": 14},
+        {"week": 16, "game": 16, "awayTeamNo": 32, "homeTeamNo": 31},
+
+        {"week": 17, "game": 1, "awayTeamNo": 31, "homeTeamNo": 29},
+        {"week": 17, "game": 2, "awayTeamNo": 19, "homeTeamNo": 18},
+        {"week": 17, "game": 3, "awayTeamNo": 27, "homeTeamNo": 26},
+        {"week": 17, "game": 4, "awayTeamNo": 24, "homeTeamNo": 22},
+        {"week": 17, "game": 5, "awayTeamNo": 6, "homeTeamNo": 7},
+        {"week": 17, "game": 6, "awayTeamNo": 20, "homeTeamNo": 17},
+        {"week": 17, "game": 7, "awayTeamNo": 10, "homeTeamNo": 9},
+        {"week": 17, "game": 8, "awayTeamNo": 8, "homeTeamNo": 5},
+        {"week": 17, "game": 9, "awayTeamNo": 25, "homeTeamNo": 28},
+        {"week": 17, "game": 10, "awayTeamNo": 2, "homeTeamNo": 3},
+        {"week": 17, "game": 11, "awayTeamNo": 1, "homeTeamNo": 4},
+        {"week": 17, "game": 12, "awayTeamNo": 11, "homeTeamNo": 12},
+        {"week": 17, "game": 13, "awayTeamNo": 23, "homeTeamNo": 21},
+        {"week": 17, "game": 14, "awayTeamNo": 15, "homeTeamNo": 14},
+        {"week": 17, "game": 15, "awayTeamNo": 16, "homeTeamNo": 13},
+        {"week": 17, "game": 16, "awayTeamNo": 30, "homeTeamNo": 32}
+        
     ]
 }
