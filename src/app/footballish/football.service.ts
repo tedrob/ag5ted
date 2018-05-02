@@ -244,6 +244,20 @@ export class FootballService {
     return curWksTeamName;
   }
 
+  setWksGmsShortNms() {
+    const tms = this.footballteamlist.slice(0);
+    const curWksTmShrtName: WeeklyGmsAHNames[] = [];
+    this.curWksGmsAH.forEach((gm) => {
+      const cwgm = +gm.game;
+      const cwawayTmShrtName = tms.find(x => x.teamnumber === gm.awayTeamNo).shortName;
+      const cwhomeTmShrtName = tms.find(x => x.teamnumber === gm.homeTeamNo).shortName;
+      const cwWksTeam = new WeeklyGmsAHNames(cwgm, cwawayTmShrtName, cwhomeTmShrtName);
+      curWksTmShrtName.push(cwWksTeam);
+    });
+
+    return curWksTmShrtName;
+  }
+
   addArrayFormGames(pickedTeams: any) {
     this.arrayForm = this.formBuilder.array([]);
     this.arrayForm.push(pickedTeams);

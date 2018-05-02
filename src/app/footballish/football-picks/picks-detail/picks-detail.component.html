@@ -24,23 +24,46 @@
 </div>
 <div>
   <div class="row" *ngFor="let gm of wklyGmsAhName; let i=index">
-    <div class="col-sm-1" style="text-align:center;">
-      <!-- {{wklyGmsAH[0].game}} -->
-      <!-- {{wklyGmsAhName[0].game}} -->
-      {{gm.game}}
-    </div>
-    <div class="col-xs-12 col-sm-4" style="text-align:left;">
-      <!-- {{wklyGmsAH[0].awayTeamNo}} -->
-      <!-- {{wklyGmsAhName[0].awayTeamName}} -->
-      {{gm.awayTeamName}}
-    </div>
-    <div class="col-sm-2" style="text-align:center;">
-      <label>@</label>
-    </div>
-    <div class="col-xs-12 col-sm-4" style="text-align:left;">
-      <!-- {{wklyGmsAH[0].homeTeamNo}} -->
-      <!-- {{wklyGmsAhName[0].homeTeamName}} -->
-      {{gm.homeTeamName}}
-    </div>
+      <div *ngIf="gm?.game === 0" class="col-sm-1" style="text-align:center;">
+          <!-- {{wklyGmsAH[0].game}} -->
+          <!-- {{wklyGmsAhName[0].game}} -->
+          {{gm.game}}
+      </div>
+      <div *ngIf="gm?.game === 0" class="col-sm-4" style="text-align:left;">
+          <!-- {{wklyGmsAH[0].awayTeamNo}} -->
+          <!-- {{wklyGmsAhName[0].awayTeamName}} -->
+          {{gm.awayTeamName}}
+      </div>
+      <div *ngIf="gm?.game === 0" class="col-sm-2" style="text-align:center;">
+        <label>@</label>
+      </div>
+      <div *ngIf="gm?.game === 0" class="col-sm-4" style="text-align:left;">
+        <!-- {{wklyGmsAH[0].homeTeamNo}} -->
+        <!-- {{wklyGmsAhName[0].homeTeamName}} -->
+        {{gm.homeTeamName}}
+      </div>
+      <div *ngIf="gm?.game !== 0 && gm?.game === 1  "
+            class="col-sm-12" style="text-align:center; color: yellow">
+        Games Above are played on Thursday not included in picks for week<br>
+      </div>
+
+        <div *ngIf="gm?.game !== 0" class="col-sm-1" style="text-align:center;">
+            <!-- {{wklyGmsAH[0].game}} -->
+            <!-- {{wklyGmsAhName[0].game}} -->
+            {{gm.game}}
+        </div>
+        <div *ngIf="gm?.game !== 0" class="col-sm-4" style="text-align:left;">
+            <!-- {{wklyGmsAH[0].awayTeamNo}} -->
+            <!-- {{wklyGmsAhName[0].awayTeamName}} -->
+            {{gm.awayTeamName}}
+        </div>
+        <div *ngIf="gm?.game !== 0" class="col-sm-2" style="text-align:center;">
+          <label>@</label>
+        </div>
+        <div *ngIf="gm?.game !== 0" class="col-sm-4" style="text-align:left;">
+          <!-- {{wklyGmsAH[0].homeTeamNo}} -->
+          <!-- {{wklyGmsAhName[0].homeTeamName}} -->
+          {{gm.homeTeamName}}
+        </div>
   </div><br>
 </div>
