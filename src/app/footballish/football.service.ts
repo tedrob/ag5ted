@@ -80,7 +80,7 @@ export class FootballService {
     new FootballTeams(26, 'Tennessee Titans', 'TEN'),
     new FootballTeams(27, 'Indianapolis Colts', 'IND'),
     new FootballTeams(28, 'Houston Texans', 'HOU'),
-    new FootballTeams(29, 'Kansas City', 'KC'),
+    new FootballTeams(29, 'Kansas City Chiefs', 'KC'),
     new FootballTeams(30, 'Los Angeles Chargers', 'LAC'),
     new FootballTeams(31, 'Oakland Raiders', 'OAK'),
     new FootballTeams(32, 'Denver Broncos', 'DEN')
