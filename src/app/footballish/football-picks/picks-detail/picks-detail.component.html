@@ -47,23 +47,37 @@
         Games Above are played on Thursday not included in picks for week<br>
       </div>
 
-        <div *ngIf="gm?.game !== 0" class="col-sm-1" style="text-align:center;">
-            <!-- {{wklyGmsAH[0].game}} -->
-            <!-- {{wklyGmsAhName[0].game}} -->
-            {{gm.game}}
+        <!-- <div *ngIf="gm?.game !== 0" class="col-sm-1" style="text-align:center;">
+          {{gm.game}}
         </div>
         <div *ngIf="gm?.game !== 0" class="col-sm-4" style="text-align:left;">
-            <!-- {{wklyGmsAH[0].awayTeamNo}} -->
-            <!-- {{wklyGmsAhName[0].awayTeamName}} -->
-            {{gm.awayTeamName}}
+          {{gm.awayTeamName}}
         </div>
         <div *ngIf="gm?.game !== 0" class="col-sm-2" style="text-align:center;">
           <label>@</label>
         </div>
         <div *ngIf="gm?.game !== 0" class="col-sm-4" style="text-align:left;">
-          <!-- {{wklyGmsAH[0].homeTeamNo}} -->
-          <!-- {{wklyGmsAhName[0].homeTeamName}} -->
           {{gm.homeTeamName}}
-        </div>
-  </div><br>
+        </div> -->
+  </div>
+  <form class="ui form" [formGroup]="weekForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-sm-12">
+         <div formArrayName="gameMethod">
+            <div class="row"
+              *ngFor="let gm of weekForm['controls'].gameMethod['controls']; let i=index"
+              formGroupName="{{i}}">
+              <div class="col-sm-1">{{gm['controls'].game.value}}</div>
+              <div class="col-sm-5" >              
+                <button type="button" style="width: 100%; font-size: 15px; text-align: left;"> {{gm['controls'].away['controls'].teamName.value}}</button>
+              </div>
+              <div class="col-sm-1"><label>@</label></div>
+              <div class="col-sm-5" >              
+                  <button type="button" style="width: 100%; font-size: 15px; text-align: left;"> {{gm['controls'].home['controls'].teamName.value}}</button>
+              </div>
+            </div>
+         </div>
+      </div>
+    </div>
+  </form><br>
 </div>

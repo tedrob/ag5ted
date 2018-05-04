@@ -8,7 +8,7 @@ import { FootballSchedule } from './football-schedule.model';
 import { Observer } from 'rxjs/Observer';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Injectable()
 export class FootballService {
@@ -31,6 +31,7 @@ export class FootballService {
   curWksGmsAHNames: WeeklyGmsAHNames[];
 
   arrayForm = this.formBuilder.array([]);
+  weekForm: FormGroup;
 
   private weekly: WeeklyGame[] = [
     new WeeklyGame(1, 1, 'away', 'NYJ'),
@@ -229,6 +230,59 @@ export class FootballService {
     getCurWksGames() {
     return this.curWksGmsAH;
   }
+  /// this will set the form for the current weeks games
+  setCurWksForm(wk: number) {
+    console.log('setting form', wk);
+    this.weekForm = this.formBuilder.group({
+      'week': [wk],
+      'gameMethod': this.initWeekFormArray()
+    });
+  }
+
+  initWeekFormArray() {
+    const arrayForm = this.formBuilder.array([]);
+    const tms = this.footballteamlist.slice();
+    for (const gm of this.curWksGmsAHNames) {
+      const group = this.initWeekFormGroup();
+      if (gm.game !== 0) {
+        group.patchValue({
+          'game': gm.game,
+          'away': {
+            'type': '',
+            'teamNo': tms.find(x => x.name === gm.awayTeamName).teamnumber,
+            'teamName': gm.awayTeamName,
+          },
+          'home': {
+            'type': '',
+            'teamNo': tms.find(x => x.name === gm.homeTeamName).teamnumber,
+            'teamName': gm.homeTeamName,
+          },
+        });
+        arrayForm.push(group);
+      }
+    }
+    return arrayForm;
+  }
+
+  initWeekFormGroup() {
+    const groupForm = this.formBuilder.group({
+      'game': [],
+      'type': ['', Validators.required],
+      'away': this.formBuilder.group(this.initModel('AWAY')),
+      'home': this.formBuilder.group(this.initModel('HOME')),
+    });
+    return groupForm;
+  }
+
+  initModel (str: string) {
+    const model = {
+      'type': new FormControl(str),
+      'teamNo': new FormControl(null),
+      'teamName': new FormControl(null)
+    };
+    return model;
+  }
+  ///
 
   setWksGmsNames() {
     const tms = this.footballteamlist.slice(0);
@@ -268,13 +322,7 @@ export class FootballService {
     return this.arrayForm;
   }
 
-  setScheduleSeasons(seasonEndDate: any) {
-    this.schSeason1stEndDate = seasonEndDate;
-  }
-  /*
-  getSchSeason1stEnddate() {
-    return this.schSeason1stEndDate;
-  } */
+  setScheduleSeasons(seasonEndDate: any) { this.schSeason1stEndDate = seasonEndDate; }
 
   getActualSeasonSchedule() {
     this.footballsch = [];

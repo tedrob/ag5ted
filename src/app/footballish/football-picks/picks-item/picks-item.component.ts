@@ -54,9 +54,7 @@ export class PicksItemComponent implements OnInit {
   }
 
   onSelect(id: number) {
-    // console.log('on item select id', id, ' sc week ', this.footballSch[id].week);
-    // this is beging done here because it didn't work in detail
-    // console.log('inSelect', this.wksGames.length, ' Games Length = ', this.wksGames.length);
+    let gmwk = +id;
     if (this.wksGames.length === 0) { // resets to main feature page because the form was reset (need to reget data)
       // console.log('now what to do');
       this.router.navigate(['../../footballish'], {relativeTo: this.route});
@@ -71,6 +69,9 @@ export class PicksItemComponent implements OnInit {
         });
         this.currentWksGms = gms;
         this.fbs.setCurWksGames(gms);
+        gmwk = gmwk + 1;
+        console.log('inselect', gmwk);
+        this.fbs.setCurWksForm(gmwk);
 
       }
     }
