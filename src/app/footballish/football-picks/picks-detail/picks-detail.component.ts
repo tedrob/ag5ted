@@ -23,6 +23,11 @@ export class PicksDetailComponent implements OnInit, OnDestroy {
   // subscriptionW: Subscription;
   // subscptnWks: Subscription;
 
+  public GAME_WEEK_TYPE = {
+    'AWAY': 'away',
+    'HOME': 'home',
+  };
+
   constructor(private router: Router,
               private route: ActivatedRoute,
               private fbs: FootballService,
@@ -47,7 +52,14 @@ export class PicksDetailComponent implements OnInit, OnDestroy {
     return this.gameMethod.get('gameMethod') as FormArray;
   }
 
-  onSubmit() {}
+  setGameMethodType(i, type1) {
+    console.log('in setGameMethodType', type1, ' i ', i);
+    const ctrl: FormGroup = (<any>this.weekForm).controls.gameMethod;
+    ctrl.controls[i].patchValue({type: type1});
+    ctrl.controls[i].get('type').markAsTouched();
+  }
+
+  onSubmit() { console.log('in submit'); }
 
   ngOnDestroy() {
     this.subscriptionR.unsubscribe();
