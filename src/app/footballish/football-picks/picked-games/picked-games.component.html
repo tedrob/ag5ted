@@ -1,0 +1,54 @@
+<p>
+  The games you picked for this week were..!
+</p>
+<div *ngIf="gameForm !== undefined ">
+  <div [formGroup]="gameForm" novlidate>
+    <div formArrayName="arrayGame">
+      <div class="row">
+        <div class="col-sm-2" style="text-align: right;">
+          Game
+        </div>
+        <div class="col-sm-4" style="text-align: center;">
+            Teams Picked
+        </div>  
+      </div>
+      <div class="row"
+        *ngFor="let gm of gameForm['controls'].arrayGame['controls']; let i=index"
+          [formGroupName]="i">
+        <div class="col-sm-2" style="text-align: right;">
+          {{ gm['controls'].game.value}}
+        </div>
+        <div class="col-sm-5" style="text-align: left;">
+          <div *ngIf="gm['controls'].type.value === 'away'">
+            <button type="button"
+                style="width: 100%; font-size: 15px; text-align: left;"
+                class="btn-primary">
+              {{ gm['controls'].teamName.value }}
+            </button>              
+          </div>
+          <div *ngIf="gm['controls'].type.value === 'home'">
+            <button type="button"
+                style="width: 100%; font-size: 15px; text-align: left;"
+                class="btn-success">
+              {{ gm['controls'].teamName.value }}
+            </button>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="gameForm === undefined ">not defined this will never be displayed</div>
+<br>
+<div style="text-align: center;">
+    <button type="button"
+    style="font-size: 15px; text-align: left;"
+    class="btn-primary">
+    Away
+  </button>
+  <button type="button"
+    style="font-size: 15px; text-align: left;"
+    class="btn-success">
+    Home
+  </button>              
+</div><br>

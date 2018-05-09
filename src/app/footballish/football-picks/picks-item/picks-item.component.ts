@@ -70,7 +70,7 @@ export class PicksItemComponent implements OnInit {
         this.currentWksGms = gms;
         this.fbs.setCurWksGames(gms);
         gmwk = gmwk + 1;
-        console.log('inselect', gmwk);
+        // console.log('inselect', gmwk);
         this.fbs.setCurWksForm(gmwk);
 
       }

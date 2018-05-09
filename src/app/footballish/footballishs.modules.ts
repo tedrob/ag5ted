@@ -22,6 +22,7 @@ import { FootballPicksComponent } from './football-picks/football-picks.componen
 import { PicksDetailComponent } from './football-picks/picks-detail/picks-detail.component';
 import { PicksStartComponent } from './football-picks/picks-start/picks-start.component';
 import { PicksItemComponent } from './football-picks/picks-item/picks-item.component';
+import { PickedGamesComponent } from './football-picks/picked-games/picked-games.component';
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ import { PicksItemComponent } from './football-picks/picks-item/picks-item.compo
         FootballPicksComponent,
         PicksStartComponent,
         PicksItemComponent,
-        PicksDetailComponent
+        PicksDetailComponent,
+        PickedGamesComponent
     ],
     imports: [
     CommonModule,

@@ -1,98 +1,100 @@
 <p>Picking teams for week
   {{ footballSch.week }} ends on {{ footballSch.endentrydate}}  
 </p>
-
-<div class="row">
-  <!-- week games -->  
-    <div class="col-sm-1" style="text-align:center;">
-      <label>GM</label>  
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div style="text-align:center;">
-        <label>Away</label>
-        
+<div *ngIf="weekForm !== undefined">
+  <div class="row">
+    <!-- week games -->  
+      <div class="col-sm-1" style="text-align:center;">
+        <label>GM</label>  
       </div>
-    </div>
-    <div class="col-sm-2" style="text-align:center;">
-        <label>VS</label>
-    </div>  
-    <div class="col-xs-12 col-sm-4">
-      <div style="text-align:center;">
-        <label>Home</label>
+      <div class="col-xs-12 col-sm-4">
+        <div style="text-align:center;">
+          <label>Away</label>
+          
+        </div>
       </div>
-    </div>  
-</div>
-<div>
-  <div class="row" *ngFor="let gm of wklyGmsAhName; let i=index">
-    <div *ngIf="gm?.game === 0" class="col-sm-1" style="text-align:center;">
-        <!-- {{wklyGmsAH[0].game}} -->
-        <!-- {{wklyGmsAhName[0].game}} -->
-        {{gm.game}}
-    </div>
-    <div *ngIf="gm?.game === 0" class="col-sm-4" style="text-align:left;">
-        <!-- {{wklyGmsAH[0].awayTeamNo}} -->
-        <!-- {{wklyGmsAhName[0].awayTeamName}} -->
-        {{gm.awayTeamName}}
-    </div>
-    <div *ngIf="gm?.game === 0" class="col-sm-2" style="text-align:center;">
-      <label>@</label>
-    </div>
-    <div *ngIf="gm?.game === 0" class="col-sm-4" style="text-align:left;">
-      <!-- {{wklyGmsAH[0].homeTeamNo}} -->
-      <!-- {{wklyGmsAhName[0].homeTeamName}} -->
-      {{gm.homeTeamName}}
-    </div>
-    <div *ngIf="gm?.game !== 0 && gm?.game === 1  "
-          class="col-sm-12" style="text-align:center; color: yellow">
-      Games Above are played on Thursday not included in picks for week<br>
-    </div>
+      <div class="col-sm-2" style="text-align:center;">
+          <label>VS</label>
+      </div>  
+      <div class="col-xs-12 col-sm-4">
+        <div style="text-align:center;">
+          <label>Home</label>
+        </div>
+      </div>  
   </div>
-  <form class="ui form" [formGroup]="weekForm" (ngSubmit)="onSubmit()">
-    <div class="row">
-      <div class="col-sm-12">
-         <div formArrayName="gameMethod">
-            <div class="row"
-              *ngFor="let gm of weekForm['controls'].gameMethod['controls']; let i=index"
-              formGroupName="{{i}}">
-              <div class="col-sm-1">{{gm['controls'].game.value}}</div>
-              <div class="col-sm-5" >              
-                <button type="button"
-                  style="width: 100%; font-size: 15px; text-align: left;"
-                  (click)="setGameMethodType(i, GAME_WEEK_TYPE.AWAY)"
-                  [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.AWAY"
-                  [class.btn-primary]="gm['controls'].type.value === GAME_WEEK_TYPE.AWAY"
-                  > {{gm['controls'].away['controls'].teamName.value}}</button>
-              </div>
-              <div class="col-sm-1"><label>@</label></div>
-              <div class="col-sm-5" >              
+  <div>
+    <div class="row" *ngFor="let gm of wklyGmsAhName; let i=index">
+      <div *ngIf="gm?.game === 0" class="col-sm-1" style="text-align:center;">
+          <!-- {{wklyGmsAH[0].game}} -->
+          <!-- {{wklyGmsAhName[0].game}} -->
+          {{gm.game}}
+      </div>
+      <div *ngIf="gm?.game === 0" class="col-sm-4" style="text-align:left;">
+          <!-- {{wklyGmsAH[0].awayTeamNo}} -->
+          <!-- {{wklyGmsAhName[0].awayTeamName}} -->
+          {{gm.awayTeamName}}
+      </div>
+      <div *ngIf="gm?.game === 0" class="col-sm-2" style="text-align:center;">
+        <label>@</label>
+      </div>
+      <div *ngIf="gm?.game === 0" class="col-sm-4" style="text-align:left;">
+        <!-- {{wklyGmsAH[0].homeTeamNo}} -->
+        <!-- {{wklyGmsAhName[0].homeTeamName}} -->
+        {{gm.homeTeamName}}
+      </div>
+      <div *ngIf="gm?.game !== 0 && gm?.game === 1  "
+            class="col-sm-12" style="text-align:center; color: yellow">
+        Games Above are played on Thursday not included in picks for week<br>
+      </div>
+    </div>
+    <form class="ui form" [formGroup]="weekForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-sm-12">
+          <div formArrayName="gameMethod">
+              <div class="row"
+                *ngFor="let gm of weekForm['controls'].gameMethod['controls']; let i=index"
+                formGroupName="{{i}}">
+                <div class="col-sm-1">{{gm['controls'].game.value}}</div>
+                <div class="col-sm-5" >              
                   <button type="button"
                     style="width: 100%; font-size: 15px; text-align: left;"
-                    (click)="setGameMethodType(i, GAME_WEEK_TYPE.HOME)"
-                    [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.HOME"
-                    [class.btn-success]="gm['controls'].type.value === GAME_WEEK_TYPE.HOME"
-                    > {{gm['controls'].home['controls'].teamName.value}}</button>
+                    (click)="setGameMethodType(i, GAME_WEEK_TYPE.AWAY)"
+                    [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.AWAY"
+                    [class.btn-primary]="gm['controls'].type.value === GAME_WEEK_TYPE.AWAY"
+                    > {{gm['controls'].away['controls'].teamName.value}}</button>
+                </div>
+                <div class="col-sm-1"><label>@</label></div>
+                <div class="col-sm-5" >              
+                    <button type="button"
+                      style="width: 100%; font-size: 15px; text-align: left;"
+                      (click)="setGameMethodType(i, GAME_WEEK_TYPE.HOME)"
+                      [class.btn-default]="gm['controls'].type.value !== GAME_WEEK_TYPE.HOME"
+                      [class.btn-success]="gm['controls'].type.value === GAME_WEEK_TYPE.HOME"
+                      > {{gm['controls'].home['controls'].teamName.value}}</button>
+                </div>
+                <span *ngIf="!gm['controls'].type.touched && !gm['controls'].type.value !==''"></span>
               </div>
-              <span *ngIf="!gm['controls'].type.touched && !gm['controls'].type.value !==''"></span>
-            </div>
-         </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <span
-          *ngIf="!weekForm['controls'].gameMethod['controls'].valid  && weekForm.touched"
-          class="help-block">Please male all selections
-        </span>
+      <div class="row">
+        <div class="col-sm-12">
+          <span
+            *ngIf="!weekForm['controls'].gameMethod['controls'].valid  && weekForm.touched"
+            class="help-block">Please male all selections
+          </span>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <button type="submit"
-          [disabled]="!weekForm.valid"
-          style="cursor: pointer;"
-          class="btn btn-success">Submit week {{ footballSch.week }} Games
-        </button>
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="submit"
+            [disabled]="!weekForm.valid"
+            style="cursor: pointer;"
+            class="btn btn-success">Submit week {{ footballSch.week }} Games
+          </button>
+        </div>
       </div>
-    </div>
-  </form><br>
+    </form><br>
+  </div>
+
 </div>

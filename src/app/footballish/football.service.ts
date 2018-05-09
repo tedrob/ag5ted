@@ -232,7 +232,7 @@ export class FootballService {
   }
   /// this will set the form for the current weeks games
   setCurWksForm(wk: number) {
-    console.log('setting form', wk);
+    // console.log('in service setting form for week', wk);
     this.weekForm = this.formBuilder.group({
       'week': [wk],
       'gameMethod': this.initWeekFormArray()
@@ -315,7 +315,7 @@ export class FootballService {
   addArrayFormGames(pickedTeams: any) {
     this.arrayForm = this.formBuilder.array([]);
     this.arrayForm.push(pickedTeams);
-
+    // console.log('service added arrayForm', this.arrayForm);
   }
 
   getArrayFromGames() {

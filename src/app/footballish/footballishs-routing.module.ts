@@ -10,6 +10,7 @@ import { FootballActualComponent } from './football-actual/football-actual.compo
 import { FootballPicksComponent } from './football-picks/football-picks.component';
 import { PicksStartComponent } from './football-picks/picks-start/picks-start.component';
 import { PicksDetailComponent } from './football-picks/picks-detail/picks-detail.component';
+import { PickedGamesComponent } from './football-picks/picked-games/picked-games.component';
 
 const footballishsRoutes: Routes = [
     { path: '', component: FootballishComponent, children: [
@@ -19,6 +20,7 @@ const footballishsRoutes: Routes = [
 
         { path: 'pickteams', component: FootballPicksComponent, children: [
             { path: '', component: PicksStartComponent },
+            { path: 'pickedgames', component: PickedGamesComponent},
             { path: ':id', component: PicksDetailComponent}
         ]},
         { path: 'actualschedule', component: FootballActualComponent},
