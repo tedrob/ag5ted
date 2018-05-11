@@ -18,7 +18,7 @@ export class PlayerService {
         new Player('62iOcrKHG6Q', 'River'),
         new Player('HhuGQUZJot8', 'Alicia Keys - Un-thinkable'),
         new Player('XxGh4ruG33M', 'Fourplay-I`ll Still Be Loving You'),
-        new Player('jT0gbcq5xqI', 'You and I'),
+        new Player('jT0gbcq5xqI', 'You and I ft. KeKe Wyatt'),
         new Player('seZMOTGCDag', 'Jack Johnson - Better Togeher'),
         new Player('xpVfcZ0ZcFM', 'Drake - God`s Plan'),
         new Player('EtJy69cEOtQ', 'How to Learn Anything'),
@@ -31,8 +31,7 @@ export class PlayerService {
         new Player('HCjNJDNzw8Y', 'HAVANA, Camila Cabello'),
         new Player('Qn25lL4a94o', 'Dr. SaxLove, Max Maxwell'),
         new Player('lFsChbwsbmo', 'Insanity Gregory Porter'),
-        new Player('5oSnLt20Wn4', 'Consequence of Love'),
-        new Player('zDj34uJdH40', 'Selena Gomez & Justin Bieber'),
+        new Player('5oSnLt20Wn4', 'Consequence of Love'), //
         new Player('n2v98PGBZH4', 'Billy Paul-Me And Mrs.Jones'),
         // new Player('_8o71Hlzonk', 'Stay With Me, Sam Smith'),
         new Player('QUmxh7H8vok', 'Anthony Hamilton - Charlene')
