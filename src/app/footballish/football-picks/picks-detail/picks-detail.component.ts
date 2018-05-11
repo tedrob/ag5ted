@@ -98,6 +98,8 @@ export class PicksDetailComponent implements OnInit, OnDestroy {
     // console.log('array', arrayForm);
 
     // console.log('submitted2', week, ' id ', this.id);
+    // console.log('week sched', this.footballSch.week, ' week ');
+    this.fbs.setCurWeek(this.footballSch.week);
     this.fbs.addArrayFormGames(arrayForm);
     this.router.navigate(['../pickedgames'], {relativeTo: this.route});
   }

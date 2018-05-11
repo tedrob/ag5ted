@@ -29,6 +29,7 @@ export class FootballService {
   curWksGmsAH: WeeklyGamesAH[];
   cwTeams: WeeklyGmsAHNames;
   curWksGmsAHNames: WeeklyGmsAHNames[];
+  curWeekPlayed;
 
   arrayForm = this.formBuilder.array([]);
   weekForm: FormGroup;
@@ -317,6 +318,12 @@ export class FootballService {
     this.arrayForm.push(pickedTeams);
     // console.log('service added arrayForm', this.arrayForm);
   }
+
+  setCurWeek(wk: number) {
+    this.curWeekPlayed = wk;
+    // console.log('service week played', wk);
+  }
+  getCurWeekplayed() { return this.curWeekPlayed; }
 
   getArrayFromGames() {
     return this.arrayForm;

@@ -43,7 +43,8 @@ export class PickedGamesComponent implements OnInit {
       this.gameForm = this.fb.group({
         arrayGame: this.arrayForm
       });
-      // console.log('setting gameForm', this.gameForm);
+      this.week = this.fs.getCurWeekplayed();
+      // console.log('after getting week ', this.week);
     }
   }
 
