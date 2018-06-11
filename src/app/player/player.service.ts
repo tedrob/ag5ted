@@ -23,6 +23,7 @@ export class PlayerService {
         new Player('xpVfcZ0ZcFM', 'Drake - God`s Plan'),
         new Player('EtJy69cEOtQ', 'How to Learn Anything'),
         new Player('BxY_eJLBflk', 'Put God First - Denzel Washington'),
+        new Player('6Pq2j_ji-XE', 'Motivational'),
         // new Player('3B87LMXvUsM', 'Black Panther'), lFsChbwsbmo 'Insanity Gregory Porter", 5oSnLt20Wn4 'Consequence of Love'
         new Player('TqyLnMa3DJw', 'CHOPIN - Nocture Op.9'),
         new Player('arMu4f8rnBk', 'Beethoven- Moonlight Sonata'),
