@@ -36,7 +36,7 @@ export class PlayerService {
         new Player('n2v98PGBZH4', 'Billy Paul-Me And Mrs.Jones'),
         // new Player('_8o71Hlzonk', 'Stay With Me, Sam Smith'),
         new Player('QUmxh7H8vok', 'Anthony Hamilton - Charlene'),
-        new Player('coue17TmnrA', 'Funky Uplifting R&B Mix')
+        // new Player('coue17TmnrA', 'Funky Uplifting R&B Mix')
         // new Player('sJ5ZsOBjaZQ', 'Keke Wyatt-My First Love')coue17TmnrA
     ];
 
