@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-football-actual',
   templateUrl: './football-actual.component.html',
-  styleUrls: ['./football-actual.component.scss'],
+  styleUrls: ['./football-actual.component.css'],
   providers: [DatePipe]
 })
 export class FootballActualComponent implements OnInit {

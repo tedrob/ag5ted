@@ -4,12 +4,12 @@ import { FootballService } from '../../football.service';
 import { FootballSchedule } from './../../football-schedule.model';
 import { FormBuilder, FormControl, Validators, FormGroup, FormArray } from '@angular/forms';
 import { WeeklyGamesAH, WeeklyGmsAHNames, FootballTeams } from './../../football-teams.model';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-picks-detail',
   templateUrl: './picks-detail.component.html',
-  styleUrls: ['./picks-detail.component.scss']
+  styleUrls: ['./picks-detail.component.css']
 })
 export class PicksDetailComponent implements OnInit, OnDestroy {
   footballSch: FootballSchedule;

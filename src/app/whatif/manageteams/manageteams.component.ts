@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable, OnDestroy, Output } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { FootballService } from '../../footballish/football.service';
 import { FootballTeams } from '../../footballish/football-teams.model';

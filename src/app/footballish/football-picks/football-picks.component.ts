@@ -2,14 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FootballService } from './../football.service';
 import { DatePipe } from '@angular/common';
 import { FootballSchedule } from './../football-schedule.model';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { WeeklyGamesAH } from './../football-teams.model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-football-picks',
   templateUrl: './football-picks.component.html',
-  styleUrls: ['./football-picks.component.scss']
+  styleUrls: ['./football-picks.component.css']
 })
 export class FootballPicksComponent implements OnInit {
   @Input() fbSchedule: FootballSchedule;

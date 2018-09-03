@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 import { Player } from './players.model';
 
@@ -38,6 +38,7 @@ export class PlayerService {
         new Player('QUmxh7H8vok', 'Anthony Hamilton - Charlene'),
         // new Player('coue17TmnrA', 'Funky Uplifting R&B Mix')
         // new Player('sJ5ZsOBjaZQ', 'Keke Wyatt-My First Love')coue17TmnrA
+      new Player('ZcThrAU9yLk', 'Pinao Jazz for Work'),
     ];
 
     getPlayers() {

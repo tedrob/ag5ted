@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { Subject } from 'rxjs/Subject';
-import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { FootballTeams, WeeklyGame, WeeklyGames, WeeklyGamesAH, WeeklyGmsAHNames } from './football-teams.model';
 import { FootballSchedule } from './football-schedule.model';
-import { Observer } from 'rxjs/Observer';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { of, Subject  } from 'rxjs';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Injectable()
@@ -132,11 +130,11 @@ export class FootballService {
 
   getWklyGmsAH() {
     return this.http.get<WeeklyGamesAH[]>(this.wklygmsUrlAH, {responseType: 'json'})
-      .map((weeklyahgms) => {
+      .pipe(map((weeklyahgms) => {
         this.setWklyGamesAh(weeklyahgms);
         // console.log('innn service', this.weekGamesAH);
         return this.weekGamesAH;
-      });
+      }));
   }
   getAllwklyGmsAH() {
     return this.weekGamesAH;
@@ -172,11 +170,11 @@ export class FootballService {
 
   getTeamsFile() {
     return this.http.get<FootballTeams[]>(this.teamUrl, {responseType: 'json'})
-      .map((teams) => {
+      .pipe(map((teams) => {
         this.teams = teams;
         // console.log('json', teams);
         return this.teams;
-      });
+      }));
   }
 
   getSeasonStart(startdate: Date) { }
@@ -197,11 +195,11 @@ export class FootballService {
       observe: 'body',
       responseType: 'json'
     })
-      .map(
+      .pipe(map(
         (footballschs) => {
           for (const footballsch of footballschs) { /* any custom work here */ }
           return footballschs;
-        })
+        }))
         .subscribe(
           (footballschs: FootballSchedule[]) => {
             this.setFootBallSch(footballschs);

@@ -4,7 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Player } from '../players.model';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { PlayerService } from '../player.service';
-import { Options } from 'selenium-webdriver/firefox';
+// import { Options } from 'selenium-webdriver/firefox';
 
 @Component({
   selector: 'app-player-detail',

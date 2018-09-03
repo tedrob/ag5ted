@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-picks-item',
   templateUrl: './picks-item.component.html',
-  styleUrls: ['./picks-item.component.scss']
+  styleUrls: ['./picks-item.component.css']
 })
 export class PicksItemComponent implements OnInit {
   @Input() fbSchedule: FootballSchedule;

@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-picked-games',
   templateUrl: './picked-games.component.html',
-  styleUrls: ['./picked-games.component.scss']
+  styleUrls: ['./picked-games.component.css']
 })
 export class PickedGamesComponent implements OnInit {
   gameForm: FormGroup;

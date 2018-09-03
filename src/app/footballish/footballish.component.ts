@@ -3,7 +3,8 @@ import { FootballTeams, WeeklyGames, WeeklyGamesAH } from './football-teams.mode
 import { FootballService } from './football.service';
 import { FootballSchedule } from './football-schedule.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
+
 
 
 @Component({

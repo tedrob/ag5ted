@@ -1,5 +1,5 @@
 import { Directive, ElementRef, HostListener, Input, Renderer, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { FootballTeams } from './footballish/football-teams.model';
 import { FootballService } from './footballish/football.service';
 
