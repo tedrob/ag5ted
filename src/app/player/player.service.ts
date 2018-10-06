@@ -25,6 +25,7 @@ export class PlayerService {
       new Player('BxY_eJLBflk', 'Put God First - Denzel Washington'),
       new Player('6Pq2j_ji-XE', 'Motivational'),
       new Player('g-jwWYX7Jlo', 'Dream Motivational'),
+      new Player('I22Lf0xF0UE', 'Change Your Mind'),
       // new Player('3B87LMXvUsM', 'Black Panther'), lFsChbwsbmo 'Insanity Gregory Porter", 5oSnLt20Wn4 'Consequence of Love'
       new Player('TqyLnMa3DJw', 'CHOPIN - Nocture Op.9'),
       new Player('arMu4f8rnBk', 'Beethoven- Moonlight Sonata'),
