@@ -26,6 +26,7 @@ export class PlayerService {
       new Player('6Pq2j_ji-XE', 'Motivational'),
       new Player('g-jwWYX7Jlo', 'Dream Motivational'),
       new Player('I22Lf0xF0UE', 'Change Your Mind'),
+      new Player('7Km0uAOsN8E', '1HourLong'),
       // new Player('3B87LMXvUsM', 'Black Panther'), lFsChbwsbmo 'Insanity Gregory Porter", 5oSnLt20Wn4 'Consequence of Love'
       new Player('TqyLnMa3DJw', 'CHOPIN - Nocture Op.9'),
       new Player('arMu4f8rnBk', 'Beethoven- Moonlight Sonata'),
@@ -38,7 +39,8 @@ export class PlayerService {
       new Player('n2v98PGBZH4', 'Billy Paul-Me And Mrs.Jones'),
       // new Player('_8o71Hlzonk', 'Stay With Me, Sam Smith'),
       new Player('QUmxh7H8vok', 'Anthony Hamilton - Charlene'),
-      // new Player('coue17TmnrA', 'Funky Uplifting R&B Mix')
+      new Player('TqtKfpsveZw', 'NY Lounge Stay See'),
+      // new Player('coue17TmnrA', 'Funky Uplifting R&B Mix')TqtKfpsveZw
       // new Player('sJ5ZsOBjaZQ', 'Keke Wyatt-My First Love')coue17TmnrA
       new Player('ZcThrAU9yLk', 'Pinao Jazz for Work'),
     ];
