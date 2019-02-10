@@ -21,6 +21,7 @@ export class PlayerService {
       new Player('jT0gbcq5xqI', 'You and I ft. KeKe Wyatt'),
       new Player('seZMOTGCDag', 'Jack Johnson - Better Togeher'),
       new Player('xpVfcZ0ZcFM', 'Drake - God`s Plan'),
+      new Player('3NKeffFYWno', 'Jhene Aiko - Unreleased'),
       new Player('EtJy69cEOtQ', 'How to Learn Anything'),
       new Player('BxY_eJLBflk', 'Put God First - Denzel Washington'),
       new Player('6Pq2j_ji-XE', 'Motivational'),
@@ -40,8 +41,9 @@ export class PlayerService {
       // new Player('_8o71Hlzonk', 'Stay With Me, Sam Smith'),
       new Player('QUmxh7H8vok', 'Anthony Hamilton - Charlene'),
       new Player('TqtKfpsveZw', 'NY Lounge Stay See'),
+      new Player('74iHoCM83Mg', 'Relaxing JAZZ 4 Work'),
       // new Player('coue17TmnrA', 'Funky Uplifting R&B Mix')TqtKfpsveZw
-      // new Player('sJ5ZsOBjaZQ', 'Keke Wyatt-My First Love')coue17TmnrA
+      // new Player('sJ5ZsOBjaZQ', 'Keke Wyatt-My First Love')74iHoCM83Mg
       new Player('ZcThrAU9yLk', 'Pinao Jazz for Work'),
     ];
 
