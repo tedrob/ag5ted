@@ -45,6 +45,7 @@ export class PlayerService {
       // new Player('coue17TmnrA', 'Funky Uplifting R&B Mix')TqtKfpsveZw
       // new Player('sJ5ZsOBjaZQ', 'Keke Wyatt-My First Love')74iHoCM83Mg
       new Player('ZcThrAU9yLk', 'Pinao Jazz for Work'),
+      new Player('m_qewI-1cEs', 'Honey Dijon Boiler Room'),
     ];
 
     getPlayers() {
