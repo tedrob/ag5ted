@@ -12,6 +12,7 @@ export class PlayerService {
       new Player('450p7goxZqg', 'All of me'),
       new Player('6YNZlXfW6Ho', 'Ella mai - Boo`d up'),
       new Player('g5Z904AccvM', 'I bring me'),
+      new Player('ttALzuU-JHw', 'If I ever fall in love'),
       new Player('H64QG4UsrGI', 'Mario - let me Love You'),
       new Player('PMivT7MJ41M', 'That`s What I Like-Bruno Mars'),
       new Player('oOfGGjr6Aq4', 'Kem - Share My Life'),
