@@ -40,6 +40,7 @@ export class PlayerService {
       new Player('74iHoCM83Mg', 'Relaxing JAZZ 4 Work'),
       new Player('coue17TmnrA', 'Funky Uplifting R&B Mix'),
       new Player('ZcThrAU9yLk', 'Pinao Jazz for Work'),
+      new Player('SGqg_ZzThDU', 'Black Coffee Salle'),
       new Player('m_qewI-1cEs', 'Honey Dijon Boiler Room')
     ];
 
