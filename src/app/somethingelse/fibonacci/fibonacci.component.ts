@@ -34,7 +34,7 @@ export class FibonacciComponent implements OnInit {
     let num: number = this.fiboForm.controls.fiboNum.value;
     if (this.fiboForm.controls.method.value === 'sequence') {
       this.fibobacciResults = this.fibonacci(num);
-    } else {
+    } else if (this.fiboForm.controls.method.value === 'recursive') {
       num++;
       this.recursivS = this.fib_s(num);
       for (let index = 0; index < this.recursivS.length; index++) {
@@ -47,8 +47,9 @@ export class FibonacciComponent implements OnInit {
         }
       }
       this.fibobacciResults = this.fibobacciResults.substr(0, this.fibobacciResults.length - 2);
+    } else {
+      this.fibobacciResults = '';
     }
-
     this.submitted = true;
   }
 
