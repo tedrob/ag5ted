@@ -12,7 +12,7 @@ export class FibonacciComponent implements OnInit {
   fibobacciResults: string;
   // cache: any = {};
   lnbreak = 8;
-  recursivS: [] = [];
+  recursivS: number[] = [];
 
 
   constructor(private fb: FormBuilder) { }
