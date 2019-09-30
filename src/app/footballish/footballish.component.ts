@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FootballTeams, WeeklyGames, WeeklyGamesAH } from './football-teams.model';
 import { FootballService } from './football.service';
-import { FootballSchedule } from './football-schedule.model';
+// import { FootballSchedule } from './football-schedule.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 

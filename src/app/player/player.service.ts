@@ -38,7 +38,8 @@ export class PlayerService {
       new Player('coue17TmnrA', 'Funky Uplifting R&B Mix'),
       new Player('ZcThrAU9yLk', 'Pinao Jazz for Work'),
       new Player('SGqg_ZzThDU', 'Black Coffee Salle'),
-      new Player('m_qewI-1cEs', 'Honey Dijon Boiler Room')
+      new Player('m_qewI-1cEs', 'Honey Dijon Boiler Room'),
+      new Player('79UWvR734wI', 'InfoOnDif-MVC-Net-Core')
     ];
 
     getPlayers() {

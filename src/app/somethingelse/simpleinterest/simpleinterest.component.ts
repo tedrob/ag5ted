@@ -10,6 +10,7 @@ export class SimpleinterestComponent implements OnInit, AfterViewInit {
   interestForm: FormGroup;
   submitted = false;
   @ViewChild('myCanvas') myCanvas: ElementRef;
+ // @ViewChild('myCanvas', {static: false}) myCanvas: ElementRef;
   context: CanvasRenderingContext2D;
   graph = document.getElementById('graph');
 

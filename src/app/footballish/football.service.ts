@@ -8,7 +8,7 @@ import { FootballSchedule } from './football-schedule.model';
 import { of, Subject  } from 'rxjs';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class FootballService {
   teamUrl = '/assets/data/teams.json';
   teamChanged = new Subject<FootballTeams[]>();

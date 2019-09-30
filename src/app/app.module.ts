@@ -16,7 +16,6 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PlayerService } from './player/player.service';
 import { FootballService } from './footballish/football.service';
-import { HttpClient } from 'selenium-webdriver/http';
 import { DatePipe } from '@angular/common';
 
 @NgModule({

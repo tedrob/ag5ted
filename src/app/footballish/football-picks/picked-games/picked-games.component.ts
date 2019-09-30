@@ -12,7 +12,7 @@ export class PickedGamesComponent implements OnInit {
   gameForm: FormGroup;
   arrayForm = this.fb.array([]);
   gmsPickedForm;
-  week;
+  week: any;
 
   constructor(private fb: FormBuilder,
               private fs: FootballService,
