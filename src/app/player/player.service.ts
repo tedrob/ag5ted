@@ -41,6 +41,7 @@ export class PlayerService {
       new Player('SGqg_ZzThDU', 'Black Coffee Salle'),
       new Player('m_qewI-1cEs', 'Honey Dijon Boiler Room'),
       new Player('8WYHDfJDPDc', 'NellyVille'),
+      new Player('J7HwVIGWBls', 'Backyard Southern Soul'),
       new Player('79UWvR734wI', 'InfoOnDif-MVC-Net-Core')
     ];
 
