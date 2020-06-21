@@ -42,6 +42,7 @@ export class PlayerService {
       new Player('m_qewI-1cEs', 'Honey Dijon Boiler Room'),
       new Player('8WYHDfJDPDc', 'NellyVille'),
       new Player('J7HwVIGWBls', 'Backyard Southern Soul'),
+      new Player('ICXNWceWRB0', 'Man in the Mirror'),
       new Player('79UWvR734wI', 'InfoOnDif-MVC-Net-Core'),
       new Player('lOqSQgHUWW4', 'Trevor Noah')
     ];
