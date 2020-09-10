@@ -331,7 +331,7 @@ export class FootballService {
 
   getActualSeasonSchedule() {
     this.footballsch = [];
-    const date = new Date(2018, 8, 2);
+    const date = new Date(2020, 8, 11);
     const dateYr = date.getFullYear();
     const dateMth = date.getMonth() + 1;
     const dateDay = date.getDay() + 2;
