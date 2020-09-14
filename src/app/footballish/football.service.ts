@@ -90,7 +90,7 @@ export class FootballService {
     new FootballTeams(1, 'Philadelphia Eagles', 'PHI'),
     new FootballTeams(2, 'Dallas Cowboys', 'DAL'),
     new FootballTeams(3, 'New York Giants', 'NYG'),
-    new FootballTeams(4, 'Washington Redskins', 'WAS'),
+    new FootballTeams(4, 'Washington', 'WAS'),
     new FootballTeams(5, 'Minnesota Vikings', 'MIN'),
     new FootballTeams(6, 'Detroit Lions', 'DET'),
     new FootballTeams(7, 'Green Bay Packers', 'GB'),
