@@ -3,7 +3,7 @@
         { "teamnumber": 1, "name": "Philadelphia Eagles", "shortName": "PHI" },
         { "teamnumber": 2, "name": "Dallas Cowboys", "shortName": "DAL"},
         { "teamnumber": 3, "name": "New York Giants", "shortName": "NYG"},
-        { "teamnumber": 4, "name": "Washington Redskins", "shortName": "WAS"},
+        { "teamnumber": 4, "name": "Washington", "shortName": "WAS"},
         { "teamnumber": 5, "name": "Minnesota Vikings", "shortName": "MIN"},
         { "teamnumber": 6, "name": "Detroit Lions", "shortName": "DET"},
         { "teamnumber": 7, "name": "Green Bay Packers", "shortName": "GB"},
@@ -30,7 +30,7 @@
         { "teamnumber": 28, "name": "Houston Texans", "shortName": "HOU"},
         { "teamnumber": 29, "name": "Kansas City", "shortName": "KC"},
         { "teamnumber": 30, "name": "Los Angeles Chargers", "shortName": "LAC"},
-        { "teamnumber": 31, "name": "Oakland Raiders", "shortName": "OAK"},
+        { "teamnumber": 31, "name": "Las Vegas Raiders", "shortName": "LV"},
         { "teamnumber": 32, "name": "Denver Broncos", "shortName": "DEN"}
     ]
 }

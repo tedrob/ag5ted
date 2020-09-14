@@ -82,7 +82,7 @@ export class FootballService {
     new FootballTeams(28, 'Houston Texans', 'HOU'),
     new FootballTeams(29, 'Kansas City Chiefs', 'KC'),
     new FootballTeams(30, 'Los Angeles Chargers', 'LAC'),
-    new FootballTeams(31, 'Oakland Raiders', 'OAK'),
+    new FootballTeams(31, 'Las Vegas Raiders', 'LV'),
     new FootballTeams(32, 'Denver Broncos', 'DEN')
   ];
 
@@ -120,7 +120,7 @@ export class FootballService {
     new FootballTeams(28, 'Houston Texans', 'HOU'),
     new FootballTeams(29, 'Kansas City Chiefs', 'KC'),
     new FootballTeams(30, 'Los Angeles Chargers', 'LAC'),
-    new FootballTeams(31, 'Oakland Raiders', 'OAK'),
+    new FootballTeams(31, 'Las Vegas Raiders', 'LS'),
     new FootballTeams(32, 'Denver Broncos', 'DEN')
   ];
 

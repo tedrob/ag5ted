@@ -46,7 +46,8 @@ export class PlayerService {
       new Player('79UWvR734wI', 'InfoOnDif-MVC-Net-Core'),
       new Player('1km-F2DVgjs', 'Moms Mabley'),
       new Player('QFUif6T5xiI', 'Witney Houston'),
-      new Player('lOqSQgHUWW4', 'Trevor Noah')
+      new Player('lOqSQgHUWW4', 'Trevor Noah'),
+      new Player('aOrmjpToyMk', 'Smooth Jazz')
     ];
 
     getPlayers() {
