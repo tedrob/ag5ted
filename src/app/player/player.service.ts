@@ -48,7 +48,8 @@ export class PlayerService {
       new Player('1km-F2DVgjs', 'Moms Mabley'),
       new Player('QFUif6T5xiI', 'Witney Houston'),
       new Player('lOqSQgHUWW4', 'Trevor Noah'),
-      new Player('aOrmjpToyMk', 'Smooth Jazz')
+      new Player('aOrmjpToyMk', 'Smooth Jazz'),
+        new Player('D0mgk0KgI0Q', 'Silent Night - Temptations'),
     ];
 
     getPlayers() {
