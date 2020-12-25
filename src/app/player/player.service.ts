@@ -8,6 +8,7 @@ export class PlayerService {
     playerChanged = new Subject<Player[]>();
 
     private playerlists: Player[] = [
+      new Player('YaxGNQE5ZLA', 'Star-Spangled Banner As Never Heard I'),
       new Player('LgPpowVNEfE', 'Musiq - So beautiful'),
       new Player('450p7goxZqg', 'John legend - All of me'),
       new Player('iXvy8ZeCs5M', 'John legend - Tonight'),
