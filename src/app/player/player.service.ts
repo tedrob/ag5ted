@@ -10,7 +10,6 @@ export class PlayerService {
     private playerlists: Player[] = [
       new Player('YaxGNQE5ZLA', 'Star-Spangled Banner As Never Heard I'),
       new Player('LgPpowVNEfE', 'Musiq - So beautiful'),
-      new Player('450p7goxZqg', 'John legend - All of me'),
       new Player('iXvy8ZeCs5M', 'John legend - Tonight'),
       new Player('NmCFY1oYDeM', 'John legend - Love Me Now'),
       new Player('6YNZlXfW6Ho', 'Ella mai - Boo`d up'),
