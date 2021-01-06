@@ -43,6 +43,7 @@ export class PlayerService {
       new Player('coue17TmnrA', 'Funky Uplifting R&B Mix'),
       new Player('hifl-h1FXek', 'Teddy Love TKO'),
       new Player('SGqg_ZzThDU', 'Black Coffee Salle'),
+      new Player('5ceVFLfGdAo', 'Superman is a DJ'),
       new Player('m_qewI-1cEs', 'Honey Dijon Boiler Room'),
       new Player('8WYHDfJDPDc', 'NellyVille'),
       new Player('J7HwVIGWBls', 'Backyard Southern Soul'),
