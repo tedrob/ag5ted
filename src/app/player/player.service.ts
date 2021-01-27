@@ -32,6 +32,7 @@ export class PlayerService {
       new Player('g-jwWYX7Jlo', 'Dream Motivational'),
       new Player('TqyLnMa3DJw', 'CHOPIN - Nocture Op.9'),
       new Player('zM4En012IJo', 'Novel & Short Story'),
+      new Player('LZ055ilIiN4', 'Amanda Gorman reads inauguration'),
       new Player('HCjNJDNzw8Y', 'HAVANA, Camila Cabello'),
       new Player('Qn25lL4a94o', 'Dr. SaxLove, Max Maxwell'),
       new Player('gSuQggW_iJA', 'Southern Blues Juke Joint Soul Jams'),
