@@ -22,6 +22,8 @@ export class PlayerService {
       new Player('fV8vB1BB2qc', 'Boyz II Men - I`ll Make Love To You'),
       new Player('HhuGQUZJot8', 'Alicia Keys - Un-thinkable'),
       new Player('2aK-ciz7mGI', 'Alicia Keys & Jay-Z - New York'),
+      new Player('2aK-ciz7mGI', 'BBC One Alicia Keys 2020/2021'),
+      new Player('fPgf2meEX1w', 'Usher & Alicia Keys My Boo'),
       new Player('uJW69FjTu7o', 'Alicia Keys-Landmarks live'),
       new Player('XxGh4ruG33M', 'Fourplay-I`ll Still Be Loving You'),
       new Player('jT0gbcq5xqI', 'You and I ft. KeKe Wyatt'),
