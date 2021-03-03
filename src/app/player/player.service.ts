@@ -38,6 +38,7 @@ export class PlayerService {
       new Player('LZ055ilIiN4', 'Amanda Gorman reads inauguration'),
       new Player('HCjNJDNzw8Y', 'HAVANA, Camila Cabello'),
       new Player('Qn25lL4a94o', 'Dr. SaxLove, Max Maxwell'),
+      new Player('h4Mrp6wuSwk', 'Santana & Gato Barbieri Europa'),
       new Player('gSuQggW_iJA', 'Southern Blues Juke Joint Soul Jams'),
       new Player('lFsChbwsbmo', 'Insanity Gregory Porter'),
       new Player('p37iZ3o5k2Y', 'GIL Scott Heron'),
