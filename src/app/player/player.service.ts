@@ -61,7 +61,8 @@ export class PlayerService {
     new Player('D0mgk0KgI0Q', 'Silent Night - Temptations'),
     new Player('78Ld6XYuegw', 'Parking Lot Pimpin'),
     new Player('79UWvR734wI', 'InfoOnDif-MVC-Net-Core'),
-    new Player('fyGSyqEX2dw', 'Don`t imitate me JavaScript')
+    new Player('fyGSyqEX2dw', 'Don`t imitate me JavaScript'),
+    new Player('HmH6KEezzUM', '30-Minute Lower Body')
   ];
 
   getPlayers() {
