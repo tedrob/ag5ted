@@ -62,7 +62,9 @@ export class PlayerService {
     new Player('78Ld6XYuegw', 'Parking Lot Pimpin'),
     new Player('79UWvR734wI', 'InfoOnDif-MVC-Net-Core'),
     new Player('fyGSyqEX2dw', 'Don`t imitate me JavaScript'),
-    new Player('HmH6KEezzUM', '30-Minute Lower Body')
+    new Player('HmH6KEezzUM', '30-Minute Lower Body'),
+    new Player('FqiVMKJxWK0', 'Major-Why I LoveYou'),
+    new Player('8p2l_gMhGic', 'John Legend U Move, I Move')
   ];
 
   getPlayers() {
