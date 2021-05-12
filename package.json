@@ -32,7 +32,7 @@
     "core-js": "^2.4.1",
     "express": "^4.16.2",
     "jquery": "^3.5.0",
-    "nodemailer": "^4.6.8",
+    "nodemailer": "^6.4.16",
     "parse-server": "^3.7.0",
     "popper.js": "^1.13.0",
     "rxjs": "^6.3.1",
