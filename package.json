@@ -33,7 +33,7 @@
     "express": "^4.16.2",
     "jquery": "^3.5.0",
     "nodemailer": "^4.6.8",
-    "parse-server": "^3.7.0",
+    "parse-server": "^4.5.2",
     "popper.js": "^1.13.0",
     "rxjs": "^6.3.1",
     "rxjs-compat": "^6.3.1",
