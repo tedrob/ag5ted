@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { DatePipe } from '@angular/common';
 import { FootballService } from './../football.service';
 import { FootballSchedule } from './../football-schedule.model';
